@@ -35,6 +35,7 @@ tl.to(".hr", 0.4, {
 }, "-=2");
 
 tl.reverse();
+
 $(document).on("click", ".menu-open", function () {
     tl.reversed(!tl.reversed());
     $(this).hide();
@@ -42,5 +43,7 @@ $(document).on("click", ".menu-open", function () {
 
 $(document).on("click", ".menu-close", function () {
     tl.reversed(!tl.reversed());
-    $(".menu-open").show();
+    setTimeout(function () {
+        $(".menu-open").show();
+    }, 1000);
 });
