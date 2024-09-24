@@ -41,7 +41,7 @@ $(document).on("click", ".menu-close", function () {
 ScrollTrigger.create({
     animation: gsap.from(".logo h1", {
         y: "40vh",
-        scale: 7,
+        scale: 6,
         yPercent: -40,
     }),
     scrub: true,

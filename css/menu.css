@@ -75,12 +75,13 @@
 
 .logo p {
     position: fixed;
-    top: 5rem;
+    top: 4rem;
     left: 50%;
     transform: translateX(-50%);
     font-family: "Bridge Head Con Medium";
     color: #0f0f0f;
     font-size: 30px;
+    text-align: center;
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
 }
@@ -121,7 +122,7 @@
     }
 
     .logo p {
-        top: 3.25rem;
+        top: 3rem;
         padding: 1rem;
         font-size: 20px;
     }
@@ -133,6 +134,6 @@
 
 @media screen and (max-width: 543px) {
     .logo p {
-        top: 5rem;
+        top: 4.75rem;
     }
 }
