@@ -18,3 +18,11 @@
 a {
     text-decoration: none;
 }
+
+button {
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
