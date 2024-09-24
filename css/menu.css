@@ -65,12 +65,24 @@
     position: absolute;
 }
 
-.logo {
+.logo h1 {
     position: fixed;
     top: 2rem;
     left: 50%;
     transform: translateX(-50%);
     font-family: "Bridge Head Con Medium";
+}
+
+.logo p {
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bridge Head Con Medium";
+    color: #0f0f0f;
+    font-size: 30px;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .container {
@@ -83,7 +95,7 @@
     padding: 0 2rem;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .menu-left {
         width: 100%;
     }
@@ -104,11 +116,23 @@
         font-size: 20px;
     }
 
-    .logo {
+    .logo h1 {
         top: 1rem;
+    }
+
+    .logo p {
+        top: 3.25rem;
+        padding: 1rem;
+        font-size: 20px;
     }
 
     .content {
         padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 543px) {
+    .logo p {
+        top: 5rem;
     }
 }

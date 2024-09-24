@@ -39,9 +39,22 @@ $(document).on("click", ".menu-close", function () {
 // LOGO
 
 ScrollTrigger.create({
-    animation: gsap.from(".logo", {
-        y: "50vh",
+    animation: gsap.from(".logo h1", {
+        y: "40vh",
         scale: 7,
+        yPercent: -40,
+    }),
+    scrub: true,
+    trigger: ".content",
+    start: "top bottom",
+    endTrigger: ".content",
+    end: "top center"
+});
+
+ScrollTrigger.create({
+    animation: gsap.from(".logo p", {
+        y: "50vh",
+        scale: 2,
         yPercent: -50,
     }),
     scrub: true,
@@ -49,4 +62,16 @@ ScrollTrigger.create({
     start: "top bottom",
     endTrigger: ".content",
     end: "top center"
-})
+});
+
+ScrollTrigger.create({
+    animation: gsap.to(".logo p", {
+        opacity: 0,
+        duration: 0.4
+    }),
+    trigger: ".logo h1",
+    start: "top 20%",
+    end: "bottom 80%",
+    scrub: true,
+    markers: false
+});
