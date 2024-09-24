@@ -1,3 +1,5 @@
+// MENU
+
 tl = new TimelineMax({ paused: true });
 
 tl.to(".menu-left", 1, {
@@ -26,8 +28,25 @@ tl.reverse();
 
 $(document).on("click", ".menu-open", function () {
     tl.reversed(!tl.reversed());
+    $("body").css("overflow", "hidden");
 });
 
 $(document).on("click", ".menu-close", function () {
     tl.reversed(!tl.reversed());
+    setTimeout(() => $("body").css("overflow", "auto"), 2000);
 });
+
+// LOGO
+
+ScrollTrigger.create({
+    animation: gsap.from(".logo", {
+        y: "50vh",
+        scale: 7,
+        yPercent: -50,
+    }),
+    scrub: true,
+    trigger: ".content",
+    start: "top bottom",
+    endTrigger: ".content",
+    end: "top center"
+})

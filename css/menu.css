@@ -6,9 +6,10 @@
 .menu-left,
 .menu-right {
     position: fixed;
+    z-index: 1;
     width: 50%;
     height: 100vh;
-    background: #000;
+    background: #0F0F0F;
     color: #FFF;
     display: grid;
     justify-content: center;
@@ -50,11 +51,36 @@
 
 .menu-open,
 .menu-close {
-    position: absolute;
     top: 2rem;
     left: 2rem;
     font-size: 30px;
     font-family: "Bridge Head Con Medium";
+}
+
+.menu-open {
+    position: fixed;
+}
+
+.menu-close {
+    position: absolute;
+}
+
+.logo {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bridge Head Con Medium";
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.content {
+    padding: 0 2rem;
 }
 
 @media (max-width: 900px) {
@@ -76,5 +102,13 @@
         top: 1rem;
         left: 1rem;
         font-size: 20px;
+    }
+
+    .logo {
+        top: 1rem;
+    }
+
+    .content {
+        padding: 0 1rem;
     }
 }
