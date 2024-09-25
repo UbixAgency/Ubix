@@ -51,6 +51,7 @@
 
 .menu-open,
 .menu-close {
+    z-index: 1;
     top: 2rem;
     right: 2rem;
     font-size: 30px;
