@@ -1,7 +1,4 @@
 .menu {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
     display: flex;
     font-family: "Bridge Head Con Medium";
 }
@@ -9,14 +6,14 @@
 .menu-left,
 .menu-right {
     position: fixed;
+    z-index: 1;
     width: 50%;
     height: 100vh;
-    background: #000;
+    background: #0F0F0F;
     color: #FFF;
     display: grid;
     justify-content: center;
     align-items: center;
-    z-index: -1;
     overflow-y: auto;
 }
 
@@ -31,7 +28,7 @@
 .menu-link a {
     text-decoration: none;
     color: #FFF;
-    font-size: 100px;
+    font-size: 90px;
 }
 
 .menu-link a span {
@@ -52,51 +49,57 @@
     margin-bottom: 60px;
 }
 
+.menu-open,
 .menu-close {
-    z-index: 2;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    opacity: 1;
-}
-
-.menu-close-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 100%;
-    border: 10px solid #000;
-}
-
-.menu-close-img img {
-    width: 100%;
-}
-
-.hr {
-    position: fixed;
-    left: 50%;
-    width: 6px;
-    height: 100vh;
-    background-color: #FFF;
     z-index: 1;
-    transform: scaleY(0);
+    top: 2rem;
+    right: 2rem;
+    font-size: 30px;
+    font-family: "Bridge Head Con Medium";
+}
+
+.menu-left .menu-close {
+    display: none;
 }
 
 .menu-open {
     position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    padding: 2rem;
-    cursor: pointer;
-    font-size: 20px;
-    color: #000;
 }
 
-@media (max-width: 900px) {
+.menu-close {
+    position: absolute;
+}
+
+.logo h1 {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    font-family: "Bridge Head Con Medium";
+}
+
+.logo p {
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    font-family: "Bridge Head Con Medium";
+    color: #0f0f0f;
+    font-size: 30px;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 900px) {
     .menu-left {
         width: 100%;
+        left: unset;
+        right: -100%;
     }
 
     .menu-right,
@@ -105,21 +108,32 @@
     }
 
     .menu-link a {
-        font-size: 75px;
+        font-size: 70px;
     }
 
+    .menu-open,
     .menu-close {
-        position: fixed;
-        top: 10%;
-        left: 80%;
-        margin: 40px;
+        top: 1rem;
+        right: 1rem;
     }
 
-    .menu-close-img {
-        border: none;
+    .menu-left .menu-close {
+        display: block;
     }
 
-    .menu-close-img img {
-        width: 40%;
+    .logo h1 {
+        top: 1rem;
+    }
+
+    .logo p {
+        top: 3rem;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .logo p {
+        top: 3rem;
+        font-size: 14px;
     }
 }

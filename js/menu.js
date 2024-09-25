@@ -1,4 +1,8 @@
-tl = new TimelineMax({ paused: true });
+gsap.registerPlugin(ScrollTrigger);
+
+// MENU
+
+tl = gsap.timeline()
 
 tl.to(".menu-left", 1, {
     left: 0,
@@ -22,25 +26,110 @@ tl.staggerFrom(".mail > div, .socials > div", 0.8, {
     ease: Expo.easeOut
 }, "0.1", "-=1");
 
-tl.from(".menu-close", 1, {
-    scale: 0,
-    opacity: 1,
-    ease: Expo.easeInOut
-}, "-=1");
-
-tl.to(".hr", 0.4, {
-    scaleY: 1,
-    transformOrigin: "0% 50%",
-    ease: Power2.ease
-}, "-=2");
-
 tl.reverse();
+
 $(document).on("click", ".menu-open", function () {
     tl.reversed(!tl.reversed());
-    $(this).hide();
+    $("body").css("overflow", "hidden");
 });
 
 $(document).on("click", ".menu-close", function () {
     tl.reversed(!tl.reversed());
-    $(".menu-open").show();
+    $("body").css("overflow", "auto");
+});
+
+// LOGO
+
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 901px)", () => {
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo h1", {
+            y: "40vh",
+            scale: 6,
+            left: "50%",
+            xPercent: -50
+        }, {
+            y: 0,
+            scale: 1,
+            left: "2rem",
+            xPercent: 0
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
+
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo p", {
+            y: "50vh",
+            scale: 2,
+            left: "50%",
+            xPercent: -50
+        }, {
+            y: 0,
+            scale: 1,
+            left: "2rem",
+            xPercent: 0
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
+});
+
+mm.add("(max-width: 900px)", () => {
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo h1", {
+            y: "40vh",
+            scale: 6,
+            left: "50%",
+            xPercent: -50
+        }, {
+            y: 0,
+            scale: 1,
+            left: "1rem",
+            xPercent: 0
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
+
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo p", {
+            y: "50vh",
+            scale: 2,
+            left: "50%",
+            xPercent: -50
+        }, {
+            y: 0,
+            scale: 1,
+            left: "1rem",
+            xPercent: 0
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
+});
+
+ScrollTrigger.create({
+    animation: gsap.to(".logo p", {
+        opacity: 0,
+        duration: 0.4
+    }),
+    trigger: ".logo h1",
+    start: "top 20%",
+    end: "top 80%",
+    scrub: true,
+    markers: false
 });
