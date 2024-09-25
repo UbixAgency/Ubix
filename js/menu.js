@@ -45,7 +45,7 @@ let mm = gsap.matchMedia();
 mm.add("(min-width: 901px)", () => {
     ScrollTrigger.create({
         animation: gsap.fromTo(".logo h1", {
-            y: "40dvh",
+            y: "40vh",
             scale: 6,
             left: "50%",
             xPercent: -50
@@ -64,7 +64,7 @@ mm.add("(min-width: 901px)", () => {
 
     ScrollTrigger.create({
         animation: gsap.fromTo(".logo p", {
-            y: "50dvh",
+            y: "50vh",
             scale: 2,
             left: "50%",
             xPercent: -50
@@ -85,7 +85,7 @@ mm.add("(min-width: 901px)", () => {
 mm.add("(max-width: 900px)", () => {
     ScrollTrigger.create({
         animation: gsap.fromTo(".logo h1", {
-            y: "40dvh",
+            y: "40vh",
             scale: 6,
             left: "50%",
             xPercent: -50
@@ -104,7 +104,7 @@ mm.add("(max-width: 900px)", () => {
 
     ScrollTrigger.create({
         animation: gsap.fromTo(".logo p", {
-            y: "50dvh",
+            y: "50vh",
             scale: 2,
             left: "50%",
             xPercent: -50
@@ -128,8 +128,8 @@ ScrollTrigger.create({
         duration: 0.4
     }),
     trigger: ".logo h1",
-    start: "top top",
-    end: "bottom bottom",
+    start: "top 20%",
+    end: "top 80%",
     scrub: true,
     markers: false
 });
