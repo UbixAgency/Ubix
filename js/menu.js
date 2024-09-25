@@ -40,7 +40,7 @@ $(document).on("click", ".menu-close", function () {
 
 ScrollTrigger.create({
     animation: gsap.from(".logo h1", {
-        y: "40vh",
+        y: "40dvh",
         scale: 6,
         yPercent: -40,
     }),
@@ -53,7 +53,7 @@ ScrollTrigger.create({
 
 ScrollTrigger.create({
     animation: gsap.from(".logo p", {
-        y: "50vh",
+        y: "50dvh",
         scale: 2,
         yPercent: -50,
     }),
