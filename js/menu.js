@@ -33,7 +33,7 @@ $(document).on("click", ".menu-open", function () {
 
 $(document).on("click", ".menu-close", function () {
     tl.reversed(!tl.reversed());
-    setTimeout(() => $("body").css("overflow", "auto"), 2000);
+    $("body").css("overflow", "auto");
 });
 
 // LOGO
