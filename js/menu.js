@@ -42,85 +42,85 @@ $(document).on("click", ".menu-close", function () {
 
 let mm = gsap.matchMedia();
 
-mm.add("(min-width: 901px)", () => {
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo h1", {
-            y: "40dvh",
-            scale: 6,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "2rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
+// mm.add("(min-width: 901px)", () => {
+//     ScrollTrigger.create({
+//         animation: gsap.fromTo(".logo h1", {
+//             y: "40dvh",
+//             scale: 6,
+//             left: "50%",
+//             xPercent: -50
+//         }, {
+//             y: 0,
+//             scale: 1,
+//             left: "2rem",
+//             xPercent: 0
+//         }),
+//         scrub: true,
+//         trigger: ".content",
+//         start: "top bottom",
+//         endTrigger: ".content",
+//         end: "top center"
+//     });
 
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo p", {
-            y: "50dvh",
-            scale: 2,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "2rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-});
+//     ScrollTrigger.create({
+//         animation: gsap.fromTo(".logo p", {
+//             y: "50dvh",
+//             scale: 2,
+//             left: "50%",
+//             xPercent: -50
+//         }, {
+//             y: 0,
+//             scale: 1,
+//             left: "2rem",
+//             xPercent: 0
+//         }),
+//         scrub: true,
+//         trigger: ".content",
+//         start: "top bottom",
+//         endTrigger: ".content",
+//         end: "top center"
+//     });
+// });
 
-mm.add("(max-width: 900px)", () => {
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo h1", {
-            y: "40dvh",
-            scale: 6,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "1rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
+// mm.add("(max-width: 900px)", () => {
+//     ScrollTrigger.create({
+//         animation: gsap.fromTo(".logo h1", {
+//             y: "40dvh",
+//             scale: 6,
+//             left: "50%",
+//             xPercent: -50
+//         }, {
+//             y: 0,
+//             scale: 1,
+//             left: "1rem",
+//             xPercent: 0
+//         }),
+//         scrub: true,
+//         trigger: ".content",
+//         start: "top bottom",
+//         endTrigger: ".content",
+//         end: "top center"
+//     });
 
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo p", {
-            y: "50dvh",
-            scale: 2,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "1rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-});
+//     ScrollTrigger.create({
+//         animation: gsap.fromTo(".logo p", {
+//             y: "50dvh",
+//             scale: 2,
+//             left: "50%",
+//             xPercent: -50
+//         }, {
+//             y: 0,
+//             scale: 1,
+//             left: "1rem",
+//             xPercent: 0
+//         }),
+//         scrub: true,
+//         trigger: ".content",
+//         start: "top bottom",
+//         endTrigger: ".content",
+//         end: "top center"
+//     });
+// });
 
 ScrollTrigger.create({
     animation: gsap.to(".logo p", {
