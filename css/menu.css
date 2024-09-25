@@ -103,6 +103,8 @@
 @media screen and (max-width: 900px) {
     .menu-left {
         width: 100%;
+        left: unset;
+        right: -100%;
     }
 
     .menu-right,
