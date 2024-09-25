@@ -73,7 +73,6 @@
     position: fixed;
     top: 2rem;
     left: 50%;
-    transform: translateX(-50%);
     font-family: "Bridge Head Con Medium";
 }
 
@@ -81,7 +80,6 @@
     position: fixed;
     top: 4rem;
     left: 50%;
-    transform: translateX(-50%);
     font-family: "Bridge Head Con Medium";
     color: #0f0f0f;
     font-size: 30px;
@@ -120,7 +118,6 @@
     .menu-close {
         top: 1rem;
         right: 1rem;
-        font-size: 20px;
     }
 
     .menu-left .menu-close {
