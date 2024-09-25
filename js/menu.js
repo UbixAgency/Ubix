@@ -40,11 +40,21 @@ $(document).on("click", ".menu-close", function () {
 
 // LOGO
 
+let mm = gsap.matchMedia();
+
 ScrollTrigger.create({
-    animation: gsap.from(".logo h1", {
+    animation: gsap.fromTo(".logo h1", {
         y: "40dvh",
         scale: 6,
         yPercent: -40,
+        left: "50%",
+        transform: "translateX(-50%)"
+    }, {
+        y: 0,
+        scale: 1,
+        yPercent: 0,
+        left: "2rem",
+        transform: "translateX(0)"
     }),
     scrub: true,
     trigger: ".content",
@@ -54,16 +64,68 @@ ScrollTrigger.create({
 });
 
 ScrollTrigger.create({
-    animation: gsap.from(".logo p", {
+    animation: gsap.fromTo(".logo p", {
         y: "50dvh",
         scale: 2,
         yPercent: -50,
+        left: "50%",
+        transform: "translateX(-50%)"
+    }, {
+        y: 0,
+        scale: 1,
+        yPercent: 0,
+        left: "2rem",
+        transform: "translateX(0)"
     }),
     scrub: true,
     trigger: ".content",
     start: "top bottom",
     endTrigger: ".content",
     end: "top center"
+});
+
+mm.add("(max-width: 900px)", () => {
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo h1", {
+            y: "40dvh",
+            scale: 6,
+            yPercent: -40,
+            left: "50%",
+            transform: "translateX(-50%)"
+        }, {
+            y: 0,
+            scale: 1,
+            yPercent: 0,
+            left: "1rem",
+            transform: "translateX(0)"
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
+
+    ScrollTrigger.create({
+        animation: gsap.fromTo(".logo p", {
+            y: "50dvh",
+            scale: 2,
+            yPercent: -50,
+            left: "50%",
+            transform: "translateX(-50%)"
+        }, {
+            y: 0,
+            scale: 1,
+            yPercent: 0,
+            left: "1rem",
+            transform: "translateX(0)"
+        }),
+        scrub: true,
+        trigger: ".content",
+        start: "top bottom",
+        endTrigger: ".content",
+        end: "top center"
+    });
 });
 
 ScrollTrigger.create({
@@ -76,4 +138,4 @@ ScrollTrigger.create({
     end: "bottom 80%",
     scrub: true,
     markers: false
-});
+})
