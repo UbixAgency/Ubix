@@ -141,10 +141,9 @@
     }
 }
 
-@media screen and (max-width: 543px) {
+@media screen and (max-width: 479px) {
     .logo p {
-        top: 2.5rem;
-        padding: unset;
+        top: 3rem;
         font-size: 14px;
     }
 }

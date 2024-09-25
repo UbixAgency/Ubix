@@ -1,42 +1,4 @@
-// LOGO
-
-ScrollTrigger.create({
-    animation: gsap.from(".logo h1", {
-        y: "40dvh",
-        scale: 6,
-        yPercent: -40,
-    }),
-    scrub: true,
-    trigger: ".content",
-    start: "top bottom",
-    endTrigger: ".content",
-    end: "top center"
-});
-
-ScrollTrigger.create({
-    animation: gsap.from(".logo p", {
-        y: "50dvh",
-        scale: 2,
-        yPercent: -50,
-    }),
-    scrub: true,
-    trigger: ".content",
-    start: "top bottom",
-    endTrigger: ".content",
-    end: "top center"
-});
-
-ScrollTrigger.create({
-    animation: gsap.to(".logo p", {
-        opacity: 0,
-        duration: 0.4
-    }),
-    trigger: ".logo h1",
-    start: "top 20%",
-    end: "bottom 80%",
-    scrub: true,
-    markers: false
-});
+gsap.registerPlugin(ScrollTrigger);
 
 // MENU
 
@@ -74,4 +36,44 @@ $(document).on("click", ".menu-open", function () {
 $(document).on("click", ".menu-close", function () {
     tl.reversed(!tl.reversed());
     $("body").css("overflow", "auto");
+});
+
+// LOGO
+
+ScrollTrigger.create({
+    animation: gsap.from(".logo h1", {
+        y: "40dvh",
+        scale: 6,
+        yPercent: -40,
+    }),
+    scrub: true,
+    trigger: ".content",
+    start: "top bottom",
+    endTrigger: ".content",
+    end: "top center"
+});
+
+ScrollTrigger.create({
+    animation: gsap.from(".logo p", {
+        y: "50dvh",
+        scale: 2,
+        yPercent: -50,
+    }),
+    scrub: true,
+    trigger: ".content",
+    start: "top bottom",
+    endTrigger: ".content",
+    end: "top center"
+});
+
+ScrollTrigger.create({
+    animation: gsap.to(".logo p", {
+        opacity: 0,
+        duration: 0.4
+    }),
+    trigger: ".logo h1",
+    start: "top 25%",
+    end: "bottom 80%",
+    scrub: true,
+    markers: false
 });
