@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | UBIX Agency</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <button class="menu-open">menu</button>
+    <div id="menu-container"></div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'js/menu.js';
+                document.body.appendChild(script);
+            });
+    </script>
+</body>
+
+</html>
