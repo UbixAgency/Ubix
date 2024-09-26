@@ -1,11 +1,21 @@
 @font-face {
     font-family: "Neue Montreal";
-    src: url(/fonts/neue-montreal/NeueMontreal-Regular.otf);
+    src: url(/fonts/NeueMontreal-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Editorial Old";
-    src: url(/fonts/editorial-old/ppeditorialold-regular.otf);
+    src: url(/fonts/PPEditorialOld-Regular.otf);
+}
+
+@font-face {
+    font-family: "Bridge Head Con Medium";
+    src: url(/fonts/BridgeHeadCon-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Bigilla";
+    src: url(/fonts/Bigilla.otf);
 }
 
 * {
@@ -21,7 +31,6 @@ body {
 }
 
 a {
-    color: #000;
     text-decoration: none;
 }
 

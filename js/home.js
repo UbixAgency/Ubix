@@ -1,3 +1,5 @@
+// LOADING
+
 function startLoader() {
     let counterElement = document.querySelector(".count p");
     let currentValue = 0;
@@ -21,6 +23,8 @@ gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
 
 let textWrapper = document.querySelector(".ml16");
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+// HOME
 
 anime.timeline({ loop: false })
     .add({
@@ -73,3 +77,43 @@ gsap.to(".loader-bg", {
     duration: 1.5,
     delay: 4
 })
+
+// NAVBAR
+
+tl = gsap.timeline()
+
+tl.to(".menu-left", 1, {
+    left: 0,
+    ease: Expo.easeInOut
+});
+
+tl.to(".menu-right", 1, {
+    right: 0,
+    ease: Expo.easeInOut
+}, "-=1");
+
+tl.staggerFrom(".menu-links > div", 0.8, {
+    y: 100,
+    opacity: 0,
+    ease: Expo.easeOut
+}, "0.1", "-=0.4");
+
+tl.staggerFrom(".mail > div, .socials > div", 0.8, {
+    y: 100,
+    opacity: 0,
+    ease: Expo.easeOut
+}, "0.1", "-=1");
+
+tl.reverse();
+
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("menu-open")) {
+        tl.reversed(!tl.reversed());
+        document.body.style.overflow = "hidden";
+    }
+
+    if (event.target.classList.contains("menu-close")) {
+        tl.reversed(!tl.reversed());
+        document.body.style.overflow = "auto";
+    }
+});
