@@ -9,7 +9,7 @@ function startLoader() {
             currentValue = Math.min(currentValue + increment, 100);
             counterElement.textContent = currentValue;
 
-            let delay = Math.floor(Math.random() * 200) + 25;
+            let delay = Math.floor(Math.random() * 200) + 50;
             setTimeout(updateCounter, delay);
         }
     }
@@ -24,7 +24,7 @@ let textWrapper = document.querySelector(".ml16");
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 let titles = document.querySelector(".titles");
-titles.style.zIndex = '3'
+titles.style.zIndex = '1'
 
 TweenMax.staggerFrom(".titles > div", 0.8, {
     x: "-40",

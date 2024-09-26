@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     height: 100dvh;
-    z-index: 2;
+    z-index: 1;
 }
 
 .loader {
@@ -20,7 +20,7 @@
 
 .loader-content {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
@@ -97,7 +97,7 @@
 .menu-left,
 .menu-right {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 50%;
     height: 100vh;
     background: #0F0F0F;
@@ -141,7 +141,7 @@
 
 .menu-open,
 .menu-close {
-    z-index: 1;
+    z-index: 2;
     top: 2rem;
     right: 2rem;
     font-size: 30px;
