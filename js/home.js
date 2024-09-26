@@ -1,4 +1,5 @@
 // LOADING
+
 function startLoader() {
     let counterElement = document.querySelector(".count p");
     let currentValue = 0;
@@ -37,6 +38,12 @@ TweenMax.staggerTo(".titles > div", 0.8, {
     ease: Power3.easeInOut,
     delay: 1,
     opacity: "0"
+}, 1.5);
+
+TweenMax.staggerTo(".titles > div", 0.8, {
+    display: "none",
+    ease: Power3.easeInOut,
+    delay: 1,
 }, 1.5);
 
 // HOME

@@ -23,6 +23,11 @@
     src: url(/fonts/Bigilla.otf);
 }
 
+@font-face {
+    font-family: "Coolvetica";
+    src: url(/fonts/Coolvetica-Regular.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
