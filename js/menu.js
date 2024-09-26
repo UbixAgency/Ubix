@@ -1,4 +1,3 @@
-// menu.js
 const tl = gsap.timeline({ paused: true });
 
 tl.to(".menu-left", 1, {
