@@ -1,4 +1,9 @@
 @font-face {
+    font-family: "Barracuda";
+    src: url(/fonts/Barracuda-Regular.ttf);
+}
+
+@font-face {
     font-family: "Neue Montreal";
     src: url(/fonts/NeueMontreal-Regular.otf);
 }

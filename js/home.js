@@ -1,5 +1,4 @@
 // LOADING
-
 function startLoader() {
     let counterElement = document.querySelector(".count p");
     let currentValue = 0;
@@ -24,6 +23,22 @@ gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
 let textWrapper = document.querySelector(".ml16");
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+let titles = document.querySelector(".titles");
+titles.style.zIndex = '3'
+
+TweenMax.staggerFrom(".titles > div", 0.8, {
+    x: "-40",
+    ease: Power3.easeInOut,
+    opacity: "0"
+}, 1.5);
+
+TweenMax.staggerTo(".titles > div", 0.8, {
+    x: "60",
+    ease: Power3.easeInOut,
+    delay: 1,
+    opacity: "0"
+}, 1.5);
+
 // HOME
 
 anime.timeline({ loop: false })
@@ -46,28 +61,28 @@ gsap.to(".pre-loader", {
     scale: 0.5,
     ease: "power4.inOut",
     duration: 2,
-    delay: 3
+    delay: 6
 })
 
 gsap.to(".loader", {
     height: "0",
     ease: "power4.inOut",
     duration: 1.5,
-    delay: 3.75
+    delay: 6.75
 })
 
 gsap.to(".loader-bg", {
     height: "0",
     ease: "power4.inOut",
     duration: 1.5,
-    delay: 4
+    delay: 7
 })
 
 gsap.from(".header h1", {
     y: 200,
     ease: "power4.inOut",
     duration: 1.5,
-    delay: 4.15,
+    delay: 7,
     stagger: 0.05
 })
 
@@ -75,7 +90,7 @@ gsap.to(".loader-bg", {
     height: "0",
     ease: "power4.inOut",
     duration: 1.5,
-    delay: 4
+    delay: 7
 })
 
 // NAVBAR
