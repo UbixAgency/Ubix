@@ -56,6 +56,7 @@
                 <h1>X</h1>
             </div>
         </div>
+
         <script>
             function startLoader() {
                 let counterElement = document.querySelector(".count p");
@@ -87,20 +88,20 @@
             TweenMax.staggerFrom(".titles > div", 0.8, {
                 x: "-40",
                 ease: Power3.easeInOut,
-                opacity: "0"
+                opacity: 0
             }, 1.5);
 
-            TweenMax.staggerTo(".titles > div", 0.8, {
+            let timeline = new TimelineMax({
+                onComplete: () => {
+                    titles.style.zIndex = '-1';
+                }
+            });
+
+            timeline.staggerTo(".titles > div", 0.8, {
                 x: "60",
                 ease: Power3.easeInOut,
                 delay: 1,
-                opacity: "0"
-            }, 1.5);
-
-            TweenMax.staggerTo(".titles > div", 0.8, {
-                display: "none",
-                ease: Power3.easeInOut,
-                delay: 1,
+                opacity: 0
             }, 1.5);
 
             anime.timeline({ loop: false })
@@ -117,28 +118,32 @@
                     easing: "easeOutExpo",
                     duration: 3000,
                     delay: (el, i) => 2000 + 30 * i
-                })
+                });
 
             gsap.to(".pre-loader", {
                 scale: 0.5,
                 ease: "power4.inOut",
                 duration: 2,
-                delay: 6
-            })
+                delay: 6,
+                onComplete: () => {
+                    document.querySelector('.pre-loader').style.zIndex = "-1";
+                    document.querySelector('.loader-content').style.zIndex = "-1";
+                }
+            });
 
             gsap.to(".loader", {
                 height: "0",
                 ease: "power4.inOut",
                 duration: 1.5,
                 delay: 6.75
-            })
+            });
 
             gsap.to(".loader-bg", {
                 height: "0",
                 ease: "power4.inOut",
                 duration: 1.5,
                 delay: 7
-            })
+            });
 
             gsap.from(".header h1", {
                 y: 200,
@@ -146,14 +151,7 @@
                 duration: 1.5,
                 delay: 7,
                 stagger: 0.05
-            })
-
-            gsap.to(".loader-bg", {
-                height: "0",
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 7
-            })
+            });
         </script>
     </main>
 

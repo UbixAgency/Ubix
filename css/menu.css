@@ -10,7 +10,7 @@
 .menu-left,
 .menu-right {
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     width: 50%;
     height: 100vh;
     background-color: #000;
@@ -54,7 +54,7 @@
 
 .menu-open,
 .menu-close {
-    z-index: 2;
+    z-index: 1;
     top: 2rem;
     right: 2rem;
     font-size: 30px;
