@@ -7,7 +7,7 @@
     <title>UBIX Agency</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/loader.css">
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -15,158 +15,38 @@
 </head>
 
 <body data-barba="wrapper">
-    <!-- NAVBAR -->
-    <button class="menu-open">menu</button>
-    <div id="menu-container"></div>
-
-    <main data-barba="container" data-barba-namespace="home">
-        <div class="pre-loader">
-            <div class="loader"></div>
-            <div class="loader-bg"></div>
-        </div>
-        <div class="loader-content">
-            <div class="count">
-                <p>0</p>
-            </div>
-            <div class="copy">
-                <p class="ml16">UBIX</p>
-            </div>
-        </div>
-
-        <div class="titles">
-            <div class="title title-1">
-                <h1>where</h1>
-            </div>
-            <div class="title title-2">
-                <h1>imagination</h1>
-            </div>
-            <div class="title title-3">
-                <h1>meets</h1>
-            </div>
-            <div class="title title-4">
-                <h1>creativity</h1>
-            </div>
-        </div>
-
-        <div class="brand">
-            <div class="header">
-                <h1>U</h1>
-                <h1>B</h1>
-                <h1>I</h1>
-                <h1>X</h1>
-            </div>
-        </div>
-
-        <script>
-            function startLoader() {
-                let counterElement = document.querySelector(".count p");
-                let currentValue = 0;
-
-                function updateCounter() {
-                    if (currentValue < 100) {
-                        let increment = Math.floor(Math.random() * 10) + 1;
-                        currentValue = Math.min(currentValue + increment, 100);
-                        counterElement.textContent = currentValue;
-
-                        let delay = Math.floor(Math.random() * 200) + 50;
-                        setTimeout(updateCounter, delay);
-                    }
-                }
-
-                updateCounter();
-            }
-            startLoader();
-
-            gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
-
-            let textWrapper = document.querySelector(".ml16");
-            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-            let titles = document.querySelector(".titles");
-            titles.style.zIndex = '1'
-
-            TweenMax.staggerFrom(".titles > div", 0.8, {
-                x: "-40",
-                ease: Power3.easeInOut,
-                opacity: 0
-            }, 1.5);
-
-            let timeline = new TimelineMax({
-                onComplete: () => {
-                    titles.style.zIndex = '-1';
-                }
-            });
-
-            timeline.staggerTo(".titles > div", 0.8, {
-                x: "60",
-                ease: Power3.easeInOut,
-                delay: 1,
-                opacity: 0
-            }, 1.5);
-
-            anime.timeline({ loop: false })
-                .add({
-                    targets: '.ml16 .letter',
-                    translateY: [-100, 0],
-                    easing: "easeOutExpo",
-                    duration: 1500,
-                    delay: (el, i) => 30 * i
-                })
-                .add({
-                    targets: '.ml16 .letter',
-                    translateY: [0, 100],
-                    easing: "easeOutExpo",
-                    duration: 3000,
-                    delay: (el, i) => 2000 + 30 * i
-                });
-
-            gsap.to(".pre-loader", {
-                scale: 0.5,
-                ease: "power4.inOut",
-                duration: 2,
-                delay: 6,
-                onComplete: () => {
-                    document.querySelector('.pre-loader').style.zIndex = "-1";
-                    document.querySelector('.loader-content').style.zIndex = "-1";
-                }
-            });
-
-            gsap.to(".loader", {
-                height: "0",
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 6.75
-            });
-
-            gsap.to(".loader-bg", {
-                height: "0",
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 7
-            });
-
-            gsap.from(".header h1", {
-                y: 200,
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 7,
-                stagger: 0.05
-            });
-        </script>
-    </main>
-
+    <!-- LOADER -->
+    <div id="loader-container"></div>
     <script>
-        barba.init({ sync: true });
-
-        fetch('menu.html')
+        fetch("loader.html")
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-                const script = document.createElement('script');
-                script.src = 'js/menu.js';
+                document.getElementById("loader-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "js/loader.js";
                 document.body.appendChild(script);
             });
     </script>
+
+    <!-- NAVBAR -->
+    <button class="menu-open">menu</button>
+    <div id="menu-container"></div>
+    <script>
+        fetch("menu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("menu-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "js/menu.js";
+                document.body.appendChild(script);
+            });
+    </script>
+
+    <main data-barba="container" data-barba-namespace="home">
+        <h1>Home</h1>
+    </main>
+
+    <script src="js/page.js"></script>
 </body>
 
 </html>

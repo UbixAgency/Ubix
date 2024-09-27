@@ -7,32 +7,46 @@
     <title>Contact Us | UBIX Agency</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/loader.css">
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
+    <!-- LOADER -->
+    <div id="loader-container"></div>
+    <script>
+        fetch("loader.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("loader-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "js/loader.js";
+                document.body.appendChild(script);
+            });
+    </script>
+
     <!-- NAVBAR -->
     <button class="menu-open">menu</button>
     <div id="menu-container"></div>
+    <script>
+        fetch("menu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("menu-container").innerHTML = data;
+                const script = document.createElement("script");
+                script.src = "js/menu.js";
+                document.body.appendChild(script);
+            });
+    </script>
 
     <main data-barba="container" data-barba-namespace="contact">
         <h1>Contact Us</h1>
     </main>
 
-    <script>
-        barba.init({ sync: true });
-
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-                const script = document.createElement('script');
-                script.src = 'js/menu.js';
-                document.body.appendChild(script);
-            });
-    </script>
+    <script src="js/page.js"></script>
 </body>
 
 </html>

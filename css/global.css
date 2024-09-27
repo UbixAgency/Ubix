@@ -41,6 +41,11 @@ body {
     overflow: hidden;
 }
 
+main {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}
+
 a {
     text-decoration: none;
 }
