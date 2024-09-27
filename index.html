@@ -15,23 +15,9 @@
 </head>
 
 <body data-barba="wrapper">
-    <div class="transition">
-        <h1>UBIX</h1>
-    </div>
-
     <!-- NAVBAR -->
     <button class="menu-open">menu</button>
     <div id="menu-container"></div>
-    <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu-container').innerHTML = data;
-                const script = document.createElement('script');
-                script.src = 'js/menu.js';
-                document.body.appendChild(script);
-            });
-    </script>
 
     <main data-barba="container" data-barba-namespace="home">
         <div class="pre-loader">
@@ -70,107 +56,119 @@
                 <h1>X</h1>
             </div>
         </div>
-    </main>
-    <script>
-        function startLoader() {
-            let counterElement = document.querySelector(".count p");
-            let currentValue = 0;
+        <script>
+            function startLoader() {
+                let counterElement = document.querySelector(".count p");
+                let currentValue = 0;
 
-            function updateCounter() {
-                if (currentValue < 100) {
-                    let increment = Math.floor(Math.random() * 10) + 1;
-                    currentValue = Math.min(currentValue + increment, 100);
-                    counterElement.textContent = currentValue;
+                function updateCounter() {
+                    if (currentValue < 100) {
+                        let increment = Math.floor(Math.random() * 10) + 1;
+                        currentValue = Math.min(currentValue + increment, 100);
+                        counterElement.textContent = currentValue;
 
-                    let delay = Math.floor(Math.random() * 200) + 50;
-                    setTimeout(updateCounter, delay);
+                        let delay = Math.floor(Math.random() * 200) + 50;
+                        setTimeout(updateCounter, delay);
+                    }
                 }
+
+                updateCounter();
             }
+            startLoader();
 
-            updateCounter();
-        }
-        startLoader();
+            gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
 
-        gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
+            let textWrapper = document.querySelector(".ml16");
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        let textWrapper = document.querySelector(".ml16");
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            let titles = document.querySelector(".titles");
+            titles.style.zIndex = '1'
 
-        let titles = document.querySelector(".titles");
-        titles.style.zIndex = '1'
+            TweenMax.staggerFrom(".titles > div", 0.8, {
+                x: "-40",
+                ease: Power3.easeInOut,
+                opacity: "0"
+            }, 1.5);
 
-        TweenMax.staggerFrom(".titles > div", 0.8, {
-            x: "-40",
-            ease: Power3.easeInOut,
-            opacity: "0"
-        }, 1.5);
+            TweenMax.staggerTo(".titles > div", 0.8, {
+                x: "60",
+                ease: Power3.easeInOut,
+                delay: 1,
+                opacity: "0"
+            }, 1.5);
 
-        TweenMax.staggerTo(".titles > div", 0.8, {
-            x: "60",
-            ease: Power3.easeInOut,
-            delay: 1,
-            opacity: "0"
-        }, 1.5);
+            TweenMax.staggerTo(".titles > div", 0.8, {
+                display: "none",
+                ease: Power3.easeInOut,
+                delay: 1,
+            }, 1.5);
 
-        TweenMax.staggerTo(".titles > div", 0.8, {
-            display: "none",
-            ease: Power3.easeInOut,
-            delay: 1,
-        }, 1.5);
+            anime.timeline({ loop: false })
+                .add({
+                    targets: '.ml16 .letter',
+                    translateY: [-100, 0],
+                    easing: "easeOutExpo",
+                    duration: 1500,
+                    delay: (el, i) => 30 * i
+                })
+                .add({
+                    targets: '.ml16 .letter',
+                    translateY: [0, 100],
+                    easing: "easeOutExpo",
+                    duration: 3000,
+                    delay: (el, i) => 2000 + 30 * i
+                })
 
-        anime.timeline({ loop: false })
-            .add({
-                targets: '.ml16 .letter',
-                translateY: [-100, 0],
-                easing: "easeOutExpo",
-                duration: 1500,
-                delay: (el, i) => 30 * i
+            gsap.to(".pre-loader", {
+                scale: 0.5,
+                ease: "power4.inOut",
+                duration: 2,
+                delay: 6
             })
-            .add({
-                targets: '.ml16 .letter',
-                translateY: [0, 100],
-                easing: "easeOutExpo",
-                duration: 3000,
-                delay: (el, i) => 2000 + 30 * i
+
+            gsap.to(".loader", {
+                height: "0",
+                ease: "power4.inOut",
+                duration: 1.5,
+                delay: 6.75
             })
 
-        gsap.to(".pre-loader", {
-            scale: 0.5,
-            ease: "power4.inOut",
-            duration: 2,
-            delay: 6
-        })
+            gsap.to(".loader-bg", {
+                height: "0",
+                ease: "power4.inOut",
+                duration: 1.5,
+                delay: 7
+            })
 
-        gsap.to(".loader", {
-            height: "0",
-            ease: "power4.inOut",
-            duration: 1.5,
-            delay: 6.75
-        })
+            gsap.from(".header h1", {
+                y: 200,
+                ease: "power4.inOut",
+                duration: 1.5,
+                delay: 7,
+                stagger: 0.05
+            })
 
-        gsap.to(".loader-bg", {
-            height: "0",
-            ease: "power4.inOut",
-            duration: 1.5,
-            delay: 7
-        })
+            gsap.to(".loader-bg", {
+                height: "0",
+                ease: "power4.inOut",
+                duration: 1.5,
+                delay: 7
+            })
+        </script>
+    </main>
 
-        gsap.from(".header h1", {
-            y: 200,
-            ease: "power4.inOut",
-            duration: 1.5,
-            delay: 7,
-            stagger: 0.05
-        })
+    <script>
+        barba.init({ sync: true });
 
-        gsap.to(".loader-bg", {
-            height: "0",
-            ease: "power4.inOut",
-            duration: 1.5,
-            delay: 7
-        })
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'js/menu.js';
+                document.body.appendChild(script);
+            });
     </script>
-    <script src="js/page.js"></script>
 </body>
 
 </html>

@@ -13,14 +13,17 @@
 </head>
 
 <body data-barba="wrapper">
-    <div class="transition">
-        <h1>UBIX</h1>
-    </div>
-
     <!-- NAVBAR -->
     <button class="menu-open">menu</button>
     <div id="menu-container"></div>
+
+    <main data-barba="container" data-barba-namespace="team">
+        <h1>Our Team</h1>
+    </main>
+
     <script>
+        barba.init({ sync: true });
+
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
@@ -30,12 +33,6 @@
                 document.body.appendChild(script);
             });
     </script>
-
-    <main data-barba="container" data-barba-namespace="team">
-        <h1>Our Team</h1>
-    </main>
-
-    <script src="js/page.js"></script>
 </body>
 
 </html>
