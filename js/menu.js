@@ -25,20 +25,22 @@ tl.staggerFrom(".mail > div, .socials > div", 0.8, {
 document.addEventListener("click", function (event) {
     if (event.target.classList.contains("menu-open")) {
         tl.play();
-        document.body.style.overflow = "hidden";
     }
 
     if (event.target.classList.contains("menu-close")) {
         tl.reverse();
-        document.body.style.overflow = "auto";
     }
 
     if (event.target.tagName === "A" && event.target.closest(".menu-link")) {
         event.preventDefault();
-        const href = event.target.getAttribute("href");
+
+        const targetLink = event.target.getAttribute("href");
+        const currentPage = window.location.pathname.split("/").pop();
+
         tl.reverse();
-        setTimeout(() => {
-            window.location.href = href;
-        }, 1800);
+
+        if (targetLink !== currentPage) {
+            barba.go(targetLink);
+        }
     }
 });
