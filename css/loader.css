@@ -15,7 +15,7 @@
     top: 0;
     width: 100%;
     height: 100dvh;
-    z-index: 1;
+    z-index: 3;
 }
 
 .loader {
@@ -32,7 +32,7 @@
 
 .loader-content {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);

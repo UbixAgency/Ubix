@@ -34,7 +34,7 @@ else {
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
     let titles = document.querySelector(".titles");
-    titles.style.zIndex = "1";
+    titles.style.zIndex = "3";
 
     TweenMax.staggerFrom(".titles > div", 0.8, {
         x: "-40",
