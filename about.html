@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <title>About Us | UBIX Agency</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+</head>
+
+<body data-barba="wrapper">
+    <div id="loader-container"></div>
+    <div id="menu-container"></div>
+    <button class="menu-open">menu</button>
+    <script>
+        function loadComponent(htmlFile, containerId, scriptFile) {
+            fetch(htmlFile)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                    const script = document.createElement("script");
+                    script.src = scriptFile;
+                    document.body.appendChild(script);
+                })
+                .catch(error => console.error(`Error loading ${htmlFile}:`, error));
+        }
+        loadComponent("loader.html", "loader-container", "js/loader.js");
+        loadComponent("menu.html", "menu-container", "js/menu.js");
+    </script>
+
+    <main data-barba="container" data-barba-namespace="about">
+        <h1>About Us</h1>
+    </main>
+
+    <script src="js/page.js"></script>
+</body>
+
+</html>

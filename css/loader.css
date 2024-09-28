@@ -1,0 +1,141 @@
+.load {
+    display: none;
+}
+
+#loader-container .load {
+    display: block;
+}
+
+#loader-container {
+    display: none;
+}
+
+.pre-loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 3;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #000;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content {
+    position: absolute;
+    z-index: 3;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-end;
+    width: 400px;
+    color: #FFF;
+}
+
+.titles {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+}
+
+.titles>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.titles h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 15vw;
+    font-family: "Barracuda", sans-serif;
+    color: #FFF;
+}
+
+.count {
+    padding: 0 1em;
+    flex: 2;
+    font-family: "Neue Montreal", sans-serif;
+    text-align: right;
+    line-height: 1;
+}
+
+.copy {
+    flex: 3;
+    font-family: "PP Editorial Old", sans-serif;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.ml16 {
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.loader-bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: red;
+    z-index: -1;
+}
+
+.brand {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #FFF;
+}
+
+.header {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+    padding: 5em;
+}
+
+.header h1 {
+    position: relative;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 20vw;
+    font-family: "Coolvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 1em;
+    }
+}

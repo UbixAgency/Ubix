@@ -1,8 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// MENU
-
-tl = gsap.timeline()
+const tl = gsap.timeline({ paused: true });
 
 tl.to(".menu-left", 1, {
     left: 0,
@@ -26,110 +22,25 @@ tl.staggerFrom(".mail > div, .socials > div", 0.8, {
     ease: Expo.easeOut
 }, "0.1", "-=1");
 
-tl.reverse();
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("menu-open")) {
+        tl.play();
+    }
 
-$(document).on("click", ".menu-open", function () {
-    tl.reversed(!tl.reversed());
-    $("body").css("overflow", "hidden");
-});
+    if (event.target.classList.contains("menu-close")) {
+        tl.reverse();
+    }
 
-$(document).on("click", ".menu-close", function () {
-    tl.reversed(!tl.reversed());
-    $("body").css("overflow", "auto");
-});
+    if (event.target.tagName === "A" && event.target.closest(".menu-link")) {
+        event.preventDefault();
 
-// LOGO
+        const targetLink = event.target.getAttribute("href");
+        const currentPage = window.location.pathname.split("/").pop();
 
-let mm = gsap.matchMedia();
+        tl.reverse();
 
-mm.add("(min-width: 901px)", () => {
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo h1", {
-            y: "40vh",
-            scale: 6,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "2rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo p", {
-            y: "50vh",
-            scale: 2,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "2rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-});
-
-mm.add("(max-width: 900px)", () => {
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo h1", {
-            y: "40vh",
-            scale: 6,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "1rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-
-    ScrollTrigger.create({
-        animation: gsap.fromTo(".logo p", {
-            y: "50vh",
-            scale: 2,
-            left: "50%",
-            xPercent: -50
-        }, {
-            y: 0,
-            scale: 1,
-            left: "1rem",
-            xPercent: 0
-        }),
-        scrub: true,
-        trigger: ".content",
-        start: "top bottom",
-        endTrigger: ".content",
-        end: "top center"
-    });
-});
-
-ScrollTrigger.create({
-    animation: gsap.to(".logo p", {
-        opacity: 0,
-        duration: 0.4
-    }),
-    trigger: ".logo h1",
-    start: "top 20%",
-    end: "top 80%",
-    scrub: true,
-    markers: false
+        if (targetLink !== currentPage) {
+            barba.go(targetLink);
+        }
+    }
 });
