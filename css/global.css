@@ -42,6 +42,8 @@ body {
 }
 
 main {
+    position: relative;
+    z-index: -1;
     opacity: 0;
     transition: opacity 150ms ease-in;
 }
@@ -56,4 +58,10 @@ button {
     background: none;
     cursor: pointer;
     font-family: inherit;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        transition: opacity 100ms ease-in;
+    }
 }
