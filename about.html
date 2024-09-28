@@ -15,31 +15,23 @@
 </head>
 
 <body data-barba="wrapper">
-    <!-- LOADER -->
     <div id="loader-container"></div>
-    <script>
-        fetch("loader.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("loader-container").innerHTML = data;
-                const script = document.createElement("script");
-                script.src = "js/loader.js";
-                document.body.appendChild(script);
-            });
-    </script>
-
-    <!-- NAVBAR -->
-    <button class="menu-open">menu</button>
     <div id="menu-container"></div>
+    <button class="menu-open">menu</button>
     <script>
-        fetch("menu.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("menu-container").innerHTML = data;
-                const script = document.createElement("script");
-                script.src = "js/menu.js";
-                document.body.appendChild(script);
-            });
+        function loadComponent(htmlFile, containerId, scriptFile) {
+            fetch(htmlFile)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                    const script = document.createElement("script");
+                    script.src = scriptFile;
+                    document.body.appendChild(script);
+                })
+                .catch(error => console.error(`Error loading ${htmlFile}:`, error));
+        }
+        loadComponent("loader.html", "loader-container", "js/loader.js");
+        loadComponent("menu.html", "menu-container", "js/menu.js");
     </script>
 
     <main data-barba="container" data-barba-namespace="about">

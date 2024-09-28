@@ -43,7 +43,7 @@ body {
 
 main {
     opacity: 0;
-    transition: opacity 200ms ease-in;
+    transition: opacity 150ms ease-in;
 }
 
 a {
