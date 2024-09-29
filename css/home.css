@@ -147,6 +147,10 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     #title {
         text-align: center;
     }
+
+    .magic {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 900px) {
