@@ -58,14 +58,14 @@ function initTeamPage() {
         gsap.to(marquee, {
             clipPath: clipPathValue,
             duration: 1,
-            ease: "power4.out",
-            delay: 0.3
+            ease: "power4.out"
         });
 
         gsap.to(img, {
             clipPath: clipPathValue,
             duration: 1,
-            ease: "power4.out"
+            ease: "power4.out",
+            delay: 0.3
         });
     };
 
