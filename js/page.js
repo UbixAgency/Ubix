@@ -11,27 +11,28 @@ barba.init({
                 }
             });
 
-            loadPageScript(data.next.namespace);
+            const namespace = data.next.namespace;
+            if (namespace === "home") {
+                document.querySelector(".logo").style.color = '#FFF';
+                document.querySelector(".menu-open").style.color = '#FFF';
+                loadScript("js/home.js", function () {
+                    initHomePage();
+                });
+            }
+            else if (namespace === "team") {
+                document.querySelector(".logo").style.color = '#000';
+                document.querySelector(".menu-open").style.color = '#000';
+                loadScript("js/team.js", function () {
+                    initTeamPage();
+                });
+            }
+            else {
+                document.querySelector(".logo").style.color = '#000';
+                document.querySelector(".menu-open").style.color = '#000';
+            }
         }
     }]
 });
-
-function loadPageScript(namespace) {
-    const scripts = {
-        home: "js/home.js",
-        team: "js/team.js"
-    };
-
-    const scriptSrc = scripts[namespace];
-    if (scriptSrc) {
-        loadScript(scriptSrc, () => {
-            const initFunction = window[`init${namespace.charAt(0).toUpperCase() + namespace.slice(1)}Page`];
-            if (typeof initFunction === "function") {
-                initFunction();
-            }
-        });
-    }
-}
 
 function loadScript(src, callback) {
     const script = document.createElement("script");

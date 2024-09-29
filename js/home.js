@@ -1,14 +1,63 @@
 function initHomePage() {
+    const wrapper = document.getElementById("tiles");
+
+    let columns = 0,
+        rows = 0,
+        toggled = false;
+
+    const toggle = () => {
+        toggled = !toggled;
+        document.querySelector("main[data-barba-namespace='home']").classList.toggle("toggled");
+    }
+
+    const handleOnClick = index => {
+        toggle();
+        anime({
+            targets: ".tile",
+            opacity: toggled ? 0 : 1,
+            delay: anime.stagger(50, {
+                grid: [columns, rows],
+                from: index
+            })
+        });
+    }
+
+    const createTile = index => {
+        const tile = document.createElement("div");
+        tile.classList.add("tile");
+        tile.style.opacity = toggled ? 0 : 1;
+        tile.onclick = e => handleOnClick(index);
+        return tile;
+    }
+
+    const createTiles = quantity => {
+        Array.from(Array(quantity)).map((tile, index) => {
+            wrapper.appendChild(createTile(index));
+        });
+    }
+
+    const createGrid = () => {
+        wrapper.innerHTML = "";
+        const size = document.body.clientWidth > 800 ? 100 : 50;
+        columns = Math.floor(document.body.clientWidth / size);
+        rows = Math.floor(document.body.clientHeight / size);
+        wrapper.style.setProperty("--columns", columns);
+        wrapper.style.setProperty("--rows", rows);
+        createTiles(columns * rows);
+    }
+
+    createGrid();
+
+    window.onresize = () => createGrid();
+
     let index = 0,
         interval = 1000;
 
-    const rand = (min, max) =>
-        Math.floor(Math.random() * (max - min + 1)) + min;
+    const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
     const animate = star => {
         star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
         star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
-
         star.style.animation = "none";
         star.offsetHeight;
         star.style.animation = "";
@@ -17,9 +66,8 @@ function initHomePage() {
     for (const star of document.getElementsByClassName("magic-star")) {
         setTimeout(() => {
             animate(star);
-
             setInterval(() => animate(star), 1000);
-        }, index++ * (interval / 3))
+        }, index++ * (interval / 3));
     }
 }
 
