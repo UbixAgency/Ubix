@@ -98,10 +98,6 @@
         right: 1rem;
     }
 
-    .menu-open {
-        transition: opacity 100ms ease-in;
-    }
-
     .menu-left .menu-close {
         display: block;
     }

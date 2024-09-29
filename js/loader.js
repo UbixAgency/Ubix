@@ -20,6 +20,8 @@ if (sessionStorage.getItem("loaderPlayed")) {
     document.querySelector("#loader-container").style.display = "none";
     document.querySelector("main").style.opacity = 1;
     document.querySelector("main").style.zIndex = 0;
+    document.querySelector(".logo").style.opacity = 1;
+    document.querySelector(".logo").style.zIndex = 1;
     document.querySelector(".menu-open").style.opacity = 1;
     document.querySelector(".menu-open").style.zIndex = 1;
 }
@@ -118,6 +120,8 @@ else {
             document.querySelector("#loader-container").style.display = "none";
             document.querySelector("main").style.opacity = 1;
             document.querySelector("main").style.zIndex = 0;
+            document.querySelector(".logo").style.opacity = 1;
+            document.querySelector(".logo").style.zIndex = 1;
             document.querySelector(".menu-open").style.opacity = 1;
             document.querySelector(".menu-open").style.zIndex = 1;
         }

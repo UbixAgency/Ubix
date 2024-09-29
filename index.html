@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/team.css">
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -17,9 +18,11 @@
 </head>
 
 <body data-barba="wrapper">
+    <a href="index.html" class="logo">UBIX</a>
+    <button class="menu-open">menu</button>
+
     <div id="loader-container"></div>
     <div id="menu-container"></div>
-    <button class="menu-open">menu</button>
     <script>
         function loadComponent(htmlFile, containerId, scriptFile) {
             fetch(htmlFile)
@@ -37,9 +40,33 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="home">
-        <h1>Home</h1>
+        <h1>
+            Let's mix your ideas with our skills and
+            <span class="magic">
+                <span class="magic-star">
+                    <svg viewBox="0 0 512 512">
+                        <path
+                            d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                    </svg>
+                </span>
+                <span class="magic-star">
+                    <svg viewBox="0 0 512 512">
+                        <path
+                            d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                    </svg>
+                </span>
+                <span class="magic-star">
+                    <svg viewBox="0 0 512 512">
+                        <path
+                            d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                    </svg>
+                </span>
+                <span class="magic-text">create something beautiful</span>
+            </span>
+        </h1>
     </main>
 
+    <script src="js/home.js"></script>
     <script src="js/page.js"></script>
 </body>
 

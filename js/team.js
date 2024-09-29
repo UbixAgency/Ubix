@@ -102,7 +102,7 @@ function initTeamPage() {
     rightButton.addEventListener("click", nextSlide);
 
     document.addEventListener("click", (e) => {
-        if (e.target.closest(".menu-open") || e.target.closest(".switch button")) return;
+        if (e.target.closest(".logo") || e.target.closest(".menu-open") || e.target.closest(".switch button")) return;
 
         const halfPageWidth = window.innerWidth / 2;
         if (e.clientX > halfPageWidth) {
