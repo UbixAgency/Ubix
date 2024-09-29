@@ -2,8 +2,8 @@
     --purple: rgb(123, 31, 162);
     --violet: rgb(103, 58, 183);
     --pink: rgb(244, 143, 177);
-    --g1: rgb(98, 0, 234);
-    --g2: rgb(236, 64, 122);
+    /* --g1: rgb(98, 0, 234); */
+    /* --g2: rgb(236, 64, 122); */
 }
 
 @keyframes background-pan {
@@ -40,7 +40,8 @@
 
 main[data-barba-namespace="home"] {
     animation: background-pan 10s linear infinite;
-    background: linear-gradient(to right, var(--g1), var(--g2), var(--g1));
+    /* background: linear-gradient(to right, #73EC8B, #D2FF72, #73EC8B); */
+    background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72);
     background-size: 200%;
     height: 100vh;
     overflow: hidden;
@@ -58,7 +59,6 @@ main[data-barba-namespace="home"] {
 }
 
 #title {
-    color: white;
     font-family: "Coolvetica", sans-serif;
     font-size: 6vw;
     font-weight: 400;
@@ -85,11 +85,17 @@ main[data-barba-namespace="home"] {
 }
 
 .tile:hover:before {
+    /* background-color: rgb(30, 30, 30); */
+    background-color: transparent;
+}
+
+main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     background-color: rgb(30, 30, 30);
 }
 
 .tile:before {
-    background-color: rgb(15, 15, 15);
+    /* background-color: rgb(15, 15, 15); */
+    background-color: #FFF;
     content: "";
     inset: 0.5px;
     position: absolute;

@@ -13,22 +13,14 @@ barba.init({
 
             const namespace = data.next.namespace;
             if (namespace === "home") {
-                document.querySelector(".logo").style.color = '#FFF';
-                document.querySelector(".menu-open").style.color = '#FFF';
                 loadScript("js/home.js", function () {
                     initHomePage();
                 });
             }
             else if (namespace === "team") {
-                document.querySelector(".logo").style.color = '#000';
-                document.querySelector(".menu-open").style.color = '#000';
                 loadScript("js/team.js", function () {
                     initTeamPage();
                 });
-            }
-            else {
-                document.querySelector(".logo").style.color = '#000';
-                document.querySelector(".menu-open").style.color = '#000';
             }
         }
     }]
