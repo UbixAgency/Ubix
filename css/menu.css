@@ -13,7 +13,7 @@
     position: fixed;
     z-index: 2;
     width: 50%;
-    height: 100vh;
+    height: 100dvh;
     background-color: #000;
     color: #FFF;
     display: grid;

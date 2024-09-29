@@ -39,11 +39,13 @@
 }
 
 main[data-barba-namespace="home"] {
+    height: 100dvh;
     animation: background-pan 10s linear infinite;
-    background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA);
+    /* background: linear-gradient(to right, #fccf31, #f55555, #fccf31); */
+    background: linear-gradient(to right, #FFDEE9, #B5FFFC, #FFDEE9);
+    /* background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA); */
     /* background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72); */
     background-size: 200%;
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -67,8 +69,8 @@ main[data-barba-namespace="home"] {
 }
 
 #tiles {
-    height: calc(100vh - 1px);
     width: calc(100vw - 1px);
+    height: calc(100dvh - 1px);
     position: relative;
     z-index: 0;
     display: grid;
@@ -103,6 +105,7 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
 }
 
 .magic {
+    width: fit-content;
     display: inline-block;
     position: relative;
 }
@@ -140,11 +143,16 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     white-space: nowrap;
 }
 
+@media screen and (max-width: 1422px) {
+    #title {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 900px) {
     #title {
         padding: 1rem;
         font-size: 8vw;
-        text-align: center;
     }
 }
 
