@@ -10,6 +10,20 @@ barba.init({
                     document.querySelector("main").style.zIndex = 0;
                 }
             });
+
+            const namespace = data.next.namespace;
+            if (namespace === "team") {
+                loadScript("js/team.js", function () {
+                    initTeamPage();
+                });
+            }
         }
     }]
 });
+
+function loadScript(src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = callback;
+    document.body.appendChild(script);
+}

@@ -69,7 +69,7 @@
     position: fixed;
     z-index: -1;
     opacity: 0;
-    transition: opacity 150ms ease-in;
+    transition: opacity 200ms ease-in;
 }
 
 .menu-close {

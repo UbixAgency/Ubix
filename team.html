@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/team.css">
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body data-barba="wrapper">
@@ -35,9 +37,51 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="team">
-        <h1>Our Team</h1>
+        <div class="overlay">
+            <div class="t-1 marquee-wrapper">
+                <h1>Aniket Das Aniket Das Aniket Das</h1>
+            </div>
+            <div class="t-2 marquee-wrapper">
+                <h1>Shubham Lal Shubham Lal Shubham Lal</h1>
+            </div>
+            <div class="t-3 marquee-wrapper">
+                <h1>Pratik Prasad Pratik Prasad Pratik Prasad</h1>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-images">
+                <div class="team" id="t-1">
+                    <img src="img/Aniket.jpg" alt="">
+                </div>
+                <div class="team" id="t-2">
+                    <img src="img/Shubham.jpg" alt="">
+                </div>
+                <div class="team" id="t-3">
+                    <img src="img/Pratik.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="info">
+                <h2 class="name">Aniket Das</h2>
+                <p class="role">Brand Strategist</p>
+                <div class="switch">
+                    <button>
+                        <i class="ph-light ph-arrow-left"></i>
+                    </button>
+                    <button>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor">
+            <i class="ph-light ph-arrow-left"></i>
+        </div>
     </main>
 
+    <script src="js/team.js"></script>
     <script src="js/page.js"></script>
 </body>
 
