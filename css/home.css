@@ -40,15 +40,16 @@
 
 main[data-barba-namespace="home"] {
     animation: background-pan 10s linear infinite;
-    /* background: linear-gradient(to right, #73EC8B, #D2FF72, #73EC8B); */
-    background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72);
+    background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA);
+    /* background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72); */
     background-size: 200%;
     height: 100vh;
     overflow: hidden;
 }
 
-.centered {
+#title {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,9 +57,6 @@ main[data-barba-namespace="home"] {
     padding: 2rem;
     display: grid;
     place-content: center;
-}
-
-#title {
     font-family: "Coolvetica", sans-serif;
     font-size: 6vw;
     font-weight: 400;
@@ -66,7 +64,6 @@ main[data-barba-namespace="home"] {
     word-wrap: break-word;
     pointer-events: none;
     transition: opacity 1200ms ease;
-    z-index: 1;
 }
 
 #tiles {
@@ -96,9 +93,9 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
 .tile:before {
     /* background-color: rgb(15, 15, 15); */
     background-color: #FFF;
+    position: absolute;
     content: "";
     inset: 0.5px;
-    position: absolute;
 }
 
 main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
@@ -145,11 +142,9 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
 
 @media screen and (max-width: 900px) {
     #title {
-        font-size: 8vw;
-    }
-
-    .centered {
         padding: 1rem;
+        font-size: 8vw;
+        text-align: center;
     }
 }
 
