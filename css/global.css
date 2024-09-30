@@ -42,8 +42,10 @@ body {
 }
 
 main {
+    position: relative;
+    z-index: -1;
     opacity: 0;
-    transition: opacity 150ms ease-in;
+    transition: opacity 200ms ease-in;
 }
 
 a {
@@ -56,4 +58,24 @@ button {
     background: none;
     cursor: pointer;
     font-family: inherit;
+}
+
+.logo {
+    position: fixed;
+    z-index: -1;
+    top: 2rem;
+    left: 2rem;
+    color: #000;
+    font-size: 30px;
+    font-family: "Bridge Head Con Medium";
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}
+
+@media screen and (max-width: 900px) {
+    .logo {
+        top: 1rem;
+        left: 1rem;
+    }
 }

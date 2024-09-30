@@ -1,0 +1,196 @@
+main[data-barba-namespace="team"] {
+    width: 100%;
+    height: 100dvh;
+    font-family: "Neue Montreal", sans-serif;
+    overflow: hidden;
+    cursor: default;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.marquee-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.marquee-wrapper.t-1 {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+.marquee-wrapper h1 {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 240px;
+    text-transform: uppercase;
+    font-weight: 400;
+    animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: -100%;
+    }
+
+    50.5% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.modal {
+    width: 450px;
+    height: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-images {
+    width: 100%;
+    height: 550px;
+}
+
+.team {
+    position: absolute;
+    width: 100%;
+    height: 550px;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.team#t-1 {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+.team img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    margin-top: 24px;
+}
+
+.role {
+    margin: 5px 0;
+}
+
+.t-1 {
+    background-color: #FFF;
+}
+
+.t-2 {
+    background-color: #C4BCA9;
+}
+
+.t-3 {
+    background-color: #8E908A;
+}
+
+.switch {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+}
+
+.switch button {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.switch button:first-child {
+    text-align: start;
+}
+
+.switch button:last-child {
+    text-align: end;
+}
+
+.switch button.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.switch i {
+    font-size: 30px;
+}
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    font-size: 30px;
+}
+
+.modal:hover~.cursor {
+    display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+    .marquee-wrapper h1 {
+        animation: marquee 30s linear infinite;
+    }
+
+    .modal {
+        width: 350px;
+        height: 550px;
+    }
+
+    .modal-images {
+        width: 100%;
+        height: 450px;
+
+    }
+
+    .team {
+        width: 100%;
+        height: 450px;
+    }
+
+    .cursor {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal {
+        width: 250px;
+        height: 450px;
+    }
+
+    .modal-images {
+        width: 100%;
+        height: 350px;
+
+    }
+
+    .team {
+        width: 100%;
+        height: 350px;
+    }
+}
