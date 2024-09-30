@@ -41,10 +41,9 @@
 main[data-barba-namespace="home"] {
     height: 100dvh;
     animation: background-pan 10s linear infinite;
-    /* background: linear-gradient(to right, #fccf31, #f55555, #fccf31); */
+    /* background: linear-gradient(to right, #FCCF31, #F55555, #FCCF31); */
     background: linear-gradient(to right, #FFDEE9, #B5FFFC, #FFDEE9);
     /* background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA); */
-    /* background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72); */
     background-size: 200%;
     overflow: hidden;
 }

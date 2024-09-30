@@ -1,8 +1,8 @@
 function initTeamPage() {
     const team = [
         { name: "Aniket Das", role: "Brand Strategist" },
-        { name: "Shubham Lal", role: "Lead Developer" },
-        { name: "Pratik Prasad", role: "Lead Designer" }
+        { name: "Pratik Prasad", role: "Creative Director" },
+        { name: "Shubham Lal", role: "Tech Lead" }
     ];
 
     const cursor = document.querySelector(".cursor");
