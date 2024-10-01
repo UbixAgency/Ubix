@@ -131,7 +131,7 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
 }
 
 .magic>.magic-text {
-    font-family: 'PP Editorial Old', cursive;
+    font-family: "PP Editorial Old", cursive;
     font-weight: 600;
     animation: background-pan 3s linear infinite;
     background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
