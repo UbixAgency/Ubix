@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/contact.css">
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body data-barba="wrapper">
-    <a href="index.html" class="logo">UBIX</a>
-    <button class="menu-open">menu</button>
+    <a href="index.html" class="logo" style="color: #FFF;">UBIX</a>
+    <button class="menu-open" style="color: #FFF;">menu</button>
 
     <div id="loader-container"></div>
     <div id="menu-container"></div>
@@ -40,9 +42,174 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="contact">
-        <h1>Contact Us</h1>
+        <section id="section1" class="h-screen w-screen overflow-auto">
+            <div class="relative flex items-center justify-center w-full h-screen overflow-hidden">
+                <video id="video" class="w-full h-full" autoplay loop muted>
+                    <source src="./assets/cube.mp4" type="video/mp4" />
+                </video>
+
+                <div class="absolute top-1/2 -translate-y-1/2 z-10">
+                    <div class="hero-marquee">
+                        <div id="content">
+                            <span class="text-white">Start your project</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content"
+                class="absolute w-screen bottom-0 p-[1rem] md:p-20 flex gap-8 flex-col md:flex-row justify-between">
+                <div>
+                    <p class="text-lg text-center md:text-left text-gray-500 pb-2">
+                        Tell us with that you're looking to achieve
+                    </p>
+                    <div class="w-fit mx-auto md:mx-0">
+                        <button id="next0" class="text-white underline underline-offset-8 uppercase">Start your project
+                            </id="next4">
+                    </div>
+                </div>
+                <div class="flex flex-col md:ml-auto">
+                    <p class="text-lg text-center md:text-right text-gray-500">contact directly</p>
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ubix.agency@gmail.com"
+                        target="_blank" rel="noopener noreferrer"
+                        class="text-lg text-center md:text-right text-white">ubix.agency@gmail.com</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2" class="h-screen w-screen p-10 overflow-auto">
+            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+                <div>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>Before we start,</span>
+                    </h1>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>What is your name?</span>
+                    </h1>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-4">
+                    <input id="firstNameInput"
+                        class="w-full border-b border-gray-500 placeholder-gray-500 text-2xl outline-none bg-transparent py-3"
+                        type="text" placeholder="Type your first name" />
+                    <input id="lastNameInput"
+                        class="w-full border-b border-gray-500 placeholder-gray-500 text-2xl outline-none bg-transparent py-3"
+                        type="text" placeholder="Type your last name" />
+                </div>
+                <div class="flex items-center gap-8">
+                    <div id="back1" class="flex items-center space-x-2">
+                        <button class="text-black font-semibold underline underline-offset-8 uppercase">Go
+                            back</button>
+                    </div>
+                    <div onclick="getName()" id="next1">
+                        <button
+                            class="text-black font-semibold underline underline-offset-8 uppercase">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="h-screen w-screen p-10 overflow-auto">
+            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+                <div>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span id="user">Nice to meet you!</span>
+                    </h1>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>What service interest you?</span>
+                    </h1>
+                </div>
+                <div>
+                    <div class="w-fit flex flex-wrap items-center gap-4">
+                        <button id="btn" value="Branding" class="btn py-2 px-5 border border-gray-500 rounded">
+                            Digital Design
+                        </button>
+                        <button id="btn" value="Digital Strategy" class="btn py-2 px-5 border border-gray-500 rounded">
+                            Web Application
+                        </button>
+                        <button id="btn" value="Marketing Sites" class="btn py-2 px-5 border border-gray-500 rounded">
+                            Photography
+                        </button>
+                        <button id="btn" value="SaaS Apps + Sites" class="btn py-2 px-5 border border-gray-500 rounded">
+                            Motion Graphics
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" id="custom_service" placeholder="Other services in mind"
+                            class="border-b border-gray-500 placeholder-gray-500 text-xl outline-none bg-transparent py-2">
+                    </div>
+                </div>
+                <div class="flex items-center gap-8">
+                    <div id="back2">
+                        <button class="text-black font-semibold underline underline-offset-8 uppercase">Go
+                            back</button>
+                    </div>
+                    <div id="next2">
+                        <button
+                            class="text-black font-semibold underline underline-offset-8 uppercase">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section4" class="h-screen w-screen p-10 overflow-auto">
+            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+                <div>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>Let's talk budget</span>
+                    </h1>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>What is yours?</span>
+                    </h1>
+                </div>
+                <div>
+                    <div class="w-fit flex flex-wrap items-center gap-4">
+                        <button id="btn" value="$1-10k" class="btn py-2 px-5 border border-gray-500 rounded">
+                            $1-10k
+                        </button>
+                        <button id="btn" value="$11-20k" class="btn py-2 px-5 border border-gray-500 rounded">
+                            $11-20k
+                        </button>
+                        <button id="btn" value="$21-50k" class="btn py-2 px-5 border border-gray-500 rounded">
+                            $21-50k
+                        </button>
+                        <button id="btn" value="$50k+" class="btn py-2 px-5 border border-gray-500 rounded">
+                            $50k+
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" id="custom_budget" placeholder="Other budget in mind"
+                            class="border-b border-gray-500 placeholder-gray-500 text-xl outline-none bg-transparent py-2">
+                    </div>
+                </div>
+                <div class="flex items-center gap-8">
+                    <div id="back3">
+                        <button class="text-black font-semibold underline underline-offset-8 uppercase">Go
+                            back</button>
+                    </div>
+                    <div id="next3">
+                        <button
+                            class="text-black font-semibold underline underline-offset-8 uppercase">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section5" class="h-screen w-screen p-10 overflow-auto">
+            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+                <div>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>Thank you!</span>
+                    </h1>
+                    <h1 class="text-black text-4xl leading-tight overflow-hidden">
+                        <span>We will contact you shortly</span>
+                    </h1>
+                </div>
+                <button id="next4" class="w-fit text-black font-semibold underline underline-offset-8 uppercase">Exit
+                    contact</button>
+            </div>
+        </section>
     </main>
 
+    <script src="js/contact.js"></script>
     <script src="js/page.js"></script>
 </body>
 

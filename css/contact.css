@@ -1,0 +1,37 @@
+section {
+    background-color: #f5f4f6;
+}
+
+#section1 {
+    background-color: #121113;
+}
+
+#section2,
+#section3,
+#section4,
+#section5 {
+    position: absolute;
+    bottom: -100%;
+    z-index: 100;
+}
+
+.hero-marquee {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 5rem;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .hero-marquee {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-marquee {
+        font-size: 32px;
+    }
+}
