@@ -214,13 +214,13 @@ footer .contact-2 a svg {
     }
 
     footer .contact-1 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
     }
 
     footer .contact-2 a {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         display: block;
     }
 }
