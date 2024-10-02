@@ -154,8 +154,11 @@ footer {
     font-family: "Poppins", sans-serif;
 }
 
-footer .contact-1 {
+footer .contact-1 a {
+    display: block;
+    height: 30px;
     font-size: 22px;
+    font-weight: bold;
 }
 
 footer .contact-2 {
@@ -165,8 +168,8 @@ footer .contact-2 {
 }
 
 footer .contact-2 a {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     display: block;
 }
 
@@ -196,9 +199,9 @@ footer .contact-2 a svg {
         padding: 1rem;
     }
 
-    footer .contact-1 {
+    footer .contact-1 a {
+        height: 29px;
         font-size: 22px;
-        font-weight: bold;
     }
 
     footer .contact-2 a {
@@ -213,9 +216,9 @@ footer .contact-2 a svg {
         font-size: 32px;
     }
 
-    footer .contact-1 {
+    footer .contact-1 a {
+        height: 24px;
         font-size: 18px;
-        font-weight: bold;
     }
 
     footer .contact-2 a {
