@@ -1,6 +1,6 @@
 function initContactPage() {
     const tl = gsap.timeline();
-    
+
     const section1 = document.getElementById("section1");
     const section2 = document.getElementById("section2");
     const section3 = document.getElementById("section3");
@@ -37,6 +37,9 @@ function initContactPage() {
     });
 
     next0.onclick = () => {
+        document.querySelector(".logo").style.color = "#000";
+        document.querySelector(".menu-open").style.color = "#000";
+
         section1.style.top = "-100%";
         section2.style.top = "0";
     };
@@ -87,13 +90,23 @@ function initContactPage() {
     };
 
     next4.onclick = () => {
+        document.querySelector(".logo").style.color = "#FFF";
+        document.querySelector(".menu-open").style.color = "#FFF";
+
         section5.style.top = "100%";
         section1.style.top = "0";
+
+        headerAnimation();
     };
 
     back1.onclick = () => {
+        document.querySelector(".logo").style.color = "#FFF";
+        document.querySelector(".menu-open").style.color = "#FFF";
+
         section2.style.top = "100%";
         section1.style.top = "0";
+
+        headerAnimation();
     };
 
     back2.onclick = () => {
