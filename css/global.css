@@ -28,6 +28,11 @@
     src: url(/fonts/Coolvetica-Regular.otf);
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url(/fonts/Poppins.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -49,6 +54,7 @@ main {
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 

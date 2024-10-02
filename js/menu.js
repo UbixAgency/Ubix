@@ -1,14 +1,14 @@
 const tl = gsap.timeline({ paused: true });
 
-tl.to(".menu-left", 0.75, {
+tl.to(".menu-left", 1, {
     left: 0,
     ease: Expo.easeInOut
 });
 
-tl.to(".menu-right", 0.75, {
+tl.to(".menu-right", 1, {
     right: 0,
     ease: Expo.easeInOut
-}, "-=0.75");
+}, "-=1");
 
 tl.staggerFrom(".menu-links > div", 0.5, {
     y: 100,

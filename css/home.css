@@ -142,6 +142,40 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     white-space: nowrap;
 }
 
+footer {
+    padding: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: "Poppins", sans-serif;
+}
+
+footer .contact-1 {
+    font-size: 22px;
+}
+
+footer .contact-2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer .contact-2 a {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+footer .contact-2 a svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 @media screen and (max-width: 1422px) {
     #title {
         text-align: center;
@@ -157,10 +191,36 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
         padding: 1rem;
         font-size: 8vw;
     }
+
+    footer {
+        padding: 1rem;
+    }
+
+    footer .contact-1 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    footer .contact-2 a {
+        width: 40px;
+        height: 40px;
+        display: block;
+    }
 }
 
 @media screen and (max-width: 480px) {
     #title {
         font-size: 32px;
+    }
+
+    footer .contact-1 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    footer .contact-2 a {
+        width: 30px;
+        height: 30px;
+        display: block;
     }
 }
