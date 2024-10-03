@@ -10,13 +10,13 @@ tl.to(".menu-right", 1, {
     ease: Expo.easeInOut
 }, "-=1");
 
-tl.staggerFrom(".menu-links > div", 0.8, {
+tl.staggerFrom(".menu-links > div", 0.5, {
     y: 100,
     opacity: 0,
     ease: Expo.easeOut
 }, "0.1", "-=0.4");
 
-tl.staggerFrom(".mail > div, .socials > div", 0.8, {
+tl.staggerFrom(".mail > div, .socials > div", 0.5, {
     y: 100,
     opacity: 0,
     ease: Expo.easeOut

@@ -41,10 +41,9 @@
 main[data-barba-namespace="home"] {
     height: 100dvh;
     animation: background-pan 10s linear infinite;
-    /* background: linear-gradient(to right, #fccf31, #f55555, #fccf31); */
+    /* background: linear-gradient(to right, #FCCF31, #F55555, #FCCF31); */
     background: linear-gradient(to right, #FFDEE9, #B5FFFC, #FFDEE9);
     /* background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA); */
-    /* background: linear-gradient(to right, #D2FF72, #73EC8B, #D2FF72); */
     background-size: 200%;
     overflow: hidden;
 }
@@ -132,7 +131,7 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
 }
 
 .magic>.magic-text {
-    font-family: 'PP Editorial Old', cursive;
+    font-family: "PP Editorial Old", cursive;
     font-weight: 600;
     animation: background-pan 3s linear infinite;
     background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
@@ -141,6 +140,43 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
+}
+
+footer {
+    padding: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: "Poppins", sans-serif;
+}
+
+footer .contact-1 a {
+    display: block;
+    height: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+footer .contact-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .contact-2 a {
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+footer .contact-2 a svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 1422px) {
@@ -158,10 +194,36 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
         padding: 1rem;
         font-size: 8vw;
     }
+
+    footer {
+        padding: 1rem;
+    }
+
+    footer .contact-1 a {
+        height: 29px;
+        font-size: 22px;
+    }
+
+    footer .contact-2 a {
+        width: 40px;
+        height: 40px;
+        display: block;
+    }
 }
 
 @media screen and (max-width: 480px) {
     #title {
         font-size: 32px;
+    }
+
+    footer .contact-1 a {
+        height: 24px;
+        font-size: 18px;
+    }
+
+    footer .contact-2 a {
+        width: 35px;
+        height: 35px;
+        display: block;
     }
 }

@@ -1,31 +1,36 @@
 @font-face {
     font-family: "Barracuda";
-    src: url(/fonts/Barracuda-Regular.ttf);
+    src: url(/assets/fonts/Barracuda-Regular.ttf);
 }
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url(/fonts/NeueMontreal-Regular.otf);
+    src: url(/assets/fonts/NeueMontreal-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Editorial Old";
-    src: url(/fonts/PPEditorialOld-Regular.otf);
+    src: url(/assets/fonts/PPEditorialOld-Regular.otf);
 }
 
 @font-face {
     font-family: "Bridge Head Con Medium";
-    src: url(/fonts/BridgeHeadCon-Medium.ttf);
+    src: url(/assets/fonts/BridgeHeadCon-Medium.ttf);
 }
 
 @font-face {
     font-family: "Bigilla";
-    src: url(/fonts/Bigilla.otf);
+    src: url(/assets/fonts/Bigilla.otf);
 }
 
 @font-face {
     font-family: "Coolvetica";
-    src: url(/fonts/Coolvetica-Regular.otf);
+    src: url(/assets/fonts/Coolvetica-Regular.otf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(/assets/fonts/Poppins.ttf);
 }
 
 * {
@@ -49,12 +54,13 @@ main {
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 
 button {
     color: inherit;
-    border: none;
+    border: inherit;
     background: none;
     cursor: pointer;
     font-family: inherit;

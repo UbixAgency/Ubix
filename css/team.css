@@ -103,11 +103,11 @@ main[data-barba-namespace="team"] {
 }
 
 .t-2 {
-    background-color: #C4BCA9;
+    background-color: #8E908A;
 }
 
 .t-3 {
-    background-color: #8E908A;
+    background-color: #C4BCA9;
 }
 
 .switch {
@@ -118,16 +118,13 @@ main[data-barba-namespace="team"] {
 }
 
 .switch button {
+    width: fit-content;
     visibility: visible;
     pointer-events: auto;
 }
 
-.switch button:first-child {
-    text-align: start;
-}
-
 .switch button:last-child {
-    text-align: end;
+    margin-left: auto;
 }
 
 .switch button.hidden {
