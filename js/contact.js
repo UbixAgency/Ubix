@@ -1,6 +1,4 @@
 function initContactPage() {
-    const tl = gsap.timeline();
-
     const section1 = document.getElementById("section1");
     const section2 = document.getElementById("section2");
     const section3 = document.getElementById("section3");
@@ -17,23 +15,19 @@ function initContactPage() {
     const back2 = document.getElementById("back2");
     const back3 = document.getElementById("back3");
 
-    const headerAnimation = () => {
-        tl.from("#video", {
+    window.addEventListener("load", () => {
+        gsap.from("#video", {
             delay: 0.2,
             duration: 0.8,
             y: 100,
             opacity: 0,
         });
 
-        tl.from("#content", {
+        gsap.from("#content", {
             delay: 0.2,
             duration: 0.8,
             opacity: 0,
         });
-    };
-
-    window.addEventListener("load", () => {
-        headerAnimation();
     });
 
     next0.onclick = () => {
@@ -53,12 +47,8 @@ function initContactPage() {
         if (firstNameValue === "") {
             firstNameInput.placeholder = "First name is required";
             firstNameInput.classList.add("placeholder-red-500");
+            firstNameInput.classList.add("border-red-500");
 
-            gsap.to(firstNameInput, {
-                duration: 0.5,
-                borderColor: "red",
-                ease: "power2.out",
-            });
             return;
         }
 
@@ -95,8 +85,6 @@ function initContactPage() {
 
         section5.style.top = "100%";
         section1.style.top = "0";
-
-        headerAnimation();
     };
 
     back1.onclick = () => {
@@ -105,8 +93,6 @@ function initContactPage() {
 
         section2.style.top = "100%";
         section1.style.top = "0";
-
-        headerAnimation();
     };
 
     back2.onclick = () => {
