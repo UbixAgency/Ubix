@@ -118,16 +118,13 @@ main[data-barba-namespace="team"] {
 }
 
 .switch button {
+    width: fit-content;
     visibility: visible;
     pointer-events: auto;
 }
 
-.switch button:first-child {
-    text-align: start;
-}
-
 .switch button:last-child {
-    text-align: end;
+    margin-left: auto;
 }
 
 .switch button.hidden {

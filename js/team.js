@@ -6,7 +6,8 @@ function initTeamPage() {
     ];
 
     const cursor = document.querySelector(".cursor");
-    const cursorIcon = document.querySelector(".cursor i");
+    const cursorLeftIcon = document.querySelector(".cursor i.arrow-left");
+    const cursorRightIcon = document.querySelector(".cursor i.arrow-right");
 
     const cursorWidth = cursor.offsetWidth / 2;
     const cursorHeight = cursor.offsetHeight / 2;
@@ -18,16 +19,16 @@ function initTeamPage() {
         const halfPageWidth = window.innerWidth / 2;
         if (xPosition > halfPageWidth) {
             if (currentSlide < totalSlides) {
-                cursorIcon.classList.remove("ph-arrow-left");
-                cursorIcon.classList.add("ph-arrow-right");
+                cursorLeftIcon.style.display = "none";
+                cursorRightIcon.style.display = "block";
                 cursor.style.display = "block";
             } else {
                 cursor.style.display = "none";
             }
         } else {
             if (currentSlide > 1) {
-                cursorIcon.classList.remove("ph-arrow-right");
-                cursorIcon.classList.add("ph-arrow-left");
+                cursorLeftIcon.style.display = "block";
+                cursorRightIcon.style.display = "none";
                 cursor.style.display = "block";
             } else {
                 cursor.style.display = "none";
