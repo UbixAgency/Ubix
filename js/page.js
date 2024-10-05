@@ -38,19 +38,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, 200);
 
-    document.addEventListener('wheel', function (event) {
-        if (document.querySelector("main").contains(event.target)) {
+    function handleScroll(event) {
+        if (event.type === 'wheel' || event.type === 'touchmove') {
             // event.preventDefault();
-            const deltaY = event.deltaY;
 
-            if ((currentPageIndex === 0 && deltaY < 0) ||
-                (currentPageIndex === pages.length - 1 && deltaY > 0)) {
-                return;
+            if (document.querySelector("main").contains(event.target)) {
+                const deltaY = event.deltaY || event.touches[0].clientY;
+
+                if ((currentPageIndex === 0 && deltaY < 0) ||
+                    (currentPageIndex === pages.length - 1 && deltaY > 0)) {
+                    return;
+                }
+
+                debounceNavigate(deltaY);
             }
-
-            debounceNavigate(deltaY);
         }
-    });
+    }
+
+    document.addEventListener('wheel', handleScroll);
+    document.addEventListener('touchmove', handleScroll);
 
     window.addEventListener('popstate', () => {
         const pageIndex = pages.findIndex(url => url === window.location.pathname);
@@ -70,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             enter(data) {
                 gsap.from(data.next.container, {
                     opacity: 0,
-                    duration: 1,
+                    duration: 0.5,
                     onComplete: () => {
                         document.querySelector("main").style.opacity = 1;
                         document.querySelector("main").style.zIndex = 0;
