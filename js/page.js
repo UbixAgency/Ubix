@@ -1,7 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const pages = ['/', '/about.html', '/services.html', '/team.html', '/contact.html'];
+document.addEventListener("DOMContentLoaded", function () {
+    const pages = ["/index.html", "/about.html", "/services.html", "/team.html", "/contact.html"];
     let currentPageIndex = 0;
     let isNavigating = false;
+    let startTouchY = 0;
 
     function navigateToNextPage() {
         if (!isNavigating && currentPageIndex < pages.length - 1) {
@@ -21,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (index >= 0 && index < pages.length) {
             currentPageIndex = index;
 
-            window.history.pushState({}, '', pages[index]);
+            window.history.pushState({}, "", pages[index]);
 
             barba.go(pages[index], {
-                namespace: pages[index].split('/').pop().replace('.html', ''),
-                transition: ['fade', 'slide']
+                namespace: pages[index].split("/").pop().replace(".html", ""),
+                transition: ["fade", "slide"]
             });
         }
     }
@@ -39,26 +40,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 200);
 
     function handleScroll(event) {
-        if (event.type === 'wheel' || event.type === 'touchmove') {
-            // event.preventDefault();
+        let deltaY = 0;
+        if (event.type === "wheel") {
+            deltaY = event.deltaY;
+        } else if (event.type === "touchmove") {
+            const touchY = event.touches[0].clientY;
+            deltaY = startTouchY - touchY;
+        }
 
-            if (document.querySelector("main").contains(event.target)) {
-                const deltaY = event.deltaY || event.touches[0].clientY;
-
-                if ((currentPageIndex === 0 && deltaY < 0) ||
-                    (currentPageIndex === pages.length - 1 && deltaY > 0)) {
-                    return;
-                }
-
-                debounceNavigate(deltaY);
+        if (deltaY !== 0) {
+            if ((currentPageIndex === 0 && deltaY < 0) ||
+                (currentPageIndex === pages.length - 1 && deltaY > 0)) {
+                return;
             }
+            debounceNavigate(deltaY);
         }
     }
 
-    document.addEventListener('wheel', handleScroll);
-    document.addEventListener('touchmove', handleScroll);
+    function handleTouchStart(event) {
+        startTouchY = event.touches[0].clientY;
+    }
 
-    window.addEventListener('popstate', () => {
+    document.addEventListener("wheel", handleScroll);
+    document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchmove", handleScroll);
+
+    window.addEventListener("popstate", () => {
         const pageIndex = pages.findIndex(url => url === window.location.pathname);
         if (pageIndex !== -1) {
             currentPageIndex = pageIndex;
