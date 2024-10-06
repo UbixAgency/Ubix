@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
         sync: true,
         transitions: [{
             enter(data) {
+                removePageSpecificScripts();
+                
                 gsap.from(data.next.container, {
                     opacity: 0,
                     duration: 0.5,
@@ -119,9 +121,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".logo").style.color = "#000";
                     document.querySelector(".menu-open").style.color = "#000";
                 }
+            },
+            leave(data) {
+                return new Promise(resolve => {
+                    removePageSpecificScripts();
+                    resolve();
+                });
             }
         }]
     });
+
+    function removePageSpecificScripts() {
+        ['js/home.js', 'js/team.js', 'js/contact.js'].forEach(removeScript);
+    }
+
+    function removeScript(src) {
+        const scriptElement = document.querySelector(`script[src="${src}"]`);
+        if (scriptElement) {
+            document.body.removeChild(scriptElement);
+        }
+    }
 
     function loadScript(src, callback) {
         const script = document.createElement("script");
