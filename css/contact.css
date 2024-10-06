@@ -1,4 +1,4 @@
-section {
+main[data-barba-namespace="contact"] section {
     background-color: #f5f4f6;
     font-family: "Neue Montreal", sans-serif;
 }

@@ -5,36 +5,8 @@ function initTeamPage() {
         { name: "Shubham Lal", role: "Tech Lead" }
     ];
 
-    const cursor = document.querySelector(".cursor");
-    const cursorLeftIcon = document.querySelector(".cursor i.arrow-left");
-    const cursorRightIcon = document.querySelector(".cursor i.arrow-right");
-
-    const cursorWidth = cursor.offsetWidth / 2;
-    const cursorHeight = cursor.offsetHeight / 2;
-
     let currentSlide = 1;
     const totalSlides = team.length;
-
-    const updateCursor = (xPosition) => {
-        const halfPageWidth = window.innerWidth / 2;
-        if (xPosition > halfPageWidth) {
-            if (currentSlide < totalSlides) {
-                cursorLeftIcon.style.display = "none";
-                cursorRightIcon.style.display = "block";
-                cursor.style.display = "block";
-            } else {
-                cursor.style.display = "none";
-            }
-        } else {
-            if (currentSlide > 1) {
-                cursorLeftIcon.style.display = "block";
-                cursorRightIcon.style.display = "none";
-                cursor.style.display = "block";
-            } else {
-                cursor.style.display = "none";
-            }
-        }
-    };
 
     const leftButton = document.querySelector(".switch button:first-child");
     const rightButton = document.querySelector(".switch button:last-child");
@@ -88,30 +60,8 @@ function initTeamPage() {
 
     updateInfo(currentSlide);
 
-    document.addEventListener("mousemove", (e) => {
-        gsap.to(cursor, {
-            x: e.clientX - cursorWidth,
-            y: e.clientY - cursorHeight,
-            duration: 1,
-            ease: "power3.out"
-        });
-
-        updateCursor(e.clientX);
-    });
-
     leftButton.addEventListener("click", prevSlide);
     rightButton.addEventListener("click", nextSlide);
-
-    document.addEventListener("click", (e) => {
-        if (e.target.closest(".logo") || e.target.closest(".menu-open") || e.target.closest(".switch button")) return;
-
-        const halfPageWidth = window.innerWidth / 2;
-        if (e.clientX > halfPageWidth) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
-    });
 }
 
 initTeamPage();

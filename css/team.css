@@ -94,6 +94,10 @@ main[data-barba-namespace="team"] {
     margin-top: 24px;
 }
 
+.info h2 {
+    font-size: 20px;
+}
+
 .role {
     margin: 5px 0;
 }
@@ -136,18 +140,6 @@ main[data-barba-namespace="team"] {
     font-size: 30px;
 }
 
-.cursor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    font-size: 30px;
-}
-
-.modal:hover~.cursor {
-    display: none !important;
-}
-
 @media screen and (max-width: 900px) {
     .marquee-wrapper h1 {
         animation: marquee 30s linear infinite;
@@ -167,10 +159,6 @@ main[data-barba-namespace="team"] {
     .team {
         width: 100%;
         height: 450px;
-    }
-
-    .cursor {
-        display: none !important;
     }
 }
 

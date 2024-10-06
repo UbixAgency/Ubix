@@ -81,11 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         sync: true,
         transitions: [{
             enter(data) {
-                removePageSpecificScripts();
-                
                 gsap.from(data.next.container, {
                     opacity: 0,
-                    duration: 0.5,
+                    duration: 0.25,
                     onComplete: () => {
                         document.querySelector("main").style.opacity = 1;
                         document.querySelector("main").style.zIndex = 0;
@@ -121,8 +119,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".logo").style.color = "#000";
                     document.querySelector(".menu-open").style.color = "#000";
                 }
+
+                removePageSpecificScripts();
             },
-            leave(data) {
+            leave() {
                 return new Promise(resolve => {
                     removePageSpecificScripts();
                     resolve();
