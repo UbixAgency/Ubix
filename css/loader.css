@@ -1,14 +1,5 @@
-.load {
-    display: none;
-}
-
 #loader-container {
     display: none;
-}
-
-#loader-container .load {
-    display: block;
-    cursor: default;
 }
 
 .pre-loader {
