@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 200);
 
     function handleScroll(event) {
+        if (!document.querySelector("main").contains(event.target)) return;
+
         let deltaY = 0;
         if (event.type === "wheel") {
             deltaY = event.deltaY;
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleTouchStart(event) {
+        if (!document.querySelector("main").contains(event.target)) return;
         startTouchY = event.touches[0].clientY;
     }
 

@@ -62,9 +62,9 @@ else {
     anime.timeline({ loop: false })
         .add({
             targets: ".ml16 .letter",
-            translateY: [-100, 0],
+            translateY: [-300, 0],
             easing: "easeOutExpo",
-            duration: 1500,
+            duration: 1000,
             delay: (el, i) => 30 * i
         })
         .add({
