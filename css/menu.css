@@ -1,7 +1,11 @@
 #menu-container .menu {
     display: flex;
     font-family: "Bridge Head Con Medium";
-    cursor: default;
+    cursor: url("/assets/cursor/default-light.png"), default;
+}
+
+#menu-container a {
+    cursor: url("/assets/cursor/pointer-light.png"), default;
 }
 
 .menu-left,
@@ -71,6 +75,7 @@
 .menu-close {
     position: absolute;
     z-index: 2;
+    cursor: url("/assets/cursor/pointer-light.png"), default;
 }
 
 @media screen and (max-width: 900px) {

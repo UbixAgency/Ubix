@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 200);
 
     function handleScroll(event) {
+        if (!document.querySelector("main").contains(event.target)) return;
+
         let deltaY = 0;
         if (event.type === "wheel") {
             deltaY = event.deltaY;
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleTouchStart(event) {
+        if (!document.querySelector("main").contains(event.target)) return;
         startTouchY = event.touches[0].clientY;
     }
 
@@ -92,6 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         currentPageIndex = pages.findIndex(url => url === window.location.pathname);
                     }
                 });
+
+                document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
 
                 const namespace = data.next.namespace;
                 if (namespace === "home") {

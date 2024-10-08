@@ -78,7 +78,7 @@ main[data-barba-namespace="home"] {
 }
 
 .tile {
-    cursor: pointer;
+    cursor: url("/assets/cursor/default-dark.png"), default;
     position: relative;
 }
 
@@ -142,15 +142,10 @@ main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     white-space: nowrap;
 }
 
-footer {
-    padding: 2rem;
+footer .contact-1 {
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    left: 2rem;
+    bottom: 2rem;
     font-family: "Poppins", sans-serif;
 }
 
@@ -162,6 +157,9 @@ footer .contact-1 a {
 }
 
 footer .contact-2 {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
     display: flex;
     align-items: center;
     gap: 10px;
