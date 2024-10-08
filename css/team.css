@@ -3,7 +3,6 @@ main[data-barba-namespace="team"] {
     height: 100dvh;
     font-family: "Neue Montreal", sans-serif;
     overflow: hidden;
-    cursor: default;
 }
 
 .overlay {

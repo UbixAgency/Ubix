@@ -42,6 +42,7 @@
 
 html,
 body {
+    cursor: url("/assets/cursor/default-dark.png"), default;
     overscroll-behavior-y: none;
     overflow: hidden;
 }
@@ -54,6 +55,7 @@ main {
 }
 
 a {
+    cursor: url("/assets/cursor/pointer-dark.png"), default;
     color: inherit;
     text-decoration: none;
 }
@@ -62,8 +64,12 @@ button {
     color: inherit;
     border: inherit;
     background: none;
-    cursor: pointer;
+    cursor: url("/assets/cursor/pointer-dark.png"), default;
     font-family: inherit;
+}
+
+input {
+    cursor: url("/assets/cursor/edit-dark.png"), default;
 }
 
 .logo {
@@ -77,6 +83,7 @@ button {
     font-weight: 600;
     opacity: 0;
     transition: opacity 200ms ease-in;
+    cursor: url("/assets/cursor/pointer-dark.png"), default;
 }
 
 @media screen and (max-width: 900px) {

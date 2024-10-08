@@ -1,6 +1,24 @@
 main[data-barba-namespace="contact"] section {
     background-color: #f5f4f6;
     font-family: "Neue Montreal", sans-serif;
+    cursor: url("/assets/cursor/default-light.png"), default;
+}
+
+#content a,
+#content button {
+    cursor: url("/assets/cursor/pointer-light.png"), default;
+}
+
+#next1 button,
+#back1 button,
+#next2 button,
+#back2 button,
+#next3 button,
+#back3 button,
+#next4,
+.service-btn,
+.budget-btn {
+    cursor: url("/assets/cursor/pointer-dark.png"), default;
 }
 
 #section1 {
@@ -16,7 +34,7 @@ main[data-barba-namespace="contact"] section {
     z-index: 100;
 }
 
-.hero-marquee {
+/* .hero-marquee {
     margin: 0 auto;
     width: fit-content;
     font-size: 5rem;
@@ -35,4 +53,4 @@ main[data-barba-namespace="contact"] section {
     .hero-marquee {
         font-size: 32px;
     }
-}
+} */

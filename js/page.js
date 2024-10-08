@@ -96,6 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
+                document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+
                 const namespace = data.next.namespace;
                 if (namespace === "home") {
                     document.querySelector(".logo").style.color = "#000";

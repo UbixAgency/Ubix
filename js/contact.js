@@ -15,6 +15,9 @@ function initContactPage() {
     const back2 = document.getElementById("back2");
     const back3 = document.getElementById("back3");
 
+    document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+    document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+
     window.addEventListener("load", () => {
         sessionStorage.removeItem("contactData");
 
@@ -89,10 +92,13 @@ function initContactPage() {
 
     next0.onclick = () => {
         document.querySelector(".logo").style.color = "#000";
+        document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
         document.querySelector(".menu-open").style.color = "#000";
+        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
 
         section1.style.top = "-100%";
         section2.style.top = "0";
+        section2.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
     };
 
     next1.onclick = () => {
@@ -122,6 +128,7 @@ function initContactPage() {
 
         section2.style.top = "-100%";
         section3.style.top = "0";
+        section3.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
 
         const userElement = document.getElementById("user");
         userElement.innerHTML = `Nice to meet you, ${contactData.first_name}!`;
@@ -157,6 +164,7 @@ function initContactPage() {
 
         section3.style.top = "-100%";
         section4.style.top = "0";
+        section4.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
     };
 
     next3.onclick = () => {
@@ -182,6 +190,7 @@ function initContactPage() {
 
         section4.style.top = "-100%";
         section5.style.top = "0";
+        section5.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
 
         customBudgetInput.placeholder = "Other budget in mind";
         customBudgetInput.classList.remove("placeholder-red-500");
@@ -192,7 +201,9 @@ function initContactPage() {
         sessionStorage.removeItem("contactData");
 
         document.querySelector(".logo").style.color = "#FFF";
+        document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
         document.querySelector(".menu-open").style.color = "#FFF";
+        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
         section5.style.top = "100%";
         section1.style.top = "0";
@@ -200,7 +211,9 @@ function initContactPage() {
 
     back1.onclick = () => {
         document.querySelector(".logo").style.color = "#FFF";
+        document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
         document.querySelector(".menu-open").style.color = "#FFF";
+        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
         section2.style.top = "100%";
         section1.style.top = "0";
