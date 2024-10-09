@@ -16,7 +16,8 @@ function initContactPage() {
     const back3 = document.getElementById("back3");
 
     document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-    document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+    // document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+    document.querySelector(".nav-btn-js").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
     window.addEventListener("load", () => {
         sessionStorage.removeItem("contactData");
@@ -93,8 +94,9 @@ function initContactPage() {
     next0.onclick = () => {
         document.querySelector(".logo").style.color = "#000";
         document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-        document.querySelector(".menu-open").style.color = "#000";
-        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+        document.querySelector(".nav-btn-js").style.color = "#000";
+        // document.querySelector(".menu-open").style.color = "#000";
+        // document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
 
         section1.style.top = "-100%";
         section2.style.top = "0";
@@ -202,8 +204,9 @@ function initContactPage() {
 
         document.querySelector(".logo").style.color = "#FFF";
         document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        document.querySelector(".menu-open").style.color = "#FFF";
-        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelector(".nav-btn-js").style.color = "#FFF";
+        // document.querySelector(".menu-open").style.color = "#FFF";
+        // document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
         section5.style.top = "100%";
         section1.style.top = "0";
@@ -212,8 +215,9 @@ function initContactPage() {
     back1.onclick = () => {
         document.querySelector(".logo").style.color = "#FFF";
         document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        document.querySelector(".menu-open").style.color = "#FFF";
-        document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelector(".nav-btn-js").style.color = "#FFF";
+        // document.querySelector(".menu-open").style.color = "#FFF";
+        // document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
         section2.style.top = "100%";
         section1.style.top = "0";
