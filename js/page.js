@@ -96,39 +96,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
+                document.querySelector(".logo").style.color = "#000";
                 document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-                // document.querySelector(".menu-open").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".nav-btn-js").style.color = "#000";
                 document.querySelector(".nav-btn-js").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
 
                 const namespace = data.next.namespace;
                 if (namespace === "home") {
-                    document.querySelector(".logo").style.color = "#000";
-                    // document.querySelector(".menu-open").style.color = "#000";
-                    document.querySelector(".nav-btn-js").style.color = "#000";
                     loadScript("js/home.js", function () {
                         initHomePage();
                     });
                 }
                 else if (namespace === "team") {
-                    document.querySelector(".logo").style.color = "#000";
-                    // document.querySelector(".menu-open").style.color = "#000";
-                    document.querySelector(".nav-btn-js").style.color = "#000";
                     loadScript("js/team.js", function () {
                         initTeamPage();
                     });
                 }
                 else if (namespace === "contact") {
                     document.querySelector(".logo").style.color = "#FFF";
-                    // document.querySelector(".menu-open").style.color = "#FFF";
                     document.querySelector(".nav-btn-js").style.color = "#FFF";
                     loadScript("js/contact.js", function () {
                         initContactPage();
                     });
-                }
-                else {
-                    document.querySelector(".logo").style.color = "#000";
-                    // document.querySelector(".menu-open").style.color = "#000";
-                    document.querySelector(".nav-btn-js").style.color = "#000";
                 }
 
                 removePageSpecificScripts();
