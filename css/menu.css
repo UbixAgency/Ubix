@@ -39,19 +39,18 @@ header {
 .header__menu {
     width: 50%;
     height: 100%;
-    padding: 2rem 0;
     display: grid;
     justify-content: center;
     align-items: center;
     overflow-y: auto;
 }
 
-.header__menu>.header__menu-item {
+.header__menu .header__menu-item {
     font-size: 90px;
     font-family: "Bridge Head Con Medium";
 }
 
-.header__menu>.header__menu-item a span {
+.header__menu .header__menu-item a span {
     font-family: "Bigilla";
     font-size: 24px;
 }
