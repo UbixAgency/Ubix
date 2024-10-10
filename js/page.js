@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     barba.init({
         sync: true,
+        prevent: ({ el }) => (el.href === window.location.href),
         transitions: [{
             enter(data) {
                 gsap.from(data.next.container, {

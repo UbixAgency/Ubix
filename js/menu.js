@@ -5,19 +5,20 @@ const revealerNav = window.revealer({
     }
 });
 
-document.addEventListener("click", function (event) {
-    const actionBtn = document.querySelector(".nav-btn-js");
-
-    if (event.target.classList.contains("nav-btn-js")) {
-        if (!revealerNav.isRevealed()) {
-            revealerNav.reveal();
-            actionBtn.setAttribute("data-open", true);
-        } else {
-            revealerNav.hide();
-            actionBtn.setAttribute("data-open", false);
-        }
+const actionBtn = document.querySelector(".nav-btn-js");
+actionBtn.addEventListener("click", () => {
+    if (!revealerNav.isRevealed()) {
+        revealerNav.reveal();
+        actionBtn.setAttribute("data-open", true);
+    } else {
+        revealerNav.hide();
+        actionBtn.setAttribute("data-open", false);
     }
-    else if (event.target.tagName === "A" && event.target.closest(".header__menu-item")) {
+});
+
+const navLinks = document.querySelectorAll(".header__menu-item");
+navLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
         event.preventDefault();
 
         revealerNav.hide();
@@ -29,5 +30,5 @@ document.addEventListener("click", function (event) {
         if (targetLink !== currentPage) {
             barba.go(targetLink);
         }
-    }
+    });
 });
