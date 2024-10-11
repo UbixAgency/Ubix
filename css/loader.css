@@ -62,14 +62,13 @@
 .count {
     padding: 0 1em;
     flex: 2;
-    font-family: "Neue Montreal", sans-serif;
+    font-family: "Recoleta", sans-serif;
     text-align: right;
-    line-height: 1;
 }
 
 .copy {
     flex: 3;
-    font-family: "PP Editorial Old", sans-serif;
+    font-family: "Recoleta", sans-serif;
     font-size: 30px;
     line-height: 1;
 }

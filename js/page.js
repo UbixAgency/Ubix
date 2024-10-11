@@ -108,6 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         initHomePage();
                     });
                 }
+                else if (namespace === "about") {
+                    loadScript("js/about.js", function () {
+                        initAboutPage();
+                    });
+                }
                 else if (namespace === "team") {
                     loadScript("js/team.js", function () {
                         initTeamPage();
@@ -133,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function removePageSpecificScripts() {
-        ['js/home.js', 'js/team.js', 'js/contact.js'].forEach(removeScript);
+        ['js/home.js', 'js/about.js', 'js/team.js', 'js/contact.js'].forEach(removeScript);
     }
 
     function removeScript(src) {

@@ -11,11 +11,7 @@ header {
     right: 2rem;
     top: 2rem;
     font-size: 30px;
-    font-family: "Bridge Head Con Medium";
-}
-
-.header__button[data-open="false"] {
-    transition: background-color 250ms linear;
+    font-family: "Recoleta";
 }
 
 .header__nav {
@@ -47,7 +43,7 @@ header {
 
 .header__menu .header__menu-item {
     font-size: 90px;
-    font-family: "Bridge Head Con Medium";
+    font-family: "Recoleta";
 }
 
 .header__menu .header__menu-item a span {
@@ -56,6 +52,7 @@ header {
 }
 
 .contact .about {
+    font-family: "PP Editorial Old", sans-serif;
     font-size: 80px;
 }
 
@@ -78,7 +75,7 @@ header {
         top: 1rem;
     }
 
-    .header__menu>.header__menu-item {
+    .header__menu .header__menu-item {
         font-size: 70px;
     }
 

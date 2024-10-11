@@ -33,6 +33,11 @@
     src: url(/assets/fonts/Poppins.ttf);
 }
 
+@font-face {
+    font-family: "Recoleta";
+    src: url(/assets/fonts/Recoleta.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -79,7 +84,8 @@ input {
     left: 2rem;
     color: #000;
     font-size: 30px;
-    font-family: "Bridge Head Con Medium";
+    font-family: "Recoleta";
+    /* font-family: "Bridge Head Con Medium"; */
     font-weight: 600;
     opacity: 0;
     transition: opacity 200ms ease-in;
