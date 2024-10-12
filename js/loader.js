@@ -96,14 +96,14 @@ else {
     gsap.to(".loader-bg", {
         height: "0",
         ease: "power4.inOut",
-        duration: 1.5,
+        duration: 1,
         delay: 7
     });
 
     gsap.from(".header span", {
         y: 200,
         ease: "power4.inOut",
-        duration: 1.5,
+        duration: 1,
         delay: 7,
         stagger: 0.05
     });

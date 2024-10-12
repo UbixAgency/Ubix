@@ -43,6 +43,11 @@
     src: url(/assets/fonts/Sora.ttf);
 }
 
+@font-face {
+    font-family: "Gallery Modern";
+    src: url(/assets/fonts/GalleryModern.woff2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -88,7 +93,7 @@ input {
     left: 2rem;
     color: #000;
     font-size: 30px;
-    font-family: "Recoleta";
+    font-family: "Gallery Modern";
     font-weight: 600;
     opacity: 0;
     transition: opacity 200ms ease-in;
