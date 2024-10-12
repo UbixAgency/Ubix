@@ -5,7 +5,7 @@ main[data-barba-namespace="about"] {
         display: grid;
         place-content: center;
         background-color: #F1F3F5;
-        background-image: url(/assets/graph.png)
+        background-image: url(/assets/graph.png);
     }
 
     #section1 h3 {

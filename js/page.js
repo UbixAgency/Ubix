@@ -49,6 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleScroll(event) {
         if (!document.querySelector("main").contains(event.target)) return;
+        else if (document.querySelector("main[data-barba-namespace='contact']")) {
+            const section1 = document.getElementById("section1");
+            if (section1.style.top === "-100%") return;
+        }
 
         let deltaY = 0;
         if (event.type === "wheel") {

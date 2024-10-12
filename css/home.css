@@ -197,14 +197,14 @@ main[data-barba-namespace="home"] {
             bottom: 1rem;
         }
 
-        footer .contact-1 a {
-            height: 29px;
-            font-size: 22px;
-        }
-
         footer .contact-2 a {
             width: 40px;
             height: 40px;
+        }
+
+        footer .contact-2 a:first-child {
+            width: 39px;
+            height: 39px;
         }
     }
 
@@ -213,14 +213,9 @@ main[data-barba-namespace="home"] {
             font-size: 32px;
         }
 
-        footer .contact-1 a {
-            height: 24px;
-            font-size: 18px;
-        }
-
         footer .contact-2 a:first-child {
-            width: 37.5px;
-            height: 37.5px;
+            width: 39.5px;
+            height: 39.5px;
         }
     }
 }
