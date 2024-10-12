@@ -2,10 +2,39 @@ main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
         height: 100dvh;
+        background-color: #e9ebed;
+    }
+
+    #tiles {
+        width: calc(100vw - 1px);
+        height: calc(100dvh - 1px);
+        position: relative;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        grid-template-rows: repeat(var(--rows), 1fr);
+    }
+
+    .tile {
+        position: relative;
+    }
+
+    .tile:before {
+        background-color: #F1F3F5;
+        position: absolute;
+        content: "";
+        inset: 0.5px;
+    }
+
+    #section1 .hero {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         display: grid;
         place-content: center;
-        background-color: #F1F3F5;
-        background-image: url(/assets/graph.png);
     }
 
     #section1 h3 {

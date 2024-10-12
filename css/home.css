@@ -77,7 +77,6 @@ main[data-barba-namespace="home"] {
     }
 
     .tile {
-        cursor: url("/assets/cursor/default-dark.png"), default;
         position: relative;
     }
 
@@ -214,8 +213,8 @@ main[data-barba-namespace="home"] {
         }
 
         footer .contact-2 a:first-child {
-            width: 39.5px;
-            height: 39.5px;
+            width: 40px;
+            height: 40px;
         }
     }
 }

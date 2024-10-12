@@ -1,9 +1,7 @@
 function initHomePage() {
     const wrapper = document.getElementById("tiles");
 
-    let columns = 0,
-        rows = 0,
-        toggled = false;
+    let columns = 0, rows = 0, toggled = false;
 
     // const toggle = () => {
     //     toggled = !toggled;
@@ -25,7 +23,7 @@ function initHomePage() {
     const createTile = index => {
         const tile = document.createElement("div");
         tile.classList.add("tile");
-        tile.style.opacity = toggled ? 0 : 1;
+        // tile.style.opacity = toggled ? 0 : 1;
         // tile.onclick = e => handleOnClick(index);
         return tile;
     }

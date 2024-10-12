@@ -89,7 +89,6 @@ input {
     color: #000;
     font-size: 30px;
     font-family: "Recoleta";
-    /* font-family: "Bridge Head Con Medium"; */
     font-weight: 600;
     opacity: 0;
     transition: opacity 200ms ease-in;

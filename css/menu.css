@@ -24,7 +24,8 @@ header {
     display: flex;
     justify-content: space-between;
     visibility: hidden;
-    background-color: #C6E421;
+    background-color: #C5FF4A;
+    /* background-color: #C6E421; */
     overflow: hidden;
 }
 
