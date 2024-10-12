@@ -1,4 +1,31 @@
 main[data-barba-namespace="about"] {
-    height: 100dvh;
-    overflow: hidden;
+    #section1 {
+        position: relative;
+        height: 100dvh;
+        display: grid;
+        place-content: center;
+        background-color: #F1F3F5;
+        background-image: url(/assets/graph.png)
+    }
+
+    #section1 h3 {
+        margin-bottom: 15px;
+        font-size: 28px;
+        font-family: "Recoleta", sans-serif;
+        text-align: center;
+    }
+
+    #section1 h1 {
+        font-size: 70px;
+        font-family: "Sora", sans-serif;
+        text-align: center;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 900px) {
+        #section1 h1 {
+            font-size: 35px;
+        }
+    }
 }

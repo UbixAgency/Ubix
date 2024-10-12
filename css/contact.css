@@ -1,56 +1,60 @@
-main[data-barba-namespace="contact"] section {
-    background-color: #f5f4f6;
-    font-family: "Neue Montreal", sans-serif;
-    cursor: url("/assets/cursor/default-light.png"), default;
-}
-
-#content a,
-#content button {
-    cursor: url("/assets/cursor/pointer-light.png"), default;
-}
-
-#next1 button,
-#back1 button,
-#next2 button,
-#back2 button,
-#next3 button,
-#back3 button,
-#next4,
-.service-btn,
-.budget-btn {
-    cursor: url("/assets/cursor/pointer-dark.png"), default;
-}
-
-#section1 {
-    background-color: #111111;
-}
-
-#section2,
-#section3,
-#section4,
-#section5 {
-    position: absolute;
-    bottom: -100%;
-    z-index: 100;
-}
-
-/* .hero-marquee {
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 5rem;
-    word-wrap: break-word;
-    white-space: nowrap;
+main[data-barba-namespace="contact"] {
     overflow: hidden;
-}
 
-@media screen and (max-width: 900px) {
-    .hero-marquee {
-        font-size: 4rem;
+    section {
+        background-color: #f5f4f6;
+        font-family: "Neue Montreal", sans-serif;
+        cursor: url("/assets/cursor/default-light.png"), default;
     }
-}
 
-@media screen and (max-width: 480px) {
-    .hero-marquee {
-        font-size: 32px;
+    #content a,
+    #content button {
+        cursor: url("/assets/cursor/pointer-light.png"), default;
     }
-} */
+
+    #next1 button,
+    #back1 button,
+    #next2 button,
+    #back2 button,
+    #next3 button,
+    #back3 button,
+    #next4,
+    .service-btn,
+    .budget-btn {
+        cursor: url("/assets/cursor/pointer-dark.png"), default;
+    }
+
+    #section1 {
+        background-color: #111111;
+    }
+
+    #section2,
+    #section3,
+    #section4,
+    #section5 {
+        position: absolute;
+        bottom: -100%;
+        z-index: 100;
+    }
+
+    /* .hero-marquee {
+        margin: 0 auto;
+        width: fit-content;
+        font-size: 5rem;
+        word-wrap: break-word;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 900px) {
+        .hero-marquee {
+            font-size: 4rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .hero-marquee {
+            font-size: 32px;
+        }
+    } */
+}

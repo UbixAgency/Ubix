@@ -38,6 +38,11 @@
     src: url(/assets/fonts/Recoleta.otf);
 }
 
+@font-face {
+    font-family: "Sora";
+    src: url(/assets/fonts/Sora.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -49,7 +54,6 @@ html,
 body {
     cursor: url("/assets/cursor/default-dark.png"), default;
     overscroll-behavior-y: none;
-    overflow: hidden;
 }
 
 main {

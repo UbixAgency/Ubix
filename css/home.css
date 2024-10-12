@@ -46,191 +46,186 @@ main[data-barba-namespace="home"] {
     /* background: linear-gradient(to right, #45FFCA, #FEFFAC, #45FFCA); */
     background-size: 200%;
     overflow: hidden;
-}
 
-#title {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    display: grid;
-    place-content: center;
-    font-family: "Coolvetica", sans-serif;
-    font-size: 6vw;
-    font-weight: 400;
-    line-height: 1.25;
-    word-wrap: break-word;
-    pointer-events: none;
-    transition: opacity 1200ms ease;
-}
+    #title {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        display: grid;
+        place-content: center;
+        font-family: "Coolvetica", sans-serif;
+        font-size: 6vw;
+        font-weight: 400;
+        line-height: 1.25;
+        word-wrap: break-word;
+        pointer-events: none;
+        transition: opacity 1200ms ease;
+    }
 
-#tiles {
-    width: calc(100vw - 1px);
-    height: calc(100dvh - 1px);
-    position: relative;
-    z-index: 0;
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    grid-template-rows: repeat(var(--rows), 1fr);
-}
+    #tiles {
+        width: calc(100vw - 1px);
+        height: calc(100dvh - 1px);
+        position: relative;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        grid-template-rows: repeat(var(--rows), 1fr);
+    }
 
-.tile {
-    cursor: url("/assets/cursor/default-dark.png"), default;
-    position: relative;
-}
+    .tile {
+        cursor: url("/assets/cursor/default-dark.png"), default;
+        position: relative;
+    }
 
-.tile:hover:before {
-    /* background-color: rgb(30, 30, 30); */
-    background-color: transparent;
+    .tile:hover:before {
+        background-color: transparent;
+    }
+
+    .tile:before {
+        background-color: #FFF;
+        position: absolute;
+        content: "";
+        inset: 0.5px;
+    }
+
+    .magic {
+        width: fit-content;
+        display: inline-block;
+        position: relative;
+    }
+
+    .magic>.magic-star {
+        --size: clamp(20px, 1.5vw, 30px);
+        animation: scale 700ms ease forwards;
+        display: block;
+        height: var(--size);
+        left: var(--star-left);
+        position: absolute;
+        top: var(--star-top);
+        width: var(--size);
+    }
+
+    .magic>.magic-star>svg {
+        animation: rotate 1000ms linear infinite;
+        display: block;
+        opacity: 0.7;
+    }
+
+    .magic>.magic-star>svg>path {
+        fill: var(--violet);
+    }
+
+    .magic>.magic-text {
+        font-family: "PP Editorial Old", cursive;
+        font-weight: 600;
+        animation: background-pan 3s linear infinite;
+        background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
+        background-size: 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+    }
+
+    footer .contact-1 {
+        position: fixed;
+        left: 2rem;
+        bottom: 2rem;
+        font-family: "Recoleta", sans-serif;
+    }
+
+    footer .contact-1 a {
+        display: block;
+        height: 30px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    footer .contact-2 {
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer .contact-2 a {
+        width: 45px;
+        height: 45px;
+        display: block;
+    }
+
+    footer .contact-2 a:first-child {
+        width: 42.5px;
+        height: 42.5px;
+    }
+
+    footer .contact-2 a svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @media screen and (max-width: 1422px) {
+        #title {
+            text-align: center;
+        }
+
+        .magic {
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        #title {
+            padding: 1rem;
+            font-size: 8vw;
+        }
+
+        footer .contact-1 {
+            left: 1rem;
+            bottom: 1rem;
+        }
+
+        footer .contact-2 {
+            right: 1rem;
+            bottom: 1rem;
+        }
+
+        footer .contact-1 a {
+            height: 29px;
+            font-size: 22px;
+        }
+
+        footer .contact-2 a {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        #title {
+            font-size: 32px;
+        }
+
+        footer .contact-1 a {
+            height: 24px;
+            font-size: 18px;
+        }
+
+        footer .contact-2 a:first-child {
+            width: 37.5px;
+            height: 37.5px;
+        }
+    }
 }
 
 main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     background-color: rgb(30, 30, 30);
-}
-
-.tile:before {
-    /* background-color: rgb(15, 15, 15); */
-    background-color: #FFF;
-    position: absolute;
-    content: "";
-    inset: 0.5px;
-}
-
-main[data-barba-namespace="home"].toggled>#tiles>.tile:hover {
     opacity: 0.1 !important;
-}
-
-.magic {
-    width: fit-content;
-    display: inline-block;
-    position: relative;
-}
-
-.magic>.magic-star {
-    --size: clamp(20px, 1.5vw, 30px);
-    animation: scale 700ms ease forwards;
-    display: block;
-    height: var(--size);
-    left: var(--star-left);
-    position: absolute;
-    top: var(--star-top);
-    width: var(--size);
-}
-
-.magic>.magic-star>svg {
-    animation: rotate 1000ms linear infinite;
-    display: block;
-    opacity: 0.7;
-}
-
-.magic>.magic-star>svg>path {
-    fill: var(--violet);
-}
-
-.magic>.magic-text {
-    font-family: "PP Editorial Old", cursive;
-    font-weight: 600;
-    animation: background-pan 3s linear infinite;
-    background: linear-gradient(to right, var(--purple), var(--violet), var(--pink), var(--purple));
-    background-size: 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    white-space: nowrap;
-}
-
-footer .contact-1 {
-    position: fixed;
-    left: 2rem;
-    bottom: 2rem;
-    font-family: "Recoleta", sans-serif;
-}
-
-footer .contact-1 a {
-    display: block;
-    height: 30px;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-footer .contact-2 {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-footer .contact-2 a {
-    width: 45px;
-    height: 45px;
-    display: block;
-}
-
-footer .contact-2 a:first-child {
-    width: 42.5px;
-    height: 42.5px;
-}
-
-footer .contact-2 a svg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-@media screen and (max-width: 1422px) {
-    #title {
-        text-align: center;
-    }
-
-    .magic {
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    #title {
-        padding: 1rem;
-        font-size: 8vw;
-    }
-
-    footer .contact-1 {
-        left: 1rem;
-        bottom: 1rem;
-    }
-
-    footer .contact-2 {
-        right: 1rem;
-        bottom: 1rem;
-    }
-
-    footer .contact-1 a {
-        height: 29px;
-        font-size: 22px;
-    }
-
-    footer .contact-2 a {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #title {
-        font-size: 32px;
-    }
-
-    footer .contact-1 a {
-        height: 24px;
-        font-size: 18px;
-    }
-
-    footer .contact-2 a:first-child {
-        width: 37.5px;
-        height: 37.5px;
-    }
 }

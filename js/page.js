@@ -39,6 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 200);
 
+    function isAtBottomOfPage() {
+        const docHeight = document.documentElement.offsetHeight;
+        const winHeight = window.innerHeight || document.documentElement.clientHeight;
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+        return Math.round(docHeight - winHeight - scrollPos) <= 0;
+    }
+
     function handleScroll(event) {
         if (!document.querySelector("main").contains(event.target)) return;
 
@@ -55,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 (currentPageIndex === pages.length - 1 && deltaY > 0)) {
                 return;
             }
+
+            if (deltaY > 0 && !isAtBottomOfPage()) return;
+
             debounceNavigate(deltaY);
         }
     }
