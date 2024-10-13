@@ -5,7 +5,7 @@ header {
 }
 
 .header__button {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     opacity: 0;
     right: 2rem;

@@ -1,3 +1,9 @@
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
 main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
@@ -52,9 +58,68 @@ main[data-barba-namespace="about"] {
         font-weight: 600;
     }
 
+    .marquee {
+        margin-bottom: 800px;
+        padding: 10px 0;
+        display: flex;
+        --gap: 30px;
+        gap: var(--gap);
+        background-color: #C5FF4A;
+        overflow: hidden;
+    }
+
+    .marquee ul {
+        list-style: none;
+        flex-shrink: 0;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--gap);
+
+        animation: scroll 20s linear infinite;
+    }
+
+    .marquee:hover ul {
+        animation-play-state: paused;
+    }
+
+    .marquee ul li {
+        display: flex;
+        align-items: center;
+    }
+
+    .marquee li::before {
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url(/assets/star.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 30px;
+    }
+
+    .marquee li span {
+        margin-top: 5px;
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: "Recoleta", sans-serif;
+    }
+
     @media screen and (max-width: 900px) {
         #section1 h1 {
             font-size: 35px;
+        }
+
+        .marquee li::before {
+            width: 30px;
+            height: 30px;
+        }
+
+        .marquee li span {
+            font-size: 40px;
         }
     }
 }
