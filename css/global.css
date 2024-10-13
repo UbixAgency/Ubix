@@ -1,51 +1,51 @@
 @font-face {
     font-family: "Barracuda";
-    src: url(/assets/fonts/Barracuda-Regular.ttf);
+    src: url(/assets/font/Barracuda-Regular.ttf);
 }
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url(/assets/fonts/NeueMontreal-Regular.otf);
+    src: url(/assets/font/NeueMontreal-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Editorial Old";
-    src: url(/assets/fonts/PPEditorialOld-Regular.otf);
+    src: url(/assets/font/PPEditorialOld-Regular.otf);
 }
 
 @font-face {
     font-family: "Bridge Head Con Medium";
-    src: url(/assets/fonts/BridgeHeadCon-Medium.ttf);
+    src: url(/assets/font/BridgeHeadCon-Medium.ttf);
 }
 
 @font-face {
     font-family: "Bigilla";
-    src: url(/assets/fonts/Bigilla.otf);
+    src: url(/assets/font/Bigilla.otf);
 }
 
 @font-face {
     font-family: "Coolvetica";
-    src: url(/assets/fonts/Coolvetica-Regular.otf);
+    src: url(/assets/font/Coolvetica-Regular.otf);
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url(/assets/fonts/Poppins.ttf);
+    src: url(/assets/font/Poppins.ttf);
 }
 
 @font-face {
     font-family: "Recoleta";
-    src: url(/assets/fonts/Recoleta.otf);
+    src: url(/assets/font/Recoleta.otf);
 }
 
 @font-face {
     font-family: "Sora";
-    src: url(/assets/fonts/Sora.ttf);
+    src: url(/assets/font/Sora.ttf);
 }
 
 @font-face {
     font-family: "Gallery Modern";
-    src: url(/assets/fonts/GalleryModern.woff2);
+    src: url(/assets/font/GalleryModern.woff2);
 }
 
 * {
