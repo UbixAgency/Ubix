@@ -47,6 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return Math.round(docHeight - winHeight - scrollPos) <= 0;
     }
 
+    function isAtTopOfPage() {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        return scrollPos <= 0;
+    }
+
     function handleScroll(event) {
         if (!document.querySelector("main").contains(event.target)) return;
         else if (document.querySelector("main[data-barba-namespace='contact']")) {
@@ -63,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (deltaY !== 0) {
-            if ((currentPageIndex === 0 && deltaY < 0) ||
-                (currentPageIndex === pages.length - 1 && deltaY > 0)) {
+            if ((currentPageIndex === 0 && deltaY < 0) || (currentPageIndex === pages.length - 1 && deltaY > 0)) {
                 return;
             }
 
             if (deltaY > 0 && !isAtBottomOfPage()) return;
+            if (deltaY < 0 && !isAtTopOfPage()) return;
 
             debounceNavigate(deltaY);
         }
