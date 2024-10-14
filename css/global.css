@@ -48,6 +48,11 @@
     src: url(/assets/font/GalleryModern.woff2);
 }
 
+@font-face {
+    font-family: "Lato";
+    src: url(/assets/font/Lato.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
