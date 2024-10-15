@@ -22,7 +22,7 @@
 }
 
 .loader-content {
-    position: absolute;
+    position: fixed;
     z-index: 3;
     bottom: 2rem;
     left: 50%;
