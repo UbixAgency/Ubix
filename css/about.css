@@ -190,23 +190,26 @@ main[data-barba-namespace="about"] {
     }
 
     #section2 {
-        margin-bottom: 800px;
-        padding: 140px 0;
+        margin: 0 auto;
+        max-width: 1296px;
+        padding: 130px 2rem 150px;
 
         h2 {
             font-family: "Coolvetica";
             font-size: 60px;
-            font-weight: 600;
             text-align: center;
             letter-spacing: 1px;
             line-height: 1.3;
         }
 
+        .info {
+            padding-top: 40px;
+            font-family: "Sora";
+            font-size: 20px;
+        }
+
         .process__container {
-            max-width: 1296px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 50px 2rem 0 2rem;
+            padding-top: 40px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
 
@@ -270,12 +273,13 @@ main[data-barba-namespace="about"] {
         }
 
         #section2 {
+            padding: 130px 1rem 150px;
+
             h2 {
                 font-size: 35px;
             }
 
             .process__container {
-                padding: 40px 1rem 0 1rem;
                 grid-template-columns: unset;
 
                 .process__card {
