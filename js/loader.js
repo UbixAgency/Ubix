@@ -19,11 +19,8 @@ function startLoader() {
 if (sessionStorage.getItem("loaderPlayed")) {
     document.querySelector("#loader-container").style.display = "none";
     document.querySelector("main").style.opacity = 1;
-    document.querySelector("main").style.zIndex = 0;
-    document.querySelector(".logo").style.opacity = 1;
-    document.querySelector(".logo").style.zIndex = 1;
-    document.querySelector(".nav-btn-js").style.opacity = 1;
-    document.querySelector(".nav-btn-js").style.zIndex = 2;
+    document.querySelector(".navbar").style.zIndex = 2;
+    document.querySelector(".navbar").style.opacity = 1;
 }
 else {
     document.querySelector("#loader-container").style.display = "block";
@@ -96,14 +93,14 @@ else {
     gsap.to(".loader-bg", {
         height: "0",
         ease: "power4.inOut",
-        duration: 1.5,
+        duration: 1,
         delay: 7
     });
 
     gsap.from(".header span", {
         y: 200,
         ease: "power4.inOut",
-        duration: 1.5,
+        duration: 1,
         delay: 7,
         stagger: 0.05
     });
@@ -119,11 +116,8 @@ else {
             document.querySelector(".brand").style.zIndex = "-1";
             document.querySelector("#loader-container").style.display = "none";
             document.querySelector("main").style.opacity = 1;
-            document.querySelector("main").style.zIndex = 0;
-            document.querySelector(".logo").style.opacity = 1;
-            document.querySelector(".logo").style.zIndex = 1;
-            document.querySelector(".nav-btn-js").style.opacity = 1;
-            document.querySelector(".nav-btn-js").style.zIndex = 2;
+            document.querySelector(".navbar").style.zIndex = 2;
+            document.querySelector(".navbar").style.opacity = 1;
         }
     });
 }

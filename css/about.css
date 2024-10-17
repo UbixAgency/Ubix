@@ -1,4 +1,235 @@
+:root {
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
 main[data-barba-namespace="about"] {
-    height: 100dvh;
-    overflow: hidden;
+    #section1 {
+        position: relative;
+        height: 100svh;
+        animation: background-pan 10s linear infinite;
+        background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
+        background-size: 200%;
+
+        #tiles {
+            width: calc(100vw - 1px);
+            height: calc(100svh - 1px);
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(var(--columns), 1fr);
+            grid-template-rows: repeat(var(--rows), 1fr);
+        }
+
+        .tile {
+            position: relative;
+        }
+
+        .tile:hover:before {
+            background-color: transparent;
+        }
+
+        .tile:before {
+            background-color: #FFF;
+            position: absolute;
+            content: "";
+            inset: 0.5px;
+        }
+
+        .hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            pointer-events: none;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: 28px;
+            font-family: "Recoleta", sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 70px;
+            font-family: "Sora", sans-serif;
+            text-align: center;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+    }
+
+    .marquee {
+        padding: 10px 0;
+        display: flex;
+        --gap: 30px;
+        gap: var(--gap);
+        background-color: #C5FF4A;
+        overflow: hidden;
+
+        ul {
+            list-style: none;
+            flex-shrink: 0;
+            min-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--gap);
+
+            animation: scroll 20s linear infinite;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url(/assets/icon/star.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    margin-right: 30px;
+                }
+
+                span {
+                    margin-top: 5px;
+                    font-size: 50px;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-family: "Recoleta", sans-serif;
+                }
+            }
+        }
+
+        &:hover ul {
+            animation-play-state: paused;
+        }
+    }
+
+    #section2 {
+        margin: 0 auto;
+        max-width: 1296px;
+        padding: 130px 2rem 150px;
+
+        h2 {
+            font-family: "Coolvetica";
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .info {
+            padding-top: 40px;
+            font-family: "Sora";
+            font-size: 20px;
+        }
+
+        .process__container {
+            padding-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .process__card {
+                .process__step {
+                    position: relative;
+                    border-bottom: 2px solid #000;
+                    padding-bottom: 22px;
+                    font-family: "Sora";
+                    font-size: 16px;
+                    font-weight: bolder;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: -4px;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background: #000;
+                        bottom: 0;
+                        transform: translate(0px, 50%);
+                        border: 4px solid #FFF;
+                    }
+                }
+
+                h4 {
+                    margin: 30px 0 10px 0;
+                    font-family: "Sora";
+                    font-size: 25px;
+                    font-weight: bolder;
+                }
+
+                p {
+                    max-width: 330px;
+                    font-family: "Lato";
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        #section1 h1 {
+            font-size: 35px;
+        }
+
+        .marquee {
+            ul {
+                li {
+                    &::before {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    span {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+
+        #section2 {
+            padding: 130px 1rem 150px;
+
+            h2 {
+                font-size: 35px;
+            }
+
+            .process__container {
+                grid-template-columns: unset;
+
+                .process__card {
+                    margin-bottom: 40px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        max-width: 100%;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+main[data-barba-namespace="about"].toggled #section1 #tiles .tile:hover {
+    background-color: rgb(30, 30, 30);
+    opacity: 0.1 !important;
 }

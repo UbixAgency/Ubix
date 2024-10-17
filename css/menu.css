@@ -4,20 +4,6 @@ header {
     justify-content: space-between;
 }
 
-.header__button {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    right: 2rem;
-    top: 2rem;
-    font-size: 30px;
-    font-family: "Bridge Head Con Medium";
-}
-
-.header__button[data-open="false"] {
-    transition: background-color 250ms linear;
-}
-
 .header__nav {
     position: fixed;
     z-index: 1;
@@ -28,7 +14,8 @@ header {
     display: flex;
     justify-content: space-between;
     visibility: hidden;
-    background-color: #C6E421;
+    background-color: #C5FF4A;
+    /* background-color: #C6E421; */
     overflow: hidden;
 }
 
@@ -39,24 +26,24 @@ header {
 .header__menu {
     width: 50%;
     height: 100%;
-    padding: 2rem 0;
     display: grid;
     justify-content: center;
     align-items: center;
     overflow-y: auto;
 }
 
-.header__menu>.header__menu-item {
+.header__menu .header__menu-item {
     font-size: 90px;
-    font-family: "Bridge Head Con Medium";
+    font-family: "Recoleta";
 }
 
-.header__menu>.header__menu-item a span {
+.header__menu .header__menu-item a span {
     font-family: "Bigilla";
     font-size: 24px;
 }
 
 .contact .about {
+    font-family: "PP Editorial Old", sans-serif;
     font-size: 80px;
 }
 
@@ -74,12 +61,7 @@ header {
 }
 
 @media screen and (max-width: 900px) {
-    .header__button {
-        right: 1rem;
-        top: 1rem;
-    }
-
-    .header__menu>.header__menu-item {
+    .header__menu .header__menu-item {
         font-size: 70px;
     }
 

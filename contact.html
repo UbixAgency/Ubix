@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="css/contact.css">
     <script src="js/pkgs/barba.umd.js"></script>
     <script src="js/pkgs/lodash.min.js"></script>
-    <script src="js/pkgs/gsap.min.js"></script>
-    <script src="js/pkgs/anime.min.js"></script>
-    <script src="js/pkgs/TweenMax.min.js"></script>
-    <script src="js/pkgs/tailwindcss.min.js"></script>
     <script src="js/pkgs/revealer.iife.js"></script>
+    <script src="js/pkgs/gsap.min.js"></script>
+    <script src="js/pkgs/TweenMax.min.js"></script>
+    <script src="js/pkgs/anime.min.js"></script>
+    <script src="js/pkgs/tailwindcss.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
-    <a href="/index.html" class="logo" style="color: #FFF;">UBIX</a>
-    <button class="header__button nav-btn-js" type="button" style="color: #FFF;">menu</button>
+    <div class="navbar" style="cursor: url('/assets/cursor/default-light.png'), default">
+        <a href="/index.html" class="logo__btn" style="color: #FFF;">UBIX</a>
+        <button class="menu__btn" type="button" style="color: #FFF;">menu</button>
+    </div>
 
     <div id="loader-container"></div>
     <div id="menu-container"></div>
@@ -50,7 +52,7 @@
         <section id="section1" class="h-[100dvh] w-screen overflow-auto">
             <div class="relative flex items-center justify-center w-full h-[100dvh] overflow-hidden">
                 <video id="video" class="w-full h-full" autoplay loop muted>
-                    <source src="./assets/cube.mp4" type="video/mp4" />
+                    <source src="./assets/video/cube.mp4" type="video/mp4" />
                 </video>
 
                 <!-- <div class="absolute top-1/2 -translate-y-1/2 z-10">
@@ -82,7 +84,7 @@
         </section>
 
         <section id="section2" class="h-[100dvh] w-screen px-[2rem] py-0 md:p-10 overflow-auto">
-            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+            <div class="mx-auto max-w-[1024px] h-full py-[6rem] flex flex-col justify-between">
                 <div>
                     <h1 class="text-black text-4xl leading-tight overflow-hidden">
                         <span>Before we start,</span>
@@ -113,7 +115,7 @@
         </section>
 
         <section id="section3" class="h-[100dvh] w-screen px-[2rem] py-0 md:p-10 overflow-auto">
-            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+            <div class="mx-auto max-w-[1024px] h-full py-[6rem] flex flex-col justify-between">
                 <div>
                     <h1 class="text-black text-4xl leading-tight overflow-hidden">
                         <span id="user">Nice to meet you!</span>
@@ -160,7 +162,7 @@
         </section>
 
         <section id="section4" class="h-[100dvh] w-screen px-[2rem] py-0 md:p-10 overflow-auto">
-            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+            <div class="mx-auto max-w-[1024px] h-full py-[6rem] flex flex-col justify-between">
                 <div>
                     <h1 class="text-black text-4xl leading-tight overflow-hidden">
                         <span>Let's talk budget</span>
@@ -203,7 +205,7 @@
         </section>
 
         <section id="section5" class="h-[100dvh] w-screen px-[2rem] py-0 md:p-10 overflow-auto">
-            <div class="mx-auto max-w-[1024px] h-full py-20 flex flex-col justify-between">
+            <div class="mx-auto max-w-[1024px] h-full py-[6rem] flex flex-col justify-between">
                 <div>
                     <h1 class="text-black text-4xl leading-tight overflow-hidden">
                         <span>Thank you!</span>

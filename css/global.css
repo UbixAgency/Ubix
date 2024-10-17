@@ -1,36 +1,56 @@
 @font-face {
     font-family: "Barracuda";
-    src: url(/assets/fonts/Barracuda-Regular.ttf);
+    src: url(/assets/font/Barracuda-Regular.ttf);
 }
 
 @font-face {
     font-family: "Neue Montreal";
-    src: url(/assets/fonts/NeueMontreal-Regular.otf);
+    src: url(/assets/font/NeueMontreal-Regular.otf);
 }
 
 @font-face {
     font-family: "PP Editorial Old";
-    src: url(/assets/fonts/PPEditorialOld-Regular.otf);
+    src: url(/assets/font/PPEditorialOld-Regular.otf);
 }
 
 @font-face {
     font-family: "Bridge Head Con Medium";
-    src: url(/assets/fonts/BridgeHeadCon-Medium.ttf);
+    src: url(/assets/font/BridgeHeadCon-Medium.ttf);
 }
 
 @font-face {
     font-family: "Bigilla";
-    src: url(/assets/fonts/Bigilla.otf);
+    src: url(/assets/font/Bigilla.otf);
 }
 
 @font-face {
     font-family: "Coolvetica";
-    src: url(/assets/fonts/Coolvetica-Regular.otf);
+    src: url(/assets/font/Coolvetica-Regular.otf);
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url(/assets/fonts/Poppins.ttf);
+    src: url(/assets/font/Poppins.ttf);
+}
+
+@font-face {
+    font-family: "Recoleta";
+    src: url(/assets/font/Recoleta.otf);
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url(/assets/font/Sora.ttf);
+}
+
+@font-face {
+    font-family: "Gallery Modern";
+    src: url(/assets/font/GalleryModern.woff2);
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(/assets/font/Lato.ttf);
 }
 
 * {
@@ -44,12 +64,10 @@ html,
 body {
     cursor: url("/assets/cursor/default-dark.png"), default;
     overscroll-behavior-y: none;
-    overflow: hidden;
 }
 
 main {
     position: relative;
-    z-index: -1;
     opacity: 0;
     transition: opacity 200ms ease-in;
 }
@@ -72,23 +90,34 @@ input {
     cursor: url("/assets/cursor/edit-dark.png"), default;
 }
 
-.logo {
+.navbar {
+    width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: -1;
-    top: 2rem;
-    left: 2rem;
-    color: #000;
-    font-size: 30px;
-    font-family: "Bridge Head Con Medium";
-    font-weight: 600;
     opacity: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: url("/assets/cursor/default-dark.png"), default;
+}
+
+.navbar .logo__btn {
+    font-size: 30px;
+    font-family: "Gallery Modern";
+    font-weight: 600;
     transition: opacity 200ms ease-in;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
 }
 
+.navbar .menu__btn {
+    font-size: 30px;
+    font-family: "Recoleta";
+}
+
 @media screen and (max-width: 900px) {
-    .logo {
-        top: 1rem;
-        left: 1rem;
+    .navbar {
+        padding: 1rem;
     }
 }

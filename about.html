@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="css/contact.css">
     <script src="js/pkgs/barba.umd.js"></script>
     <script src="js/pkgs/lodash.min.js"></script>
-    <script src="js/pkgs/gsap.min.js"></script>
-    <script src="js/pkgs/anime.min.js"></script>
-    <script src="js/pkgs/TweenMax.min.js"></script>
-    <script src="js/pkgs/tailwindcss.min.js"></script>
     <script src="js/pkgs/revealer.iife.js"></script>
+    <script src="js/pkgs/gsap.min.js"></script>
+    <script src="js/pkgs/TweenMax.min.js"></script>
+    <script src="js/pkgs/anime.min.js"></script>
+    <script src="js/pkgs/tailwindcss.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
-    <a href="/index.html" class="logo">UBIX</a>
-    <button class="header__button nav-btn-js" type="button">menu</button>
+    <div class="navbar">
+        <a href="/index.html" class="logo__btn">UBIX</a>
+        <button class="menu__btn">menu</button>
+    </div>
 
     <div id="loader-container"></div>
     <div id="menu-container"></div>
@@ -47,9 +49,93 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="about">
-        <h1>About Us</h1>
+        <section id="section1">
+            <div id="tiles"></div>
+
+            <div class="hero">
+                <h3>Digital agency studio</h3>
+                <h1>
+                    <span>a creative digital</span><br />
+                    <span>design studio</span>
+                </h1>
+            </div>
+        </section>
+        <div class="marquee">
+            <ul>
+                <li>
+                    <span>Flexible Price</span>
+                </li>
+                <li>
+                    <span>User Centric Design</span>
+                </li>
+                <li>
+                    <span>AI-Driven Solutions</span>
+                </li>
+                <li>
+                    <span>Dedicated Support 24/7</span>
+                </li>
+            </ul>
+
+            <ul aria-hidden="true">
+                <li>
+                    <span>Flexible Price</span>
+                </li>
+                <li>
+                    <span>User Centric Design</span>
+                </li>
+                <li>
+                    <span>AI-Driven Solutions</span>
+                </li>
+                <li>
+                    <span>Dedicated Support 24/7</span>
+                </li>
+            </ul>
+        </div>
+        <section id="section2">
+            <h2>Our high-quality working processes</h2>
+            <p class="info">
+                We focus at every stage on effective communication and collaboration between the client and
+                ensuring that the final design meets the client's objectives and expectations.
+            </p>
+            <div class="process__container">
+                <div class="process__card">
+                    <div class="process__step">
+                        STEP 1
+                    </div>
+                    <h4>Strategic Approach</h4>
+                    <p>
+                        We begin by understanding your goals and crafting a plan to ensure every creative choice
+                        supports your vision.
+                    </p>
+                </div>
+                <div class="process__card">
+                    <div class="process__step">
+                        STEP 2
+                    </div>
+                    <h4>Collaboration is Key</h4>
+                    <p>
+                        We work hand-in-hand with you, combining your ideas and our expertise to create something
+                        unique.
+                    </p>
+                </div>
+                <div class="process__card">
+                    <div class="process__step">
+                        STEP 3
+                    </div>
+                    <h4>End to End Delivery</h4>
+                    <p>
+                        From start to finish, we handle every aspect to deliver a polished, high-quality result on time.
+                    </p>
+                </div>
+            </div>
+            <p class="info">
+                *It is important to note that these are simplified steps, and the actual work process may vary
+                depending on the complexity of the project.
+            </p>
+        </section>
     </main>
 
+    <script src="js/about.js"></script>
     <script src="js/page.js"></script>
 </body>
 

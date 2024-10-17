@@ -17,16 +17,18 @@
     <link rel="stylesheet" href="css/contact.css">
     <script src="js/pkgs/barba.umd.js"></script>
     <script src="js/pkgs/lodash.min.js"></script>
-    <script src="js/pkgs/gsap.min.js"></script>
-    <script src="js/pkgs/anime.min.js"></script>
-    <script src="js/pkgs/TweenMax.min.js"></script>
-    <script src="js/pkgs/tailwindcss.min.js"></script>
     <script src="js/pkgs/revealer.iife.js"></script>
+    <script src="js/pkgs/gsap.min.js"></script>
+    <script src="js/pkgs/TweenMax.min.js"></script>
+    <script src="js/pkgs/anime.min.js"></script>
+    <script src="js/pkgs/tailwindcss.min.js"></script>
 </head>
 
 <body data-barba="wrapper">
-    <a href="/index.html" class="logo">UBIX</a>
-    <button class="header__button nav-btn-js" type="button">menu</button>
+    <div class="navbar">
+        <a href="/index.html" class="logo__btn">UBIX</a>
+        <button class="menu__btn">menu</button>
+    </div>
 
     <div id="loader-container"></div>
     <div id="menu-container"></div>
@@ -47,7 +49,9 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="home">
-        <div id="tiles"></div>
+        <div id="blocks">
+            <div class="block"></div>
+        </div>
 
         <h1 id="title">
             Let's mix your ideas with our skills and
@@ -74,14 +78,6 @@
                     rel="noopener noreferrer">Say Hello</a>
             </div>
             <div class="contact-2">
-                <a href="https://linkedin.com/company/ubix-agency" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="50px" height="50px">
-                        <path fill="#0288D1"
-                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
-                        <path fill="#FFF"
-                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
-                    </svg>
-                </a>
                 <a href="https://x.com/UbixAgency" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="50px" height="50px">
                         <path
@@ -114,6 +110,14 @@
                         <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
                         <path fill="#fff"
                             d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/company/ubix-agency" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="50px" height="50px">
+                        <path fill="#0288D1"
+                            d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z" />
+                        <path fill="#FFF"
+                            d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z" />
                     </svg>
                 </a>
             </div>
