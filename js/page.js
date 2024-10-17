@@ -110,17 +110,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     duration: 0.25,
                     onComplete: () => {
                         document.querySelector("main").style.opacity = 1;
-                        document.querySelector("main").style.zIndex = 0;
 
                         isNavigating = false;
                         currentPageIndex = pages.findIndex(url => url === window.location.pathname);
                     }
                 });
 
-                document.querySelector(".logo").style.color = "#000";
-                document.querySelector(".logo").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-                document.querySelector(".nav-btn-js").style.color = "#000";
-                document.querySelector(".nav-btn-js").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".navbar").style.cursor = 'url("/assets/cursor/default-dark.png"), default';
+                document.querySelector(".logo__btn").style.color = "#000";
+                document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".menu__btn").style.color = "#000";
+                document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
 
                 const namespace = data.next.namespace;
                 if (namespace === "home") {
@@ -139,8 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 }
                 else if (namespace === "contact") {
-                    document.querySelector(".logo").style.color = "#FFF";
-                    document.querySelector(".nav-btn-js").style.color = "#FFF";
+                    document.querySelector(".navbar").style.cursor = 'url("/assets/cursor/default-light.png"), default';
+                    document.querySelector(".logo__btn").style.color = "#FFF";
+                    document.querySelector(".menu__btn").style.color = "#FFF";
                     loadScript("js/contact.js", function () {
                         initContactPage();
                     });
@@ -158,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function removePageSpecificScripts() {
-        ['js/home.js', 'js/about.js', 'js/team.js', 'js/contact.js'].forEach(removeScript);
+        ["js/home.js", "js/about.js", "js/team.js", "js/contact.js"].forEach(removeScript);
     }
 
     function removeScript(src) {

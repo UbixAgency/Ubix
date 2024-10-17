@@ -20,9 +20,8 @@ main[data-barba-namespace="about"] {
 
         #tiles {
             width: calc(100vw - 1px);
-            height: calc(100dvh - 1px);
+            height: calc(100svh - 1px);
             position: relative;
-            z-index: 0;
             display: grid;
             grid-template-columns: repeat(var(--columns), 1fr);
             grid-template-rows: repeat(var(--rows), 1fr);
@@ -45,7 +44,6 @@ main[data-barba-namespace="about"] {
 
         .hero {
             position: absolute;
-            z-index: 1;
             top: 0;
             left: 0;
             width: 100%;
@@ -95,7 +93,7 @@ main[data-barba-namespace="about"] {
                 align-items: center;
 
                 &::before {
-                    content: '';
+                    content: "";
                     display: inline-block;
                     width: 40px;
                     height: 40px;

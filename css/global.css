@@ -68,7 +68,6 @@ body {
 
 main {
     position: relative;
-    z-index: -1;
     opacity: 0;
     transition: opacity 200ms ease-in;
 }
@@ -91,23 +90,34 @@ input {
     cursor: url("/assets/cursor/edit-dark.png"), default;
 }
 
-.logo {
+.navbar {
+    width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: -1;
-    top: 2rem;
-    left: 2rem;
-    color: #000;
+    opacity: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: url("/assets/cursor/default-dark.png"), default;
+}
+
+.navbar .logo__btn {
     font-size: 30px;
     font-family: "Gallery Modern";
     font-weight: 600;
-    opacity: 0;
     transition: opacity 200ms ease-in;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
 }
 
+.navbar .menu__btn {
+    font-size: 30px;
+    font-family: "Recoleta";
+}
+
 @media screen and (max-width: 900px) {
-    .logo {
-        top: 1rem;
-        left: 1rem;
+    .navbar {
+        padding: 1rem;
     }
 }

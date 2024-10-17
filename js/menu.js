@@ -1,16 +1,18 @@
 const revealerNav = window.revealer({
-    revealElementSelector: ".nav-js",
+    revealElementSelector: ".header__nav",
     options: {
-        anchorSelector: ".nav-btn-js",
+        anchorSelector: ".menu__btn",
     }
 });
 
-const actionBtn = document.querySelector(".nav-btn-js");
+const actionBtn = document.querySelector(".menu__btn");
 actionBtn.addEventListener("click", () => {
     if (!revealerNav.isRevealed()) {
+        document.body.style.overflow = "hidden";
         revealerNav.reveal();
         actionBtn.setAttribute("data-open", true);
     } else {
+        document.body.style.overflow = "auto";
         revealerNav.hide();
         actionBtn.setAttribute("data-open", false);
     }

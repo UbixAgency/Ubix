@@ -4,16 +4,6 @@ header {
     justify-content: space-between;
 }
 
-.header__button {
-    position: fixed;
-    z-index: -1;
-    opacity: 0;
-    right: 2rem;
-    top: 2rem;
-    font-size: 30px;
-    font-family: "Recoleta";
-}
-
 .header__nav {
     position: fixed;
     z-index: 1;
@@ -71,11 +61,6 @@ header {
 }
 
 @media screen and (max-width: 900px) {
-    .header__button {
-        right: 1rem;
-        top: 1rem;
-    }
-
     .header__menu .header__menu-item {
         font-size: 70px;
     }

@@ -34,7 +34,6 @@ main[data-barba-namespace="contact"] {
     #section5 {
         position: absolute;
         bottom: -100%;
-        z-index: 100;
     }
 
     /* .hero-marquee {
