@@ -23,6 +23,7 @@ navLinks.forEach(link => {
     link.addEventListener("click", (event) => {
         event.preventDefault();
 
+        document.body.style.overflow = "auto";
         revealerNav.hide();
         actionBtn.setAttribute("data-open", false);
 
