@@ -101,6 +101,7 @@ input {
     display: flex;
     justify-content: space-between;
     cursor: url("/assets/cursor/default-dark.png"), default;
+    pointer-events: none;
 }
 
 .navbar .logo__btn {
@@ -109,11 +110,13 @@ input {
     font-weight: 600;
     transition: opacity 200ms ease-in;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
+    pointer-events: fill;
 }
 
 .navbar .menu__btn {
     font-size: 30px;
     font-family: "Recoleta";
+    pointer-events: fill;
 }
 
 @media screen and (max-width: 900px) {

@@ -1,4 +1,17 @@
 main[data-barba-namespace="services"] {
-    height: 100dvh;
-    overflow: hidden;
+    .hero {
+        margin-top: calc(4rem + 45px);
+        height: calc(100svh - (4rem + 45px));
+        background: url(/assets/background/bg-3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @media screen and (max-width: 900px) {
+        .hero {
+            margin-top: calc(2rem + 45px);
+            height: calc(100svh - (2rem + 45px));
+        }
+    }
 }

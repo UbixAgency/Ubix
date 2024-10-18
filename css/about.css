@@ -20,7 +20,7 @@ main[data-barba-namespace="about"] {
 
         #tiles {
             width: calc(100vw - 1px);
-            height: calc(100svh - 1px);
+            height: calc(100% - 1px);
             position: relative;
             display: grid;
             grid-template-columns: repeat(var(--columns), 1fr);
