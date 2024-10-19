@@ -1,17 +1,38 @@
 main[data-barba-namespace="services"] {
     .hero {
         margin-top: calc(4rem + 45px);
-        height: calc(100svh - (4rem + 45px));
+        padding: 2rem;
+        min-height: calc(100svh - (4rem + 45px));
         background: url(/assets/background/bg-3.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        display: grid;
+        place-content: center;
+        color: #FFF;
+        font-family: "Sora";
+        font-size: 50px;
+
+        span {
+            background-size: 100% 15%;
+            background-repeat: repeat-x;
+            background-position: left 0% bottom 0%;
+        }
+
+        span:first-child {
+            background-image: linear-gradient(179deg, #C5FF4A 0%, #C5FF4A 50%, transparent 54%, transparent 100%);
+        }
+
+        span:last-child {
+            background-image: linear-gradient(181deg, #C5FF4A 0%, #C5FF4A 50%, transparent 54%, transparent 100%);
+        }
     }
 
     @media screen and (max-width: 900px) {
         .hero {
             margin-top: calc(2rem + 45px);
-            height: calc(100svh - (2rem + 45px));
+            padding: 1rem;
+            min-height: calc(100svh - (2rem + 45px));
         }
     }
 }
