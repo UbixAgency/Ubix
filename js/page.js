@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
         startTouchY = event.touches[0].clientY;
     }
 
-    // document.addEventListener("wheel", handleScroll);
-    // document.addEventListener("touchstart", handleTouchStart);
-    // document.addEventListener("touchmove", handleScroll);
+    document.addEventListener("wheel", handleScroll);
+    document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchmove", handleScroll);
 
     window.addEventListener("popstate", () => {
         const pageIndex = pages.findIndex(url => url === window.location.pathname);
