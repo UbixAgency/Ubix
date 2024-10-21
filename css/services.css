@@ -2,7 +2,7 @@ main[data-barba-namespace="services"] {
     .hero {
         margin-top: calc(4rem + 45px);
         padding: 2rem;
-        min-height: calc(100svh - (4rem + 45px));
+        min-height: calc(100lvh - (4rem + 45px));
         background: url(/assets/background/bg-3.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -32,7 +32,7 @@ main[data-barba-namespace="services"] {
         .hero {
             margin-top: calc(2rem + 45px);
             padding: 1rem;
-            min-height: calc(100svh - (2rem + 45px));
+            min-height: calc(100lvh - (2rem + 45px));
         }
     }
 }

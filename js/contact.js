@@ -4,16 +4,19 @@ function initContactPage() {
     const section3 = document.getElementById("section3");
     const section4 = document.getElementById("section4");
     const section5 = document.getElementById("section5");
+    const section6 = document.getElementById("section6");
 
     const next0 = document.getElementById("next0");
     const next1 = document.getElementById("next1");
     const next2 = document.getElementById("next2");
     const next3 = document.getElementById("next3");
     const next4 = document.getElementById("next4");
+    const next5 = document.getElementById("next5");
 
     const back1 = document.getElementById("back1");
     const back2 = document.getElementById("back2");
     const back3 = document.getElementById("back3");
+    const back4 = document.getElementById("back4");
 
     document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
     document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
@@ -198,6 +201,12 @@ function initContactPage() {
     };
 
     next4.onclick = () => {
+        section5.style.top = "-100%";
+        section6.style.top = "0";
+        section6.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
+    };
+
+    next5.onclick = () => {
         sessionStorage.removeItem("contactData");
 
         document.querySelector(".logo__btn").style.color = "#FFF";
@@ -205,7 +214,7 @@ function initContactPage() {
         document.querySelector(".menu__btn").style.color = "#FFF";
         document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
 
-        section5.style.top = "100%";
+        section6.style.top = "100%";
         section1.style.top = "0";
     };
 
@@ -227,6 +236,11 @@ function initContactPage() {
     back3.onclick = () => {
         section3.style.top = "0";
         section4.style.top = "100%";
+    };
+    
+    back4.onclick = () => {
+        section4.style.top = "0";
+        section5.style.top = "100%";
     };
 }
 

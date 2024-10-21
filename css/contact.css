@@ -31,7 +31,8 @@ main[data-barba-namespace="contact"] {
     #section2,
     #section3,
     #section4,
-    #section5 {
+    #section5,
+    #section6 {
         position: absolute;
         bottom: -100%;
     }
