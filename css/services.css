@@ -2,7 +2,7 @@ main[data-barba-namespace="services"] {
     .hero {
         margin-top: calc(4rem + 45px);
         padding: 2rem;
-        min-height: calc(100lvh - (4rem + 45px));
+        min-height: calc(100dvh - (4rem + 45px));
         background: url(/assets/background/bg-3.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -28,11 +28,112 @@ main[data-barba-namespace="services"] {
         }
     }
 
+    .qualities {
+        padding: 130px 2rem 150px;
+        background-color: #F2F2F2;
+
+        .head {
+            margin: 0 auto;
+            max-width: 1296px;
+
+            h2 {
+                border-bottom: 1px solid #000;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+                font-family: "Coolvetica";
+                font-size: 60px;
+                line-height: 40px;
+            }
+
+            p {
+                font-family: "Sora";
+                font-size: 20px;
+            }
+        }
+
+        .top {
+            margin: 0 auto;
+            margin-top: 60px;
+            max-width: 1296px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .bottom {
+            margin: 0 auto;
+            margin-top: 10px;
+            max-width: 1296px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .box {
+            padding: 40px 30px;
+            background-color: #FFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: background-color 200ms ease-in-out;
+
+            &:hover {
+                background-color: #C5FF4A;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    margin-bottom: 5px;
+                    width: 100%;
+                    font-family: "Sora";
+                    font-size: 25px;
+                    font-weight: bolder;
+                    line-height: 30px;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: 20px;
+                    font-family: "Lato";
+                    line-height: 1.25;
+                }
+            }
+        }
+
+        .bottom .box {
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (max-width: 1160px) {
+        .qualities {
+            .top {
+                max-width: 600px;
+                grid-template-columns: unset;
+                grid-template-rows: auto;
+            }
+
+            .bottom {
+                max-width: 600px;
+                grid-template-columns: unset;
+                grid-template-rows: auto;
+            }
+        }
+    }
+
     @media screen and (max-width: 900px) {
         .hero {
             margin-top: calc(2rem + 45px);
             padding: 1rem;
-            min-height: calc(100lvh - (2rem + 45px));
+            min-height: calc(100dvh - (2rem + 45px));
+        }
+
+        .qualities {
+            padding: 130px 1rem 150px;
         }
     }
 }
