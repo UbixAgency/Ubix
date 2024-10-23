@@ -2,7 +2,7 @@ main[data-barba-namespace="services"] {
     .hero {
         margin-top: calc(4rem + 45px);
         padding: 2rem;
-        min-height: calc(100dvh - (4rem + 45px));
+        min-height: calc(100svh - (4rem + 45px));
         background: url(/assets/background/bg-3.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -76,11 +76,6 @@ main[data-barba-namespace="services"] {
             display: flex;
             align-items: center;
             gap: 20px;
-            transition: background-color 200ms ease-in-out;
-
-            &:hover {
-                background-color: #C5FF4A;
-            }
 
             .info {
                 display: flex;
@@ -129,7 +124,7 @@ main[data-barba-namespace="services"] {
         .hero {
             margin-top: calc(2rem + 45px);
             padding: 1rem;
-            min-height: calc(100dvh - (2rem + 45px));
+            min-height: calc(100svh - (2rem + 45px));
         }
 
         .qualities {

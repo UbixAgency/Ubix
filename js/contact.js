@@ -201,6 +201,33 @@ function initContactPage() {
     };
 
     next4.onclick = () => {
+        const emailInput = document.getElementById("emailInput");
+        const contactNumberInput = document.getElementById("contactNumberInput");
+
+        const emailValue = emailInput.value.trim();
+        const contactNumberValue = contactNumberInput.value.trim();
+
+        if (emailValue === "") {
+            emailInput.placeholder = "Email is required";
+            emailInput.classList.add("placeholder-red-500");
+            emailInput.classList.add("border-red-500");
+            return;
+        }
+
+        let contactData = JSON.parse(sessionStorage.getItem("contactData")) || {};
+
+        contactData.email = emailValue;
+
+        if (contactNumberValue !== "") {
+            contactData.contact_number = contactNumberValue;
+        }
+
+        sessionStorage.setItem("contactData", JSON.stringify(contactData));
+
+        emailInput.placeholder = "Your email address";
+        emailInput.classList.remove("placeholder-red-500");
+        emailInput.classList.remove("border-red-500");
+
         section5.style.top = "-100%";
         section6.style.top = "0";
         section6.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
@@ -208,14 +235,7 @@ function initContactPage() {
 
     next5.onclick = () => {
         sessionStorage.removeItem("contactData");
-
-        document.querySelector(".logo__btn").style.color = "#FFF";
-        document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        document.querySelector(".menu__btn").style.color = "#FFF";
-        document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-
-        section6.style.top = "100%";
-        section1.style.top = "0";
+        barba.go('/index.html');
     };
 
     back1.onclick = () => {
@@ -237,7 +257,7 @@ function initContactPage() {
         section3.style.top = "0";
         section4.style.top = "100%";
     };
-    
+
     back4.onclick = () => {
         section4.style.top = "0";
         section5.style.top = "100%";
