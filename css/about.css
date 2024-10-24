@@ -74,7 +74,8 @@ main[data-barba-namespace="about"] {
         display: flex;
         --gap: 30px;
         gap: var(--gap);
-        background-color: #C5FF4A;
+        background-color: #A8F600;
+        /* background-color: #C5FF4A; */
         overflow: hidden;
 
         ul {
@@ -158,7 +159,8 @@ main[data-barba-namespace="about"] {
                         width: 24px;
                         height: 24px;
                         border-radius: 50%;
-                        background: #C5FF4A;
+                        background: #A8F600;
+                        /* background: #C5FF4A; */
                         bottom: 0;
                         transform: translate(0px, 50%);
                         border: 4px solid #FFF;
