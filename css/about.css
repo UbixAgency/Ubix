@@ -11,6 +11,8 @@
 }
 
 main[data-barba-namespace="about"] {
+    overflow-x: hidden;
+
     #section1 {
         position: relative;
         height: 100svh;
@@ -82,7 +84,6 @@ main[data-barba-namespace="about"] {
         gap: var(--gap);
         background-color: #000;
         color: #C5FF4A;
-        overflow: hidden;
 
         ul {
             list-style: none;
