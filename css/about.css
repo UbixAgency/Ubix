@@ -55,9 +55,15 @@ main[data-barba-namespace="about"] {
 
         h3 {
             margin-bottom: 10px;
-            font-size: 40px;
+            font-size: 35px;
             font-family: "Recoleta", sans-serif;
             text-align: center;
+
+            span {
+                font-size: 40px;
+                font-family: "Gallery Modern";
+                font-weight: 600;
+            }
         }
 
         h1 {
@@ -74,8 +80,8 @@ main[data-barba-namespace="about"] {
         display: flex;
         --gap: 30px;
         gap: var(--gap);
-        background-color: #A8F600;
-        /* background-color: #C5FF4A; */
+        background-color: #000;
+        color: #C5FF4A;
         overflow: hidden;
 
         ul {
@@ -159,8 +165,7 @@ main[data-barba-namespace="about"] {
                         width: 24px;
                         height: 24px;
                         border-radius: 50%;
-                        background: #A8F600;
-                        /* background: #C5FF4A; */
+                        background: #C5FF4A;
                         bottom: 0;
                         transform: translate(0px, 50%);
                         border: 4px solid #FFF;

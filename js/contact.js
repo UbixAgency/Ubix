@@ -20,6 +20,7 @@ function initContactPage() {
 
     document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
     document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+    document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
 
     window.addEventListener("load", () => {
         sessionStorage.removeItem("contactData");
@@ -98,6 +99,9 @@ function initContactPage() {
         document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
         document.querySelector(".menu__btn").style.color = "#000";
         document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+        document.querySelector(".menu__itms").style.color = "#000";
+        document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+        document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-dark.png"), default');
 
         section1.style.top = "-100%";
         section2.style.top = "0";
@@ -243,6 +247,9 @@ function initContactPage() {
         document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
         document.querySelector(".menu__btn").style.color = "#FFF";
         document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelector(".menu__itms").style.color = "#FFF";
+        document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
 
         section2.style.top = "100%";
         section1.style.top = "0";
