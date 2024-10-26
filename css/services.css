@@ -28,8 +28,44 @@ main[data-barba-namespace="services"] {
         }
     }
 
+    .services {
+        position: relative;
+        padding: 130px 2rem;
+        background: url(/assets/background/bg-4.png);
+        background-attachment: fixed;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(242, 242, 242, 0), #F2F2F2);
+            pointer-events: none;
+        }
+
+        .top {
+            margin: 0 auto;
+            max-width: 1296px;
+
+            p {
+                width: 75%;
+                font-family: "Sora";
+                font-size: 20px;
+            }
+        }
+
+        .bottom {
+            margin: 0 auto;
+            padding-top: 60px;
+            max-width: 1296px;
+        }
+    }
+
     .qualities {
-        padding: 130px 2rem 150px;
+        padding: 0 2rem 130px;
+        position: relative;
         background-color: #F2F2F2;
 
         .head {
@@ -43,9 +79,14 @@ main[data-barba-namespace="services"] {
                 font-family: "Coolvetica";
                 font-size: 60px;
                 line-height: 40px;
+                color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+                letter-spacing: 3px;
             }
 
             p {
+                width: 75%;
                 font-family: "Sora";
                 font-size: 20px;
             }
@@ -104,11 +145,6 @@ main[data-barba-namespace="services"] {
         }
     }
 
-    .services {
-        background: url(/assets/background/bg-4.png);
-        background-attachment: fixed;
-    }
-
     @media screen and (max-width: 1160px) {
         .qualities {
             .top {
@@ -133,7 +169,16 @@ main[data-barba-namespace="services"] {
         }
 
         .qualities {
-            padding: 130px 1rem 150px;
+            padding: 0 1rem 130px;
+        }
+
+        .services {
+            padding: 130px 1rem;
+        }
+
+        .qualities .head p,
+        .services .top p {
+            width: 100%;
         }
     }
 }
