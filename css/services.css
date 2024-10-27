@@ -12,6 +12,7 @@ main[data-barba-namespace="services"] {
         color: #FFF;
         font-family: "Sora";
         font-size: 50px;
+        text-align: center;
 
         span {
             background-size: 100% 15%;
@@ -50,9 +51,8 @@ main[data-barba-namespace="services"] {
             max-width: 1296px;
 
             p {
-                width: 75%;
                 font-family: "Sora";
-                font-size: 20px;
+                font-size: 30px;
             }
         }
 
@@ -176,9 +176,12 @@ main[data-barba-namespace="services"] {
             padding: 130px 1rem;
         }
 
-        .qualities .head p,
-        .services .top p {
+        .qualities .head p {
             width: 100%;
+        }
+
+        .services .top p {
+            font-size: 20px;
         }
     }
 }

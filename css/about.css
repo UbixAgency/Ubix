@@ -16,9 +16,10 @@ main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
         height: 100svh;
-        animation: background-pan 10s linear infinite;
+        background: url(/assets/background/bg-5.png) repeat fixed;
+        /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
-        background-size: 200%;
+        background-size: 200%; */
 
         #tiles {
             width: calc(100vw - 1px);
@@ -128,8 +129,24 @@ main[data-barba-namespace="about"] {
 
     #section2 {
         margin: 0 auto;
+        max-width: 915px;
+        padding: 150px 2rem;
+
+        h2 {
+            font-family: "Lato";
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 72px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #0D0E10;
+        }
+    }
+
+    #section3 {
+        margin: 0 auto;
         max-width: 1296px;
-        padding: 130px 2rem 150px;
+        padding: 0 2rem 150px;
 
         h2 {
             font-family: "Coolvetica";
@@ -193,6 +210,10 @@ main[data-barba-namespace="about"] {
         #section1 {
             h3 {
                 font-size: 30px;
+
+                span {
+                    font-size: 35px;
+                }
             }
 
             h1 {
@@ -216,7 +237,16 @@ main[data-barba-namespace="about"] {
         }
 
         #section2 {
-            padding: 130px 1rem 150px;
+            padding: 150px 1rem;
+
+            h2 {
+                font-size: 30px;
+                line-height: 1.5;
+            }
+        }
+
+        #section3 {
+            padding: 0 1rem 150px;
 
             h2 {
                 font-size: 35px;
