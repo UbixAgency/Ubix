@@ -119,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
         prevent: ({ el }) => (el.href === window.location.href),
         transitions: [{
             enter(data) {
+                window.scrollTo(0, 0);
+
                 gsap.from(data.next.container, {
                     opacity: 0,
                     duration: 0.25,

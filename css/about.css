@@ -16,10 +16,26 @@ main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
         height: 100svh;
-        background: url(/assets/background/bg-5.png) repeat fixed;
+        /* background: url(/assets/background/bg-7.jpg) repeat fixed; */
         /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
         background-size: 200%; */
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            background: hsla(0, 0%, 99%, 0.7);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
         #tiles {
             width: calc(100vw - 1px);
@@ -122,9 +138,9 @@ main[data-barba-namespace="about"] {
             }
         }
 
-        &:hover ul {
+        /* &:hover ul {
             animation-play-state: paused;
-        }
+        } */
     }
 
     #section2 {
