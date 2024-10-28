@@ -1,4 +1,187 @@
 main[data-barba-namespace="services"] {
-    height: 100dvh;
-    overflow: hidden;
+    .hero {
+        margin-top: calc(4rem + 45px);
+        padding: 2rem;
+        min-height: calc(100svh - (4rem + 45px));
+        background: url(/assets/background/bg-3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        place-content: center;
+        color: #FFF;
+        font-family: "Sora";
+        font-size: 50px;
+        text-align: center;
+
+        span {
+            background-size: 100% 15%;
+            background-repeat: repeat-x;
+            background-position: left 0% bottom 0%;
+        }
+
+        span:first-child {
+            background-image: linear-gradient(179deg, #C5FF4A 0%, #C5FF4A 50%, transparent 54%, transparent 100%);
+        }
+
+        span:last-child {
+            background-image: linear-gradient(181deg, #C5FF4A 0%, #C5FF4A 50%, transparent 54%, transparent 100%);
+        }
+    }
+
+    .services {
+        position: relative;
+        padding: 130px 2rem;
+        background: url(/assets/background/bg-4.png);
+        background-attachment: fixed;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(242, 242, 242, 0), #F2F2F2);
+            pointer-events: none;
+        }
+
+        .top {
+            margin: 0 auto;
+            max-width: 1296px;
+
+            p {
+                font-family: "Sora";
+                font-size: 30px;
+            }
+        }
+
+        .bottom {
+            margin: 0 auto;
+            padding-top: 60px;
+            max-width: 1296px;
+        }
+    }
+
+    .qualities {
+        padding: 0 2rem 130px;
+        position: relative;
+        background-color: #F2F2F2;
+
+        .head {
+            margin: 0 auto;
+            max-width: 1296px;
+
+            h2 {
+                border-bottom: 1px solid #000;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+                font-family: "Coolvetica";
+                font-size: 60px;
+                line-height: 40px;
+                color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+                letter-spacing: 3px;
+            }
+
+            p {
+                width: 75%;
+                font-family: "Sora";
+                font-size: 20px;
+            }
+        }
+
+        .top {
+            margin: 0 auto;
+            margin-top: 60px;
+            max-width: 1296px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .bottom {
+            margin: 0 auto;
+            margin-top: 10px;
+            max-width: 1296px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .box {
+            padding: 40px 30px;
+            background-color: #FFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .info {
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    margin-bottom: 5px;
+                    width: 100%;
+                    font-family: "Sora";
+                    font-size: 25px;
+                    font-weight: bolder;
+                    line-height: 30px;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: 20px;
+                    font-family: "Lato";
+                    line-height: 1.25;
+                }
+            }
+        }
+
+        .bottom .box {
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (max-width: 1160px) {
+        .qualities {
+            .top {
+                max-width: 600px;
+                grid-template-columns: unset;
+                grid-template-rows: auto;
+            }
+
+            .bottom {
+                max-width: 600px;
+                grid-template-columns: unset;
+                grid-template-rows: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .hero {
+            margin-top: calc(2rem + 45px);
+            padding: 1rem;
+            min-height: calc(100svh - (2rem + 45px));
+        }
+
+        .qualities {
+            padding: 0 1rem 130px;
+        }
+
+        .services {
+            padding: 130px 1rem;
+        }
+
+        .qualities .head p {
+            width: 100%;
+        }
+
+        .services .top p {
+            font-size: 20px;
+        }
+    }
 }

@@ -4,19 +4,23 @@ function initContactPage() {
     const section3 = document.getElementById("section3");
     const section4 = document.getElementById("section4");
     const section5 = document.getElementById("section5");
+    const section6 = document.getElementById("section6");
 
     const next0 = document.getElementById("next0");
     const next1 = document.getElementById("next1");
     const next2 = document.getElementById("next2");
     const next3 = document.getElementById("next3");
     const next4 = document.getElementById("next4");
+    const next5 = document.getElementById("next5");
 
     const back1 = document.getElementById("back1");
     const back2 = document.getElementById("back2");
     const back3 = document.getElementById("back3");
+    const back4 = document.getElementById("back4");
 
     document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
     document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+    document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
 
     window.addEventListener("load", () => {
         sessionStorage.removeItem("contactData");
@@ -95,6 +99,9 @@ function initContactPage() {
         document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
         document.querySelector(".menu__btn").style.color = "#000";
         document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+        document.querySelector(".menu__itms").style.color = "#000";
+        document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+        document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-dark.png"), default');
 
         section1.style.top = "-100%";
         section2.style.top = "0";
@@ -198,15 +205,41 @@ function initContactPage() {
     };
 
     next4.onclick = () => {
+        const emailInput = document.getElementById("emailInput");
+        const contactNumberInput = document.getElementById("contactNumberInput");
+
+        const emailValue = emailInput.value.trim();
+        const contactNumberValue = contactNumberInput.value.trim();
+
+        if (emailValue === "") {
+            emailInput.placeholder = "Email is required";
+            emailInput.classList.add("placeholder-red-500");
+            emailInput.classList.add("border-red-500");
+            return;
+        }
+
+        let contactData = JSON.parse(sessionStorage.getItem("contactData")) || {};
+
+        contactData.email = emailValue;
+
+        if (contactNumberValue !== "") {
+            contactData.contact_number = contactNumberValue;
+        }
+
+        sessionStorage.setItem("contactData", JSON.stringify(contactData));
+
+        emailInput.placeholder = "Your email address";
+        emailInput.classList.remove("placeholder-red-500");
+        emailInput.classList.remove("border-red-500");
+
+        section5.style.top = "-100%";
+        section6.style.top = "0";
+        section6.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
+    };
+
+    next5.onclick = () => {
         sessionStorage.removeItem("contactData");
-
-        document.querySelector(".logo__btn").style.color = "#FFF";
-        document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        document.querySelector(".menu__btn").style.color = "#FFF";
-        document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-
-        section5.style.top = "100%";
-        section1.style.top = "0";
+        barba.go('/index.html');
     };
 
     back1.onclick = () => {
@@ -214,6 +247,9 @@ function initContactPage() {
         document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
         document.querySelector(".menu__btn").style.color = "#FFF";
         document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelector(".menu__itms").style.color = "#FFF";
+        document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
+        document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
 
         section2.style.top = "100%";
         section1.style.top = "0";
@@ -227,6 +263,11 @@ function initContactPage() {
     back3.onclick = () => {
         section3.style.top = "0";
         section4.style.top = "100%";
+    };
+
+    back4.onclick = () => {
+        section4.style.top = "0";
+        section5.style.top = "100%";
     };
 }
 

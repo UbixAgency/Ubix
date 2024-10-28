@@ -97,27 +97,55 @@ input {
     left: 0;
     z-index: -1;
     opacity: 0;
-    padding: 2rem;
     display: flex;
     justify-content: space-between;
     cursor: url("/assets/cursor/default-dark.png"), default;
+    pointer-events: none;
 }
 
 .navbar .logo__btn {
+    padding: 2rem;
     font-size: 30px;
     font-family: "Gallery Modern";
     font-weight: 600;
     transition: opacity 200ms ease-in;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
+    pointer-events: fill;
+}
+
+.navbar .menu__itms {
+    height: fit-content;
+    padding: 2rem;
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+    font-family: "Recoleta";
+
+    a {
+        height: fit-content;
+        pointer-events: fill;
+    }
 }
 
 .navbar .menu__btn {
+    padding: 2rem;
+    display: none;
     font-size: 30px;
     font-family: "Recoleta";
+    pointer-events: fill;
 }
 
 @media screen and (max-width: 900px) {
-    .navbar {
+    .navbar .logo__btn {
         padding: 1rem;
+    }
+
+    .navbar .menu__itms {
+        display: none;
+    }
+
+    .navbar .menu__btn {
+        padding: 1rem;
+        display: block;
     }
 }

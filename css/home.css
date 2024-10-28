@@ -203,8 +203,8 @@ main[data-barba-namespace="home"] {
 
     footer .contact-1 a {
         display: block;
-        height: 30px;
-        font-size: 22px;
+        font-size: 30px;
+        line-height: 1;
         font-weight: bold;
     }
 
@@ -255,6 +255,10 @@ main[data-barba-namespace="home"] {
             bottom: 1rem;
         }
 
+        footer .contact-1 a {
+            font-size: 25px;
+        }
+
         footer .contact-2 {
             right: 1rem;
             bottom: 1rem;
@@ -274,6 +278,10 @@ main[data-barba-namespace="home"] {
     @media screen and (max-width: 480px) {
         #title {
             font-size: 32px;
+        }
+
+        footer .contact-1 a {
+            font-size: 22px;
         }
 
         footer .contact-2 a:first-child {

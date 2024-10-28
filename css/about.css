@@ -11,16 +11,35 @@
 }
 
 main[data-barba-namespace="about"] {
+    overflow-x: hidden;
+
     #section1 {
         position: relative;
         height: 100svh;
-        animation: background-pan 10s linear infinite;
+        /* background: url(/assets/background/bg-7.jpg) repeat fixed; */
+        /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
-        background-size: 200%;
+        background-size: 200%; */
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            background: hsla(0, 0%, 99%, 0.7);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
         #tiles {
             width: calc(100vw - 1px);
-            height: calc(100svh - 1px);
+            height: calc(100% - 1px);
             position: relative;
             display: grid;
             grid-template-columns: repeat(var(--columns), 1fr);
@@ -54,10 +73,16 @@ main[data-barba-namespace="about"] {
         }
 
         h3 {
-            margin-bottom: 15px;
-            font-size: 28px;
+            margin-bottom: 10px;
+            font-size: 35px;
             font-family: "Recoleta", sans-serif;
             text-align: center;
+
+            span {
+                font-size: 40px;
+                font-family: "Gallery Modern";
+                font-weight: 600;
+            }
         }
 
         h1 {
@@ -74,8 +99,8 @@ main[data-barba-namespace="about"] {
         display: flex;
         --gap: 30px;
         gap: var(--gap);
-        background-color: #C5FF4A;
-        overflow: hidden;
+        background-color: #000;
+        color: #C5FF4A;
 
         ul {
             list-style: none;
@@ -113,15 +138,31 @@ main[data-barba-namespace="about"] {
             }
         }
 
-        &:hover ul {
+        /* &:hover ul {
             animation-play-state: paused;
-        }
+        } */
     }
 
     #section2 {
         margin: 0 auto;
+        max-width: 915px;
+        padding: 150px 2rem;
+
+        h2 {
+            font-family: "Lato";
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 72px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #0D0E10;
+        }
+    }
+
+    #section3 {
+        margin: 0 auto;
         max-width: 1296px;
-        padding: 130px 2rem 150px;
+        padding: 0 2rem 150px;
 
         h2 {
             font-family: "Coolvetica";
@@ -158,7 +199,7 @@ main[data-barba-namespace="about"] {
                         width: 24px;
                         height: 24px;
                         border-radius: 50%;
-                        background: #000;
+                        background: #C5FF4A;
                         bottom: 0;
                         transform: translate(0px, 50%);
                         border: 4px solid #FFF;
@@ -182,8 +223,18 @@ main[data-barba-namespace="about"] {
     }
 
     @media screen and (max-width: 900px) {
-        #section1 h1 {
-            font-size: 35px;
+        #section1 {
+            h3 {
+                font-size: 30px;
+
+                span {
+                    font-size: 35px;
+                }
+            }
+
+            h1 {
+                font-size: 35px;
+            }
         }
 
         .marquee {
@@ -202,7 +253,16 @@ main[data-barba-namespace="about"] {
         }
 
         #section2 {
-            padding: 130px 1rem 150px;
+            padding: 150px 1rem;
+
+            h2 {
+                font-size: 30px;
+                line-height: 1.5;
+            }
+        }
+
+        #section3 {
+            padding: 0 1rem 150px;
 
             h2 {
                 font-size: 35px;

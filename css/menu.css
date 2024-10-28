@@ -1,7 +1,6 @@
 header {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: none;
 }
 
 .header__nav {
@@ -24,7 +23,7 @@ header {
 }
 
 .header__menu {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: grid;
     justify-content: center;
@@ -42,34 +41,17 @@ header {
     font-size: 24px;
 }
 
-.contact .about {
-    font-family: "PP Editorial Old", sans-serif;
-    font-size: 80px;
-}
-
-.contact .info {
-    font-family: Helvetica, sans-serif;
-}
-
-.mail {
-    margin-bottom: 60px;
-}
-
 .header__menu-item a {
     font-weight: 300;
     color: #000;
 }
 
 @media screen and (max-width: 900px) {
+    header {
+        display: block;
+    }
+
     .header__menu .header__menu-item {
         font-size: 70px;
-    }
-
-    .header__menu:first-child {
-        width: 100%;
-    }
-
-    .header__menu:last-child {
-        display: none;
     }
 }

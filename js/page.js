@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
         startTouchY = event.touches[0].clientY;
     }
 
-    document.addEventListener("wheel", handleScroll);
-    document.addEventListener("touchstart", handleTouchStart);
-    document.addEventListener("touchmove", handleScroll);
+    // document.addEventListener("wheel", handleScroll);
+    // document.addEventListener("touchstart", handleTouchStart);
+    // document.addEventListener("touchmove", handleScroll);
 
     window.addEventListener("popstate", () => {
         const pageIndex = pages.findIndex(url => url === window.location.pathname);
@@ -100,11 +100,27 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPageIndex = initialPageIndex;
     }
 
+    const navLinks = document.querySelectorAll(".menu__itms a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const targetLink = event.target.getAttribute("href");
+            const currentPage = window.location.pathname.split("/").pop();
+
+            if (targetLink !== currentPage) {
+                barba.go(targetLink);
+            }
+        });
+    });
+
     barba.init({
         sync: true,
         prevent: ({ el }) => (el.href === window.location.href),
         transitions: [{
             enter(data) {
+                window.scrollTo(0, 0);
+
                 gsap.from(data.next.container, {
                     opacity: 0,
                     duration: 0.25,
@@ -121,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
                 document.querySelector(".menu__btn").style.color = "#000";
                 document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
+                document.querySelector(".menu__itms").style.color = "#000";
+                document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-dark.png"), default');
 
                 const namespace = data.next.namespace;
                 if (namespace === "home") {
@@ -142,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector(".navbar").style.cursor = 'url("/assets/cursor/default-light.png"), default';
                     document.querySelector(".logo__btn").style.color = "#FFF";
                     document.querySelector(".menu__btn").style.color = "#FFF";
+                    document.querySelector(".menu__itms").style.color = "#FFF";
                     loadScript("js/contact.js", function () {
                         initContactPage();
                     });
