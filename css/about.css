@@ -16,7 +16,7 @@ main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
         height: 100svh;
-        /* background: url(/assets/background/bg-7.jpg) repeat fixed; */
+        /* background: url(/assets/background/bg-7.jpg) fixed; */
         /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
         background-size: 200%; */
