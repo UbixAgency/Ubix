@@ -25,7 +25,18 @@ main[data-barba-namespace="contact"] {
     }
 
     #section1 {
+        position: relative;
+        margin: 0 auto;
+        margin-top: calc(4rem + 45px);
+        margin-bottom: 2rem;
+        padding: 2rem;
+        width: calc(100vw - 4rem);
+        height: calc(100svh - (6rem + 45px));
+        border-radius: 20px;
         background-color: #111111;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
     }
 
     #section2,
@@ -50,14 +61,24 @@ main[data-barba-namespace="contact"] {
     }
 
     @media screen and (max-width: 900px) {
-        .hero-marquee {
-            font-size: 4rem;
+        #section1 {
+            margin-top: calc(2rem + 45px);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            width: calc(100vw - 2rem);
+            min-height: calc(100svh - (3rem + 45px));
+
+            .hero-marquee {
+                font-size: 4rem;
+            }
         }
     }
 
     @media screen and (max-width: 480px) {
-        .hero-marquee {
-            font-size: 32px;
+        #section1 {
+            .hero-marquee {
+                font-size: 32px;
+            }
         }
     }
 }
