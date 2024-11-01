@@ -16,10 +16,10 @@ main[data-barba-namespace="about"] {
     #section1 {
         position: relative;
         margin: 0 auto;
-        margin-top: calc(4rem + 45px);
+        margin-top: calc(4rem + 30px);
         padding: 2rem;
         width: calc(100vw - 4rem);
-        min-height: calc(100svh - (6rem + 45px));
+        min-height: calc(100svh - (6rem + 30px));
         background-image: url(/assets/background/bg-9.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -221,10 +221,10 @@ main[data-barba-namespace="about"] {
 
     @media screen and (max-width: 900px) {
         #section1 {
-            margin-top: calc(2rem + 45px);
+            margin-top: calc(2rem + 30px);
             padding: 1rem;
             width: calc(100vw - 2rem);
-            min-height: calc(100svh - (3rem + 45px));
+            min-height: calc(100svh - (3rem + 30px));
 
             .hero {
                 padding: 1rem;
