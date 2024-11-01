@@ -108,7 +108,7 @@ input {
     font-size: 30px;
     font-family: "Gallery Modern";
     font-weight: 600;
-    transition: opacity 200ms ease-in;
+    line-height: 1;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
     pointer-events: fill;
 }
@@ -122,7 +122,7 @@ input {
     font-family: "Recoleta";
 
     a {
-        height: fit-content;
+        line-height: 1;
         pointer-events: fill;
     }
 }
@@ -132,6 +132,7 @@ input {
     display: none;
     font-size: 30px;
     font-family: "Recoleta";
+    line-height: 1;
     pointer-events: fill;
 }
 

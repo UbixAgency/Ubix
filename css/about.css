@@ -15,27 +15,20 @@ main[data-barba-namespace="about"] {
 
     #section1 {
         position: relative;
-        height: 100svh;
-        /* background: url(/assets/background/bg-7.jpg) repeat fixed; */
+        margin: 0 auto;
+        margin-top: calc(4rem + 30px);
+        padding: 2rem;
+        width: calc(100vw - 4rem);
+        min-height: calc(100svh - (6rem + 30px));
+        background-image: url(/assets/background/bg-9.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        /* background: hsla(0, 0%, 99%, 0.7); */
         /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
         background-size: 200%; */
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        &::before {
-            background: hsla(0, 0%, 99%, 0.7);
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
 
         #tiles {
             width: calc(100vw - 1px);
@@ -62,6 +55,7 @@ main[data-barba-namespace="about"] {
         }
 
         .hero {
+            padding: 2rem;
             position: absolute;
             top: 0;
             left: 0;
@@ -77,6 +71,7 @@ main[data-barba-namespace="about"] {
             font-size: 35px;
             font-family: "Recoleta", sans-serif;
             text-align: center;
+            color: #FFF;
 
             span {
                 font-size: 40px;
@@ -91,10 +86,12 @@ main[data-barba-namespace="about"] {
             text-align: center;
             line-height: 1.2;
             font-weight: 600;
+            color: #FFF;
         }
     }
 
     .marquee {
+        margin-top: 2rem;
         padding: 10px 0;
         display: flex;
         --gap: 30px;
@@ -224,20 +221,31 @@ main[data-barba-namespace="about"] {
 
     @media screen and (max-width: 900px) {
         #section1 {
-            h3 {
-                font-size: 30px;
+            margin-top: calc(2rem + 30px);
+            padding: 1rem;
+            width: calc(100vw - 2rem);
+            min-height: calc(100svh - (3rem + 30px));
 
-                span {
+            .hero {
+                padding: 1rem;
+
+                h3 {
+                    font-size: 30px;
+
+                    span {
+                        font-size: 35px;
+                    }
+                }
+
+                h1 {
                     font-size: 35px;
                 }
-            }
-
-            h1 {
-                font-size: 35px;
             }
         }
 
         .marquee {
+            margin-top: 1rem;
+
             ul {
                 li {
                     &::before {
@@ -282,6 +290,18 @@ main[data-barba-namespace="about"] {
                         max-width: 100%;
                         font-size: 18px;
                     }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        #section1 {
+            .hero {
+
+                h3,
+                h1 {
+                    text-align: unset;
                 }
             }
         }

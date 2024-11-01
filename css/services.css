@@ -1,12 +1,18 @@
 main[data-barba-namespace="services"] {
+    background: url(/assets/background/bg-4.png);
+    background-attachment: fixed;
+
     .hero {
-        margin-top: calc(4rem + 45px);
+        margin: 0 auto;
+        margin-top: calc(4rem + 30px);
         padding: 2rem;
-        min-height: calc(100svh - (4rem + 45px));
-        background: url(/assets/background/bg-3.png);
+        width: calc(100vw - 4rem);
+        min-height: calc(100svh - (6rem + 30px));
+        background-image: url(/assets/background/bg-3.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        border-radius: 20px;
         display: grid;
         place-content: center;
         color: #FFF;
@@ -32,8 +38,8 @@ main[data-barba-namespace="services"] {
     .services {
         position: relative;
         padding: 130px 2rem;
-        background: url(/assets/background/bg-4.png);
-        background-attachment: fixed;
+        /* background: url(/assets/background/bg-4.png);
+        background-attachment: fixed; */
 
         &::after {
             content: "";
@@ -163,9 +169,12 @@ main[data-barba-namespace="services"] {
 
     @media screen and (max-width: 900px) {
         .hero {
-            margin-top: calc(2rem + 45px);
+            margin-top: calc(2rem + 30px);
             padding: 1rem;
-            min-height: calc(100svh - (2rem + 45px));
+            width: calc(100vw - 2rem);
+            min-height: calc(100svh - (3rem + 30px));
+            font-size: 45px;
+            text-align: unset;
         }
 
         .qualities {

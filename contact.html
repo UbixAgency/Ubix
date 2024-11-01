@@ -25,16 +25,17 @@
 </head>
 
 <body data-barba="wrapper">
-    <div class="navbar" style="cursor: url('/assets/cursor/default-light.png'), default">
-        <a href="/index.html" class="logo__btn" style="color: #FFF;">UBIX</a>
-        <nav class="menu__itms" style="color: #FFF;">
+    <!-- <div class="navbar" style="cursor: url('/assets/cursor/default-light.png'), default; color: #FFF;"> -->
+    <div class="navbar">
+        <a href="/index.html" class="logo__btn">UBIX</a>
+        <div class="menu__itms">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="team.html">Team</a>
             <a href="contact.html">Contact</a>
-        </nav>
-        <button class="menu__btn" type="button" style="color: #FFF;">menu</button>
+        </div>
+        <button class="menu__btn">menu</button>
     </div>
 
     <div id="loader-container"></div>
@@ -56,20 +57,19 @@
     </script>
 
     <main data-barba="container" data-barba-namespace="contact">
-        <section id="section1" class="h-[100dvh] w-screen overflow-auto">
-            <div class="relative flex items-center justify-center w-full h-[100dvh] overflow-hidden">
-                <video id="video" class="w-full h-full" autoplay loop muted>
-                    <source src="./assets/video/cube.mp4" type="video/mp4" />
-                </video>
+        <section id="section1">
+            <video id="video" class="w-full h-full object-contain" autoplay loop muted>
+                <source src="./assets/video/cube.mp4" type="video/mp4" />
+            </video>
 
-                <div id="content" class="hero-marquee">
-                    Any project in mind
-                </div>
+            <div id="content" class="hero-marquee">
+                Any project in mind
             </div>
+
             <div id="content"
-                class="absolute w-screen bottom-0 p-[1rem] md:p-20 flex gap-8 flex-col md:flex-row md:items-end justify-between">
+                class="absolute w-full bottom-0 p-[1rem] md:p-[2rem] flex gap-8 flex-col md:flex-row md:items-end justify-between">
                 <div>
-                    <p class="text-lg text-center md:text-left text-gray-500 pb-2">
+                    <p class="pb-1 text-lg text-center md:text-left text-gray-500">
                         Tell us with that you're looking to achieve
                     </p>
                     <div class="w-fit mx-auto md:mx-0">
@@ -78,9 +78,9 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:ml-auto">
-                    <p class="text-lg text-center md:text-right text-gray-500">Contact us directly</p>
+                    <p class="pb-1 text-lg text-center md:text-right text-gray-500">Contact us directly</p>
                     <a href="tel:+918910503408" class="text-lg text-center md:text-right text-white">+91 89105 03408</a>
-                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ubix.agency@gmail.com"
+                    <a href="mailto:ubix.agency@gmail.com?bcc=im.shubhamlal@gmail.com,im.pratikprasad@gmail.com&subject=Project%20Discussion&body=Hello%20Ubix%20team!"
                         target="_blank" rel="noopener noreferrer"
                         class="text-lg text-center md:text-right text-white">ubix.agency@gmail.com</a>
                 </div>
