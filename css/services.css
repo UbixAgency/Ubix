@@ -19,6 +19,7 @@ main[data-barba-namespace="services"] {
         font-family: "Sora";
         font-size: 50px;
         text-align: center;
+        cursor: url("/assets/cursor/default-light.png"), default;
 
         span {
             background-size: 100% 15%;
@@ -91,7 +92,7 @@ main[data-barba-namespace="services"] {
             -ms-flex-preferred-size: calc(33.33333% - 30px);
             flex-basis: calc(33.33333% - 30px);
             overflow: hidden;
-            /* border-radius: 20px; */
+            cursor: url("/assets/cursor/default-light.png"), default;
         }
 
         .services-item_link {

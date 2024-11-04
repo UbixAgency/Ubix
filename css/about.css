@@ -25,6 +25,7 @@ main[data-barba-namespace="about"] {
         background-size: cover;
         background-position: center;
         border-radius: 20px;
+        cursor: url("/assets/cursor/default-light.png"), default;
         /* background: hsla(0, 0%, 99%, 0.7); */
         /* animation: background-pan 10s linear infinite;
         background: linear-gradient(to right, #B5FFFC, #FFDEE9, #B5FFFC);
@@ -98,6 +99,7 @@ main[data-barba-namespace="about"] {
         gap: var(--gap);
         background-color: #000;
         color: #C5FF4A;
+        cursor: url("/assets/cursor/default-light.png"), default;
 
         ul {
             list-style: none;
