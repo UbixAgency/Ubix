@@ -18,10 +18,6 @@ function initContactPage() {
     const back3 = document.getElementById("back3");
     const back4 = document.getElementById("back4");
 
-    // document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-    // document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-    // document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
-
     window.addEventListener("load", () => {
         sessionStorage.removeItem("contactData");
 
@@ -95,14 +91,6 @@ function initContactPage() {
     };
 
     next0.onclick = () => {
-        // document.querySelector(".logo__btn").style.color = "#000";
-        // document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-        // document.querySelector(".menu__btn").style.color = "#000";
-        // document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-        // document.querySelector(".menu__itms").style.color = "#000";
-        // document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-        // document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-dark.png"), default');
-
         section1.style.top = "-100%";
         section2.style.top = "0";
         section2.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
@@ -205,6 +193,10 @@ function initContactPage() {
     };
 
     next4.onclick = () => {
+        if (next4.disabled) return;
+
+        const continueText = document.getElementById("continueText");
+        const loadingSpinner = document.getElementById("loadingSpinner");
         const emailInput = document.getElementById("emailInput");
         const contactNumberInput = document.getElementById("contactNumberInput");
 
@@ -213,28 +205,43 @@ function initContactPage() {
 
         if (emailValue === "") {
             emailInput.placeholder = "Email is required";
-            emailInput.classList.add("placeholder-red-500");
-            emailInput.classList.add("border-red-500");
+            emailInput.classList.add("placeholder-red-500", "border-red-500");
             return;
         }
 
+        continueText.classList.add("hidden");
+        loadingSpinner.classList.remove("hidden");
+        next4.disabled = true;
+
         let contactData = JSON.parse(sessionStorage.getItem("contactData")) || {};
-
         contactData.email = emailValue;
-
         if (contactNumberValue !== "") {
-            contactData.contact_number = contactNumberValue;
+            contactData.contact = contactNumberValue;
         }
-
         sessionStorage.setItem("contactData", JSON.stringify(contactData));
 
-        emailInput.placeholder = "Your email address";
-        emailInput.classList.remove("placeholder-red-500");
-        emailInput.classList.remove("border-red-500");
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyctb__OlvxhHP1ZavR3YTAMKXVQfwVejO7GCIvnrQ5lF-o6-h8u3bAsJamHXmJTtLiBg/exec';
+        const formData = new FormData();
+        for (let key in contactData) {
+            formData.append(key, contactData[key]);
+        }
 
-        section5.style.top = "-100%";
-        section6.style.top = "0";
-        section6.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                continueText.classList.remove("hidden");
+                loadingSpinner.classList.add("hidden");
+                next4.disabled = false;
+
+                section5.style.top = "-100%";
+                section6.style.top = "0";
+                section6.style.cursor = 'url("/assets/cursor/default-dark.png"), default';
+            })
+            .catch(error => {
+                continueText.classList.remove("hidden");
+                loadingSpinner.classList.add("hidden");
+                next4.disabled = false;
+                alert("Failed to submit the form! Please try again later.");
+            });
     };
 
     next5.onclick = () => {
@@ -243,14 +250,6 @@ function initContactPage() {
     };
 
     back1.onclick = () => {
-        // document.querySelector(".logo__btn").style.color = "#FFF";
-        // document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        // document.querySelector(".menu__btn").style.color = "#FFF";
-        // document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        // document.querySelector(".menu__itms").style.color = "#FFF";
-        // document.querySelector(".menu__itms").style.cursor = 'url("/assets/cursor/pointer-light.png"), default';
-        // document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-light.png"), default');
-
         section2.style.top = "100%";
         section1.style.top = "0";
     };

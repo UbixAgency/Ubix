@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
         startTouchY = event.touches[0].clientY;
     }
 
-    // document.addEventListener("wheel", handleScroll);
-    // document.addEventListener("touchstart", handleTouchStart);
-    // document.addEventListener("touchmove", handleScroll);
+    document.addEventListener("wheel", handleScroll);
+    document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchmove", handleScroll);
 
     window.addEventListener("popstate", () => {
         const pageIndex = pages.findIndex(url => url === window.location.pathname);
@@ -132,35 +132,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-                // document.querySelector(".navbar").style.cursor = 'url("/assets/cursor/default-dark.png"), default';
-                // document.querySelector(".logo__btn").style.color = "#000";
-                // document.querySelector(".logo__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-                // document.querySelector(".menu__btn").style.color = "#000";
-                // document.querySelector(".menu__btn").style.cursor = 'url("/assets/cursor/pointer-dark.png"), default';
-                // document.querySelector(".menu__itms").style.color = "#000";
-                // document.querySelectorAll(".menu__itms a").forEach(itm => itm.style.cursor = 'url("/assets/cursor/pointer-dark.png"), default');
-
                 const namespace = data.next.namespace;
                 if (namespace === "home") {
                     loadScript("js/home.js", function () {
                         initHomePage();
                     });
                 }
-                // else if (namespace === "about") {
-                //     loadScript("js/about.js", function () {
-                //         initAboutPage();
-                //     });
-                // }
                 else if (namespace === "team") {
                     loadScript("js/team.js", function () {
                         initTeamPage();
                     });
                 }
                 else if (namespace === "contact") {
-                    // document.querySelector(".navbar").style.cursor = 'url("/assets/cursor/default-light.png"), default';
-                    // document.querySelector(".logo__btn").style.color = "#FFF";
-                    // document.querySelector(".menu__btn").style.color = "#FFF";
-                    // document.querySelector(".menu__itms").style.color = "#FFF";
                     loadScript("js/contact.js", function () {
                         initContactPage();
                     });

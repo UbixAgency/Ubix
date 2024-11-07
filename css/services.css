@@ -19,6 +19,7 @@ main[data-barba-namespace="services"] {
         font-family: "Sora";
         font-size: 50px;
         text-align: center;
+        cursor: url("/assets/cursor/default-light.png"), default;
 
         span {
             background-size: 100% 15%;
@@ -41,17 +42,6 @@ main[data-barba-namespace="services"] {
         /* background: url(/assets/background/bg-4.png);
         background-attachment: fixed; */
 
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to bottom, rgba(242, 242, 242, 0), #F2F2F2);
-            pointer-events: none;
-        }
-
         .top {
             margin: 0 auto;
             max-width: 1296px;
@@ -66,6 +56,107 @@ main[data-barba-namespace="services"] {
             margin: 0 auto;
             padding-top: 60px;
             max-width: 1296px;
+        }
+    }
+
+    .format-container {
+        position: relative;
+        padding: 0 2rem 130px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(242, 242, 242, 0), #F2F2F2);
+            pointer-events: none;
+        }
+
+        .services_box {
+            margin: 0 auto;
+            max-width: 1296px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .services_item {
+            -ms-flex-preferred-size: calc(33.33333% - 30px);
+            flex-basis: calc(33.33333% - 30px);
+            overflow: hidden;
+            cursor: url("/assets/cursor/default-light.png"), default;
+        }
+
+        .services-item_link {
+            display: block;
+            padding: 30px 20px;
+            background-color: #121212;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .services-item_link:hover {
+            text-decoration: none;
+        }
+
+        .services-item_link:hover .services-item_bg {
+            -webkit-transform: scale(10);
+            -ms-transform: scale(10);
+            transform: scale(10);
+        }
+
+        .services-item_title {
+            min-height: 87px;
+            margin: 0 0 25px;
+            overflow: hidden;
+            font-family: "Neue Montreal";
+            font-weight: bold;
+            font-size: 30px;
+            color: #FFF;
+            z-index: 2;
+            position: relative;
+        }
+
+        .services-item_bg {
+            height: 128px;
+            width: 128px;
+            background-color: #f9b234;
+            z-index: 1;
+            position: absolute;
+            top: -75px;
+            right: -75px;
+            border-radius: 50%;
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+        }
+
+        .services_item:nth-child(2n) .services-item_bg {
+            background-color: #3ecd5e;
+        }
+
+        .services_item:nth-child(3n) .services-item_bg {
+            background-color: #e44002;
+        }
+
+        .services_item:nth-child(4n) .services-item_bg {
+            background-color: #952aff;
+        }
+
+        .services_item:nth-child(5n) .services-item_bg {
+            background-color: #cd3e94;
+        }
+
+        .services_item:nth-child(6n) .services-item_bg {
+            background-color: #4c49ea;
         }
     }
 
@@ -167,6 +258,19 @@ main[data-barba-namespace="services"] {
         }
     }
 
+    @media only screen and (max-width: 979px) {
+        .format-container {
+            .services_item {
+                -ms-flex-preferred-size: calc(50% - 30px);
+                flex-basis: calc(50% - 30px);
+            }
+
+            .services-item_title {
+                font-size: 24px;
+            }
+        }
+    }
+
     @media screen and (max-width: 900px) {
         .hero {
             margin-top: calc(2rem + 30px);
@@ -181,6 +285,10 @@ main[data-barba-namespace="services"] {
             padding: 0 1rem 130px;
         }
 
+        .format-container {
+            padding: 0 1rem 130px;
+        }
+
         .services {
             padding: 130px 1rem;
         }
@@ -191,6 +299,25 @@ main[data-barba-namespace="services"] {
 
         .services .top p {
             font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 639px) {
+        .format-container {
+            .services_item {
+                -ms-flex-preferred-size: 100%;
+                flex-basis: 100%;
+            }
+
+            .services-item_title {
+                min-height: 72px;
+                line-height: 1;
+                font-size: 24px;
+            }
+
+            .services-item_link {
+                padding: 22px 40px;
+            }
         }
     }
 }

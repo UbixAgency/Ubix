@@ -1,3 +1,9 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 main[data-barba-namespace="contact"] {
     overflow: hidden;
 
@@ -58,6 +64,10 @@ main[data-barba-namespace="contact"] {
         font-size: 5rem;
         color: #FFF;
         text-align: center;
+    }
+
+    .animate-spin {
+        animation: spin 0.6s linear infinite;
     }
 
     @media screen and (max-width: 900px) {
