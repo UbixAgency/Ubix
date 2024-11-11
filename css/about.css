@@ -310,7 +310,6 @@ main[data-barba-namespace="about"] {
     }
 }
 
-
 main[data-barba-namespace="about"].toggled #section1 #tiles .tile:hover {
     background-color: rgb(30, 30, 30);
     opacity: 0.1 !important;

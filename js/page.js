@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function removePageSpecificScripts() {
-        ["js/home.js", "js/about.js", "js/team.js", "js/contact.js"].forEach(removeScript);
+        ["js/home.js", "js/team.js", "js/contact.js"].forEach(removeScript);
     }
 
     function removeScript(src) {
