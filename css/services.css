@@ -121,7 +121,7 @@ main[data-barba-namespace="services"] {
             font-weight: bold;
             font-size: 30px;
             color: #FFF;
-            z-index: 2;
+            z-index: 0;
             position: relative;
         }
 
@@ -129,8 +129,8 @@ main[data-barba-namespace="services"] {
             height: 128px;
             width: 128px;
             background-color: #f9b234;
-            z-index: 1;
             position: absolute;
+            z-index: 0;
             top: -75px;
             right: -75px;
             border-radius: 50%;
