@@ -119,8 +119,9 @@
     justify-content: center;
     align-items: center;
     font-size: 20vw;
-    font-family: "Gallery Modern", sans-serif;
-    font-weight: 600;
+    font-family: "Utendo", sans-serif;
+    /* font-family: "Gallery Modern", sans-serif; */
+    /* font-weight: 600; */
     line-height: 1;
     text-align: center;
 }
