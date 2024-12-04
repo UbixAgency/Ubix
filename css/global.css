@@ -53,6 +53,11 @@
     src: url(/assets/font/Lato.ttf);
 }
 
+@font-face {
+    font-family: "Utendo";
+    src: url(/assets/font/Utendo-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -106,8 +111,10 @@ input {
 .navbar .logo__btn {
     padding: 2rem;
     font-size: 30px;
-    font-family: "Gallery Modern";
+    font-family: "Utendo", sans-serif;
+    /* font-family: "Gallery Modern"; */
     font-weight: 600;
+    text-transform: lowercase;
     line-height: 1;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
     pointer-events: fill;
@@ -119,7 +126,7 @@ input {
     display: flex;
     gap: 20px;
     font-size: 30px;
-    font-family: "Recoleta";
+    font-family: "Utendo", sans-serif;
 
     a {
         line-height: 1;
@@ -131,7 +138,7 @@ input {
     padding: 2rem;
     display: none;
     font-size: 30px;
-    font-family: "Recoleta";
+    font-family: "Recoleta", sans-serif;
     line-height: 1;
     pointer-events: fill;
 }
