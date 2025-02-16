@@ -194,7 +194,7 @@ main[data-barba-namespace="home"] {
         white-space: nowrap;
     }
 
-    footer .contact-1 {
+    /* footer .contact-1 {
         position: fixed;
         left: 2rem;
         bottom: 2rem;
@@ -206,11 +206,13 @@ main[data-barba-namespace="home"] {
         font-size: 30px;
         line-height: 1;
         font-weight: bold;
-    }
+    } */
 
     footer .contact-2 {
         position: fixed;
-        right: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        /* right: 2rem; */
         bottom: 2rem;
         display: flex;
         align-items: center;
@@ -223,9 +225,9 @@ main[data-barba-namespace="home"] {
         display: block;
     }
 
-    footer .contact-2 a:first-child {
-        width: 42.5px;
-        height: 42.5px;
+    footer .contact-2 a:last-child {
+        width: 40px;
+        height: 40px;
     }
 
     footer .contact-2 a svg {
@@ -250,17 +252,17 @@ main[data-barba-namespace="home"] {
             font-size: 8vw;
         }
 
-        footer .contact-1 {
+        /* footer .contact-1 {
             left: 1rem;
             bottom: 1rem;
         }
 
         footer .contact-1 a {
             font-size: 25px;
-        }
+        } */
 
         footer .contact-2 {
-            right: 1rem;
+            /* right: 1rem; */
             bottom: 1rem;
         }
 
@@ -269,7 +271,7 @@ main[data-barba-namespace="home"] {
             height: 40px;
         }
 
-        footer .contact-2 a:first-child {
+        footer .contact-2 a:last-child {
             width: 39px;
             height: 39px;
         }
@@ -280,11 +282,11 @@ main[data-barba-namespace="home"] {
             font-size: 32px;
         }
 
-        footer .contact-1 a {
+        /* footer .contact-1 a {
             font-size: 22px;
-        }
+        } */
 
-        footer .contact-2 a:first-child {
+        footer .contact-2 a:last-child {
             width: 40px;
             height: 40px;
         }

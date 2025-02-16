@@ -109,15 +109,16 @@ input {
 }
 
 .navbar .logo__btn {
-    padding: 2rem;
-    font-size: 30px;
-    font-family: "Utendo", sans-serif;
-    /* font-family: "Gallery Modern"; */
-    font-weight: 600;
-    text-transform: lowercase;
-    line-height: 1;
+    padding-left: 2rem;
+    width: 110px;
     cursor: url("/assets/cursor/pointer-dark.png"), default;
     pointer-events: fill;
+}
+
+.navbar .logo__btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .navbar .menu__itms {
@@ -145,7 +146,8 @@ input {
 
 @media screen and (max-width: 900px) {
     .navbar .logo__btn {
-        padding: 1rem;
+        padding-left: 1rem;
+        width: 90px;
     }
 
     .navbar .menu__itms {
